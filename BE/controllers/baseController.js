@@ -57,7 +57,7 @@ exports.updateOne = (Model) => async (req, res, next) => {
 
 exports.getOne = (Model) => async (req, res, next) => {
     try {
-        const doc = await Model.findById(req.params.id);
+        const doc = await Model.findById(req.params.id).lean();
 
         if (!doc) {
             //!

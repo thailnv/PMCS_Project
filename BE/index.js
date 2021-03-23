@@ -5,6 +5,7 @@ const path = require('path');
 
 const userRoutes = require('./routes/userRoute');
 const questionRoutes = require('./routes/questionRoute');
+const testRoutes = require('./routes/testRoute');
 const db = require('./config/database');
 
 const app = express();
@@ -28,8 +29,8 @@ app.use(express.json());
 
 //routes
 app.use('/api/users', userRoutes);
-
-app.use('/api/question', questionRoutes);
+app.use('/api/questions', questionRoutes);
+app.use('/api/tests', testRoutes);
 
 app.use('*', (req, res) => {
     res.status(400).send('Undefined route !');
