@@ -5,17 +5,16 @@ const { validate } = require('../models/userModel');
 const validator = require('../middleware/validate');
 const auth = require('../middleware/auth');
 const userController = require('../controllers/userController');
-const { runInContext } = require('lodash');
 
 router.post('/login', userController.login);
 
-router.post('/signup', [validator(validate)], userController.signup);
+router.post('/signup', validator(validate), userController.signup);
 
 router.use(auth.protect);
 
 router.get('/:id', userController.getOne);
 
-router.post('/:id', validator(validate), userController.update);
+router.post('/:id',  validator(validate), userController.update);
 
 router.use(auth.restrictTo('admin'));
 

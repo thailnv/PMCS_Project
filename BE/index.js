@@ -2,6 +2,7 @@ const express = require('express');
 const helmet = require('helmet');
 const dotenv = require('dotenv');
 const path = require('path');
+const cors = require('cors');
 
 const userRoutes = require('./routes/userRoute');
 const questionRoutes = require('./routes/questionRoute');
@@ -23,6 +24,9 @@ app.use(express.static(path.join(__dirname, '/shared')))
 
 //set security http header
 app.use(helmet());
+
+//cors policy 
+app.use(cors())
 
 //body parser
 app.use(express.json());

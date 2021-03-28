@@ -13,12 +13,17 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         select: false,
+        default: ""
     },
     role: {
         type: String,
         enum: ["admin", "partner", "guest"],
         default: "guest",
     },
+    googleID : {
+        type: String,
+        default: ""
+    }
 }, {
     versionKey: false
 })
