@@ -17,7 +17,7 @@ const createToken = user => {
 
 exports.signup = async (req, res, next) => {
     console.log("Signup request data: ", req.body);
-    const doc = await User.find({ email : req.body.email });
+    const doc = await User.findOne({ email : req.body.email });
     if(doc){
         res.status(400).json({
             status: 'fail',
