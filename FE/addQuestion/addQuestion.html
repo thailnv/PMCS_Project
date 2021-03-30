@@ -11,8 +11,7 @@
 </head>
 
 <body>
-    <img src="http://localhost:3000/img/403.png" alt="">
-    <form style="width: 50%; margin: auto; margin-top: 2em;">
+    <form onsubmit="return false;" style="width: 50%; margin: auto; margin-top: 2em;">
         <div class="form-group">
             <label for="questionContent">Question content</label>
             <input type="text" class="form-control" id="questionContent" placeholder="Question content">
@@ -39,7 +38,7 @@
                     <input type="checkbox" name="isTrueCheckbox" id="isTrueCheckboxB">
                 </div>
             </div>
-            <input type="text" class="form-control" id="answerAContent" placeholder="content">
+            <input type="text" class="form-control" id="answerBContent" placeholder="content">
         </div>
         <div class="form-group">
             <div style="display: flex; justify-content: space-between; width: 50%;">
@@ -49,7 +48,7 @@
                     <input type="checkbox" name="isTrueCheckbox" id="isTrueCheckboxC">
                 </div>
             </div>
-            <input type="text" class="form-control" id="answerAContent" placeholder="content">
+            <input type="text" class="form-control" id="answerCContent" placeholder="content">
         </div>
         <div class="form-group">
             <div style="display: flex; justify-content: space-between; width: 50%;">
@@ -59,10 +58,11 @@
                     <input type="checkbox" name="isTrueCheckbox" id="isTrueCheckboxD">
                 </div>
             </div>
-            <input type="text" class="form-control" id="answerAContent" placeholder="content">
+            <input type="text" class="form-control" id="answerDContent" placeholder="content">
         </div>
-        <button type="btn" class="btn btn-primary">Add</button>
+        <button type="btn" class="btn btn-primary" onclick="addQ()">Add</button>
     </form>
+    <script src="FE.js"></script>
 </body>
 
 </html>

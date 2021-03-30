@@ -22,13 +22,21 @@ async function onSignIn(googleUser) {
   // console.log('Image URL: ' + profile.getImageUrl());
   // console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
   await fetch("http://localhost:3000/api/users/login" , {
-    method : "POST",
+    method : "POST",//get delete
     headers : {
-      'Content-Type' : 'application/json'
+      'Content-Type' : 'application/json',
     },
     body : JSON.stringify(data)
-  }).then((response)=>response.json()).then(rs => {
+  })
+  .then((response)=>response.json())
+  .then(rs => {
     console.log(rs);
     document.getElementById('jwt').innerHTML += rs.token;
-  }).catch( error => console.log(error));
+  })
+  .catch( error => console.log(error));
+
+  await fetch("http://localhost:3000/api/questions")
+  .then( res => res.json())
+  .then( dt => console.log(dt))
+  .catch( err => console.log(err));
 }
