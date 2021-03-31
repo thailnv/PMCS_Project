@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: roboto,sans-serif;
+    text-decoration: none;
+}
+  button{
+    background-color: transparent;
+    border: none;
+  }
+  button:focus{
+      outline: none;
+  }
+  .nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    max-height: 4em;
+    width: 100%;
+    z-index: 3;
+    background-color: #3c3f42e1;
+  }
+  .nav .dropdown {
+    margin-right: 3em;
+    position: relative;
+  
+  }
+  .nav .dropdown .dropdown-btn{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 4em;
+    display: block;
+  }
+  .dropdown-list{
+    width: auto;
+    z-index: 3;
+    display: none;
+    opacity: 0;
+    transition: opacity 1s;
+    position: absolute;
+    background-color: white;
+    padding-right: 0.5em;
+    border-radius: 0.25em;
+    box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.5);
+  }
+  .dropdown:hover .dropdown-list{
+    display: block;
+    opacity: 1;
+  }
+  .dropdown-item:first-of-type{
+    padding-top: 1em;
+  }
+  .dropdown-item{
+    min-width: 15em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    display: block;
+    color: #3c3f42;
+    font-size: 0.875em;
+  }
+  .dropdown-item:hover{
+    color: #3988d3;
+  }
+.profile{  
+    height: 2.5em;
+    width: 2.5em;
+    margin-right: 2em;
+}
+.profile_link{
+    width: 100%;
+    border-radius: 100%;
+    border:1px solid black;
+}
+#nav_menu_btn{
+    color: white;
+    font-size: 30px;
+    margin-left: 20px;
+    cursor: pointer;
+    border: none;
+}
+#nav_menu_btn:hover{
+    color: rgb(55, 196, 231);
+}
+#side_bar{
+    position: fixed;
+    top: 3.6em;
+    width:200px;
+    height:100%;
+    background-color: whitesmoke;
+    transition: all 0.4s linear;
+    left: 0;
+}
+.sidebar_menu{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50%;
+}
+.sidebar_menu_item a{
+    color:  rgba(23, 67, 109, 0.637);
+    text-decoration: none;
+    font-weight: bold;
+    line-height: 60px;
+    display: block;
+    padding-left: 20px;
+    transition: 0.2s;
+}
+.sidebar_menu_item:hover a{
+    background-color: rgb(219, 217, 217);
+    border-right: 10px solid rgb(55, 196, 231);
+    transition: 0.2s;
+}
+.sidebar_menu_item a i{
+    padding-right: 10px;
+    font-size: 20px;
+}
+#side_bar.active{
+    left:-150px;
+    transition: all 0.5s linear;
+}
+#side_bar.active .sidebar_menu_item a i{
+    margin-left: 145px;
+    transition:  0.5s linear;
+}
+#side_bar.active .sidebar_menu_item a span{
+    display: none;
+    transition: 0.5s linear;
+}
