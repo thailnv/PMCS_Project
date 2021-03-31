@@ -45,22 +45,40 @@
     <div class="sidebar" id="side_bar">
         <ul class="sidebar_menu">
             <li class="sidebar_menu_item">
-                <a href=""><i class="fas fa-home"></i><span>Dashboard</span></a>
+                <button onclick="showDashboard()"><i class="fas fa-home"></i><span>Dashboard</span></button>
             </li>
             <li class="sidebar_menu_item">
-                <a href=""><i class="fas fa-sticky-note"></i><span>New test</span></a>
+                <button><i class="fas fa-sticky-note"></i><span>New test</span></button>
             </li>
             <li class="sidebar_menu_item">
-                <a href=""><i class="fas fa-question-circle"></i><span>New question</span></a>
+                <button><i class="fas fa-question-circle"></i><span>New question</span></button>
             </li>
             <li class="sidebar_menu_item">
-                <a href=""><i class="fas fa-envelope"></i><span>Inbox</span></a>
+                <button><i class="fas fa-envelope"></i><span>Inbox</span></button>
             </li>
         </ul>
+    </div>
+    <div id="dashboard_content">
+        <h2 class="dashboard_title">Over view</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="cardimg.jpg" alt="" class="card_img">
+                <a href="" class="card_name">Member</a>
+                <p class="card_quantity">999</p>
+            </div>
+            <div class="card">
+                <img src="cardimg.jpg" alt="" class="card_img">
+                <a href="" class="card_name">test</a>
+                <p class="card_quantity">100</p>
+            </div>
+        </div>
     </div>
 </body>
 <script>
     function toggleSidebar(){
         document.getElementById("side_bar").classList.toggle('active')}
+        function showDashboard() {
+  document.getElementById("dashboard_content").style.display = "block";
+}
 </script>
 </html>

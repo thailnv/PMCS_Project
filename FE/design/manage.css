@@ -21,7 +21,7 @@
     max-height: 4em;
     width: 100%;
     z-index: 3;
-    background-color: #bcbdbe25;
+    background-color:#151a19d3;
   }
   .nav .dropdown {
     margin-right: 3em;
@@ -29,7 +29,7 @@
   
   }
   .nav .dropdown .dropdown-btn{
-    color: gray;
+    color: white;
     text-decoration: none;
     font-weight: 600;
     font-size: 14px;
@@ -77,7 +77,7 @@
     border:1px solid black;
 }
 #nav_menu_btn{
-    color: gray;
+    color: white;
     font-size: 30px;
     margin-left: 20px;
     cursor: pointer;
@@ -88,11 +88,11 @@
 }
 #side_bar{
     position: fixed;
-    top: 3.6em;
+    top: 3.5em;
     width:200px;
     height:100%;
     background-color: whitesmoke;
-    transition: all 0.4s linear;
+    transition: all 0.2s linear;
     left: 0;
 }
 .sidebar_menu{
@@ -101,7 +101,8 @@
     flex-direction: column;
     margin-top: 50%;
 }
-.sidebar_menu_item a{
+.sidebar_menu_item button{
+    width: 100%;
     color:  rgba(23, 67, 109, 0.637);
     text-decoration: none;
     font-weight: bold;
@@ -109,25 +110,88 @@
     display: block;
     padding-left: 20px;
     transition: 0.2s;
+    text-align: left;
 }
-.sidebar_menu_item:hover a{
+.sidebar_menu_item:hover button{
     background-color: rgb(219, 217, 217);
     border-right: 10px solid rgb(55, 196, 231);
     transition: 0.2s;
 }
-.sidebar_menu_item a i{
+.sidebar_menu_item button i{
     padding-right: 10px;
     font-size: 20px;
 }
 #side_bar.active{
     left:-150px;
-    transition: all 0.5s linear;
+    transition: all 0.2s linear;
 }
-#side_bar.active .sidebar_menu_item a i{
+#side_bar.active .sidebar_menu_item button i{
     margin-left: 145px;
-    transition:  0.5s linear;
+    transition:  0.2s linear;
 }
-#side_bar.active .sidebar_menu_item a span{
+#side_bar.active .sidebar_menu_item button span{
     display: none;
-    transition: 0.5s linear;
+    transition: 0.2s linear;
+}
+#dashboard_content{
+    position: absolute;
+    top: 3.6em;
+    left: 200px;
+    width: 100%;
+    display: none;
+}
+.dashboard_title{
+    color: #3c3f42;
+    margin: 50px 50px;
+}
+.cards{
+    width: 80%;
+    margin-left: 50px;
+    display: flex;
+}
+.card{
+    position: relative;
+    width: 20%;
+    height: 250px;
+    border-radius: 15px;
+    box-shadow: 4px 4px 18px #8888;
+    margin-right: 50px;
+    transition: 0.3s;
+}
+.card_img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+    height: 60%;
+}
+.card_name{
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 60%;
+    z-index: 1;
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(43, 43, 43);
+    margin-top: 20px;
+    margin-left: 20px;
+    text-transform: uppercase;
+}
+.card_quantity{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    color: teal;
+}
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 4px 6px 30px #8888;
+    transition: 0.3s;
 }
