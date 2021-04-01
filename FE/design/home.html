@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
   <link rel="stylesheet" href="./home.css">
   <script src="https://kit.fontawesome.com/2b3f16036e.js" crossorigin="anonymous"></script>
   <title>Edulogy - Homepage</title>
@@ -11,7 +12,7 @@
 <body>
   <div class="nav">
     <div class="logo" style="margin-left: 1em;">
-      <img src="./logo_trans_light.png" style="width: 8em; margin-top: 0.25em;" alt="">
+      <img src="./img/logo_trans_light.png" style="width: 8em; margin-top: 0.25em;" alt="">
     </div>
     <div style="margin-right: 0; margin-left: auto; display: flex;">
       <div class="dropdown">
@@ -43,41 +44,156 @@
     </button>
   </div>
   <div class="banner">
-    <img src="./banner.jpg" alt="">
-    <div>
-      hahaha
-    </div>
+    <img src="./img/banner.jpg" alt="">
+    <div></div>
   </div>
   <div class="main">
-    <div class="service">
-      <div class="slider-container" style="display: flex; justify-content: space-between;">
-          <div class="card">
-            <img src="./listening.png" alt="">
-            <div class="name">Listening</div>
-            <a href="#">PRACTICE</a>
+    <div style="text-align:center; font-size: 1.5em; font-weight: 600; margin-top: 1em;">Chúng tôi hỗ trợ bạn...</div>
+    <div class="skill">
+          <div class="skill-card">
+            <div class="img-container">
+              <img src="./img/listening.png" alt="">
+            </div>
+            <div class="name">Luyện nghe</div>
+            <a href="#">Luyện tập</a>
           </div>
-          <div class="card">
-            <img src="./reading.png" alt="">
-            <div class="name">Reading</div>
-            <a href="#">PRACTICE</a>
+          <div class="skill-card">
+            <div class="img-container">
+              <img src="./img/reading.png" alt="">
+            </div>
+            <div class="name">Luyện đọc</div>
+            <a href="#">Luyện tập</a>
           </div>
-          <div class="card">
-            <img src="./writing.png" alt="">
-            <div class="name">Writing</div>
-            <a href="#">COMING SOON</a>
+          <div class="skill-card">
+            <div class="img-container">
+              <img src="./img/writing.png" alt="">
+            </div>
+            <div class="name">Luyện viết</div>
+            <a href="#">Sắp ra mắt</a>
           </div>
-          <div class="card">
-            <img src="./speaking.png" alt="">
-            <div class="name">Speaking</div>
-            <a href="#">COMING SOON</a>
+          <div class="skill-card">
+            <div class="img-container">
+              <img src="./img/speaking.png" alt="">
+            </div>
+            <div class="name">Luyện nói</div>
+            <a href="#">Sắp ra mắt</a>
           </div>
-        </div>
+    </div>
+    <div style="text-align:center; font-size: 1.5em; font-weight: 600; margin-top: 1em;">Đề thi mới cập nhật</div>
+    <div class="test">
+      <div class="slider-container">
+        <a href="#" class="test-card">
+          <div class="img-container">
+            <img src="./img/ets.png" alt="">
+          </div>
+          <div class="card-title">
+            ETS 2021 đề 1
+          </div>
+          <div class="card-info">
+            Thời gian : 120'
+          </div>
+          <div class="card-info">
+            Thang điểm : 990
+          </div>
+        </a>
+        <a href="#" class="test-card">
+          <div class="img-container">
+            <img src="./img/economy.png" alt="">
+          </div>
+          <div class="card-title">
+            Economy 2019 đề 1
+          </div>
+          <div class="card-info">
+            Thời gian : 120'
+          </div>
+          <div class="card-info">
+            Thang điểm : 990
+          </div>
+        </a>
+        <a href="#" class="test-card">
+          <div class="img-container">
+            <img src="./img/ets.png" alt="">
+          </div>
+          <div class="card-title">
+            ETS 2021 đề 2
+          </div>
+          <div class="card-info">
+            Thời gian : 120'
+          </div>
+          <div class="card-info">
+            Thang điểm : 990
+          </div>
+        </a>
+        <a href="#" class="test-card">
+          <div class="img-container">
+            <img src="./img/ets.png" alt="">
+          </div>
+          <div class="card-title">
+            ETS 2021 đề 3
+          </div>
+          <div class="card-info">
+            Thời gian : 120'
+          </div>
+          <div class="card-info">
+            Thang điểm : 990
+          </div>
+        </a>
+        <a href="#" class="test-card">
+          <div class="img-container">
+            <img src="./img/ets.png" alt="">
+          </div>
+          <div class="card-title">
+            Reading đề 1
+          </div>
+          <div class="card-info">
+            Thời gian : 80'
+          </div>
+          <div class="card-info">
+            Thang điểm : 450
+          </div>
+        </a>
+        <a href="#" class="test-card">
+          <div class="img-container">
+            <img src="./img/ets.png" alt="">
+          </div>
+          <div class="card-title">
+            ETS 2021 đề 1
+          </div>
+          <div class="card-info">
+            Thời gian : 120'
+          </div>
+          <div class="card-info">
+            Thang điểm : 990
+          </div>
+        </a>
+        <a href="#" class="test-card">
+          <div class="img-container">
+            <img src="./img/economy.png" alt="">
+          </div>
+          <div class="card-title">
+            Economy 2019 đề 1
+          </div>
+          <div class="card-info">
+            Thời gian : 120'
+          </div>
+          <div class="card-info">
+            Thang điểm : 990
+          </div>
+        </a>
+      </div>
+      <button class="pre-btn">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button class="next-btn">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+      <a class="see-more-btn" href="#">Xem thêm</a>
     </div>
   </div>
   <div class="footer">
       <div class="footer__contact">
         <div class="brand">
-          <img src="./foot-logo.png" alt="">
+          <img src="./img/foot-logo.png" alt="">
         </div>
         <div class="content">
           Lorem ipsum dolor sit amet, consect
@@ -143,6 +259,8 @@
         </button>
       </div>
   </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <script src="./design.js"></script>
 </body>
 </html>
