@@ -1,24 +1,3 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: roboto,sans-serif;
-  text-decoration: none;
-}
-button{
-  background-color: transparent;
-  border: none;
-}
-.row{
-  display: flex;
-  justify-content: space-between;
-}
-a{
-  color: #333;
-}
-body{
-  background-color: whitesmoke;
-}
 .nav {
   position: fixed;
   left: 0;
@@ -27,7 +6,7 @@ body{
   align-items: center;
   max-height: 4em;
   width: 100%;
-  z-index: 3;
+  z-index: 2;
 }
 .nav .dropdown {
   margin-right: 3em;
@@ -90,7 +69,7 @@ body{
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1;
+  z-index: 1;
 }
 .banner > div{
   position: absolute;
@@ -245,7 +224,127 @@ body{
   right: 4%;
   font-weight: 600;
 }
+.app{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  display: none;
+}
 
+.filter{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(51, 51, 51, 0.596);
+}
+#modal_form{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 400px;
+  height: 550px;
+  z-index: 3;
+  opacity: 1;
+  margin-top: -275px;
+  margin-left: -175px;
+  background: #fff;
+}
+#close_form{
+  color: rgb(105, 101, 101);
+  font-size: 25px;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+#close_form:hover{
+  color: #333;
+}
+.login_form .login_form_title{
+  font-weight: 600;
+  font-size: 30px;
+  display: block;
+  margin: auto;
+  color: #5a5a5a;
+  margin-top: 100px;
+  margin-bottom: 10px;
+}
+.login_form{
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  transition: 0.5s;
+}
+.login_form input{
+  margin-top: 20px;
+  height: 50px;
+  padding-left: 10px;
+  color: black;
+  border-radius: 5px;
+  border: 1px solid;
+}
+.login_form #btn_login{
+  width:100%;
+  background: rgb(81, 183, 187);
+  color: #fff;
+  height: 50px;
+  border-radius: 5px;
+  margin-top:30px;
+}
+#btn_login:hover{
+  background:rgb(126, 208, 211) ;
+}
+.text_form{
+  display: inline-block;
+  color: #333;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 10px;
+}
+.text_form2{
+  font-weight: 400;
+}
+.login_form #google_login_btn{
+  width:60%;
+  height: 50px;
+  border-radius: 5px;
+  color:#333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(212, 25, 25);
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+}
+#google_login_btn i{
+  font-size: 24px;
+  color: #fff;
+}
+#google_login_btn:hover{
+  background: red;
+}
+.login_form a{
+  display: block;
+  margin: auto;
+  margin-top: 25px;
+  color: #7b7d80;
+  font-size: 14px;
+}
+.login_form a span{
+  color: #3988d3;
+}
+.login_form a span:hover{
+  color: #58aaf7;
+}
+.login_form a:hover{
+  color: #535457;
+}
 .footer{
   position: relative;
   height: 65vh;

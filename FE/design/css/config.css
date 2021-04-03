@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: roboto,sans-serif;
+    text-decoration: none;
+}
+button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+  }
+  a{
+    color: #333;
+  }
+  body{
+    background-color: whitesmoke;
+  }

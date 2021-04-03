@@ -34,3 +34,13 @@ window.onscroll = () => {
     }
   }
 }
+
+function showLoginForm(){
+  var modal = document.getElementsByClassName("app")[0];
+  modal.style.display= 'block';
+}
+
+function closeModalForm(){
+  var modal = document.getElementsByClassName("app")[0];
+  modal.style.display= 'none';
+}

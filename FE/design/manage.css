@@ -114,8 +114,12 @@
 }
 .sidebar_menu_item:hover button{
     background-color: rgb(219, 217, 217);
-    border-right: 10px solid rgb(55, 196, 231);
     transition: 0.2s;
+}
+.sidebar_menu_item button:focus{
+    background-color: rgb(219, 217, 217);
+    border-right: 10pxsolid rgb(55, 196, 231);
+    transition: 0.3s;
 }
 .sidebar_menu_item button i{
     padding-right: 10px;
@@ -137,7 +141,7 @@
     position: absolute;
     top: 3.6em;
     left: 200px;
-    width: 100%;
+    width: 80%;
     display: none;
 }
 .dashboard_title{
@@ -145,7 +149,7 @@
     margin: 50px 50px;
 }
 .cards{
-    width: 80%;
+    width: 100%;
     margin-left: 50px;
     display: flex;
 }

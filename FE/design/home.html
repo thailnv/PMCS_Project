@@ -6,10 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
   <link rel="stylesheet" href="./home.css">
+  <link rel="stylesheet" href="./css/config.css">
   <script src="https://kit.fontawesome.com/2b3f16036e.js" crossorigin="anonymous"></script>
   <title>Edulogy - Homepage</title>
 </head>
 <body>
+
   <div class="nav">
     <div class="logo" style="margin-left: 1em;">
       <img src="./img/logo_trans_light.png" style="width: 8em; margin-top: 0.25em;" alt="">
@@ -39,7 +41,7 @@
         <a href="#" class="dropdown-btn">Đóng góp</a>
       </div>
     </div>
-    <button id="login-btn">
+    <button id="login-btn" onclick="showLoginForm()">
       Let's start 
     </button>
   </div>
@@ -188,7 +190,11 @@
         <i class="fas fa-chevron-right"></i>
       </button>
       <a class="see-more-btn" href="#">Xem thêm</a>
-    </div>
+        </div>
+        <div class="list_test">
+            <button class="pre_btn"></button>
+            <button class="next_btn"></button>
+        </div>
   </div>
   <div class="footer">
       <div class="footer__contact">
@@ -259,6 +265,25 @@
         </button>
       </div>
   </div>
+  <div class="app">
+    <div class="filter"></div>
+      <div id="modal_form">
+        <button id="close_form" onclick="closeModalForm()"><i class="fas fa-times"></i></button>
+        <form action="" class="login_form" onsubmit="return false;">
+          <p class="login_form_title">Login</p>
+          <input type="text" placeholder="UserName" onfocus="this.placeholder = ''"
+          onblur="this.placeholder = 'UserName'">
+          <input type="password" placeholder="Password">
+          <button id="btn_login">Login</button>
+          <p class="text_form">or</p>
+          <p class="text_form text_form2">Login with</p>
+          <button id="google_login_btn"><i class="fab fa-google-plus-g"></i></button>
+          <a href="" class="find_password">Forgot your password? <span>Sign Up.</span></a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <script src="./design.js"></script>
