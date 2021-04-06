@@ -71,11 +71,6 @@
     padding-left: 10em;
     transition: 0.3s ease;
 }
-
-.sidebar_item_link:focus{
-    background-color:#eda82a ;
-    transition: 0.2s;
-}
 .sidebar_item_link:focus ion-icon{
     color: rgb(77, 48, 6);
     transition: 0.2s;
@@ -87,12 +82,16 @@
 .sidebar_item_link:hover{
     background-color: #1d223b;
 }
+.sidebar_item_link:focus{
+    background-color:#eda82a ;
+    transition: 0.2s;
+}
 #dashboard_content{
     position: relative;
     top: 3.6em;
     left: 200px;
     width: 80%;
-    display: none;
+
     transition: 0.3s ease;
 }
 .dashboard_title{

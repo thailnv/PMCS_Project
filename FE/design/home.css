@@ -4,20 +4,39 @@
   top: 0;
   display: flex;
   align-items: center;
-  max-height: 4em;
+  max-height: 6em;
   width: 100%;
-  z-index: 2;
+  z-index: 5;
+  background-color: transparent;
+}
+.nav .logo a{
+  color: #192a88;
+  font-weight: bold;
+  margin-left: 20px;
+  font-size: 30px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+.logo a span{
+  font-size: 20px;
+}
+.nav.hide{
+  transform: translateY(-100%);
+  transition: 0.4s;
 }
 .nav .dropdown {
   margin-right: 3em;
   position: relative;
 
 }
+.dropdown a:hover{
+  color: #192a88;
+}
 .nav .dropdown .dropdown-btn{
-  color: #fff;
   text-decoration: none;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 4em;
   display: block;
 }
@@ -54,96 +73,174 @@
 #login-btn{
   height: 3.5em;
   width: 10em;
-  color: white;
-  border: #4d72d0 2px solid;
+  color: #192a88;
   border-radius: 2em;
   margin-right: 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#login-btn span{
+  margin-right: 5px;
+  font-weight: 500;
+  color: #000000;
+  font-size: 18px;
+  font-weight: bold;
+}
+#login-btn ion-icon{
+  color: #192a88;
+  font-size: 18px;
+}
+#login-btn:hover span{
+  color: #333;
+  font-weight: bold;
+  transition: 0.2s;
 }
 
+
+
+/*banner*/
 .banner{
-  width: 100%;
-  height: 50vh;
+  width: 90%;
+  height: 70vh;
   position: relative;
+  top: 8em;
+  display: flex;
+  margin: auto;
 }
-.banner > img{
-  width: 100%;
+.banner > .img{
+  width: 70%;
   height: 100%;
-  object-fit: cover;
-  z-index: 1;
+  object-fit: contain;
+  background:url(./img/banner.jpg);
+  background-size: cover;
+  background-attachment: fixed;
 }
-.banner > div{
-  position: absolute;
-  box-shadow: inset 0 0 30em black;
-  top: 0;
-  right: 0;
-  width: 100%;
+.banner .banner_content{
+  width: 30%;
   height: 100%;
+  background-color: #ecfdff;
+}
+.banner_text{
+  color: #000000;
+  display: block;
+  margin: auto;
+  margin-top: 100px;
+  width: 60%;
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+.banner_content >p{
+  margin:auto;
+  width: 60%;
+  display: block;
+  margin-bottom: 20px;
+  font-size: 15px;
+  line-height: 20px;
+}
+.banner_content #let_start{
+  width: 40%;
+  border-radius: 5px;
+  background-color: #192a88;
+  height: 60px;
+  color: white;
+  margin:auto;
+  display: block;
+  margin-left: 20%;
+  font-size: 25px;
+  font-weight: 700;
+  margin-top: 50px;
+  transition: 0.3s;
+}
+#let_start:hover{
+  background-color: #ffffff;
+  color: #192a88;
+  border: 1px solid #192a88;
+  transition: 0.3s;
 }
 
+
+
+/*main content*/
+.main{
+  margin-top: 300px;
+}
 .skill{
   width: 100%;
   padding-left: 12.5%;
   padding-right: 12.5%;
   height: 40vh;
-  margin:auto;
   display: flex; 
   justify-content: space-between;
   align-items: center;
+  margin-top: 100px;
+  margin-bottom: 200px;
   /* background-color:rgba(209, 244, 255, 0.3); */
 }
-.skill-card{
-  width: 12em;
-  border-radius: 0.25em;
-  height: 12em;
-  background-color: white;
-  z-index: 2;
-  padding: 1em;
-  padding-top: 1em;
-  background-size: 20em;
-  background-color: rgba(82, 146, 175, 0.1);
-  border: white 0.5em solid;
+.skill_card{
+  width: 23%;
+  height: 45vh;
   position: relative;
+  overflow: hidden;
 }
-.skill-card > .name {
-  font-size: 1.25em;
+.card_name{
+  font-size: 20px;
   font-weight: 600;
-  margin-top: 0.5em;
-  text-align: center;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
-.skill-card > .img-container{
-  height: 4em;
+.card_background{
+  width: 100%;
+  height: 80%;
+  background:#fcf0e0 ;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 40px;
+  z-index: 2;
+  transition: 0.3s;
 }
-.skill-card img {
-  width: 3.5em;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
+.skill_card:hover .card_background{
+  left: -30%;
+  transition: 0.3s;
 }
-.skill-card > a {
-  display: block;
-  width: 8.5em;
-  line-height: 2.75em;
-  font-size: 0.857em;
-  background: #3c3f42;
-  text-align: center;
-  margin: auto;
-  margin-top: 1em;
+.card_discover{
+  position: absolute;
+  width: 30%;
+  height: 80%;
+  top:40px;
+  right: 0;
+  font-size: 14px;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card_link{
   color: white;
-  font-weight: 600;
-  border-radius: 0.35em;
-  box-shadow: 0 0 6px black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
 }
-.skill-card:hover{
-  border: rgba(82, 153, 175, 0.4) 0.5em solid;
+.skill_2{
+  background: #ebedfc;
 }
-.skill-card:hover > a {
-  background-color: rgba(82, 153, 175, 1);
-  box-shadow: 0 0 8px rgba(82, 153, 175, 0.6);
+.skill_3{
+  background: #dcdef7;
 }
-.skill-card:hover > .name {
-  color: rgba(82, 153, 175, 1);
+.skill_4{
+  background: #f9e0d6;
 }
-
+.card_background ion-icon{
+  font-size: 60px;
+  background: transparent;
+  display: block;
+  margin: auto;
+}
 .test{
   width: 100%;
   position: relative;

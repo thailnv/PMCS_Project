@@ -7,14 +7,18 @@
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
   <link rel="stylesheet" href="./home.css">
   <link rel="stylesheet" href="./css/config.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/2b3f16036e.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
   <title>Edulogy - Homepage</title>
 </head>
 <body>
 
   <div class="nav">
     <div class="logo" style="margin-left: 1em;">
-      <img src="./img/logo_trans_light.png" style="width: 8em; margin-top: 0.25em;" alt="">
+     <a href=""><ion-icon name="laptop-outline"></ion-icon><span>Edulogy</span> </a> 
     </div>
     <div style="margin-right: 0; margin-left: auto; display: flex;">
       <div class="dropdown">
@@ -42,44 +46,57 @@
       </div>
     </div>
     <button id="login-btn" onclick="showLoginForm()">
-      Let's start 
+     <span id="login-btn_text">Login</span>
+     <ion-icon name="person-circle"></ion-icon>
     </button>
   </div>
   <div class="banner">
-    <img src="./img/banner.jpg" alt="">
-    <div></div>
+    <div class="banner_content">
+      <h1 class="banner_text">NGÔN NGỮ LÀ TƯƠNG LAI</h1>
+      <p>Đừng bỏ lỡ cơ hội để học tập tiếng anh tốt hơn</p>
+      <button id="let_start">Start now</button>
+    </div>
+    <div class="img"></div>
   </div>
   <div class="main">
-    <div style="text-align:center; font-size: 1.5em; font-weight: 600; margin-top: 1em;">Chúng tôi hỗ trợ bạn...</div>
+    <div style="text-align:center; font-size: 2em; font-weight: bold; margin-top: 1em;margin-bottom: 50px;">Chúng tôi hỗ trợ bạn</div>
     <div class="skill">
-          <div class="skill-card">
-            <div class="img-container">
-              <img src="./img/listening.png" alt="">
-            </div>
-            <div class="name">Luyện nghe</div>
-            <a href="#">Luyện tập</a>
+         <div class="skill_card">
+           <p class="card_name ">Reading</p>
+           <div class="card_background skill_1">
+            <ion-icon name="book-outline"></ion-icon>        
+           </div>
+           <div class="card_discover">
+            <a href="" class="card_link"><span>Khám phá </span><ion-icon name="arrow-forward-outline"></ion-icon></a>
           </div>
-          <div class="skill-card">
-            <div class="img-container">
-              <img src="./img/reading.png" alt="">
-            </div>
-            <div class="name">Luyện đọc</div>
-            <a href="#">Luyện tập</a>
+         </div>
+         <div class="skill_card ">
+          <p class="card_name">Listening</p>
+          <div class="card_background skill_2">
+          <ion-icon name="headset-outline"></ion-icon>
           </div>
-          <div class="skill-card">
-            <div class="img-container">
-              <img src="./img/writing.png" alt="">
-            </div>
-            <div class="name">Luyện viết</div>
-            <a href="#">Sắp ra mắt</a>
+          <div class="card_discover">
+            <a href="" class="card_link"><span>Khám phá </span><ion-icon name="arrow-forward-outline"></ion-icon></a>
           </div>
-          <div class="skill-card">
-            <div class="img-container">
-              <img src="./img/speaking.png" alt="">
-            </div>
-            <div class="name">Luyện nói</div>
-            <a href="#">Sắp ra mắt</a>
+        </div>
+        <div class="skill_card ">
+          <p class="card_name">Speaking</p>
+          <div class="card_background skill_3">
+          <ion-icon name="chatbubbles-outline"></ion-icon>
           </div>
+          <div class="card_discover">
+            <a href="" class="card_link"><span>Sắp có!</span></a>
+          </div>
+        </div>
+        <div class="skill_card ">
+          <p class="card_name">Writing</p>
+          <div class="card_background skill_4">
+          <ion-icon name="pencil-outline"></ion-icon>
+          </div>
+          <div class="card_discover">
+            <a href="" class="card_link"><span>Sắp có!</span></a>
+          </div>
+        </div>
     </div>
     <div style="text-align:center; font-size: 1.5em; font-weight: 600; margin-top: 1em;">Đề thi mới cập nhật</div>
     <div class="test">
