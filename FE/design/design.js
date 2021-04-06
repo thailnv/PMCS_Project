@@ -5,44 +5,24 @@ $('.slider-container').slick({
   prevArrow: '.pre-btn',
   nextArrow: '.next-btn'
 });
-
-/*window.onscroll = () => {
-  if (document.documentElement.scrollTop > innerHeight*0.5){
-    document.querySelector('.nav').style.background = "url('./img/banner-bg.jpg') bottom";
-    document.querySelector('.logo > img').src = "./img/Edulogy-logos_transparent.png";
-    let dropBtn = document.getElementsByClassName('dropdown-btn');
-    for(let i = 0; i < dropBtn.length; i++){
-      dropBtn[i].style.color = '#333'
-    }
-    document.getElementById('login-btn').style.color = '#333';
-  }
-  else{
-    document.querySelector('.nav').style.background = "transparent";
-    let dropBtn = document.getElementsByClassName('dropdown-btn');
-    if(document.documentElement.scrollTop > innerHeight*0.5 - 29){
-      for(let i = 0; i < dropBtn.length; i++){
-        dropBtn[i].style.color = '#333'
-      }
-      document.querySelector('.logo > img').src = "./img/Edulogy-logos_transparent.png";
-      document.getElementById('login-btn').style.color = '#333';
-    }else{
-      for(let i = 0; i < dropBtn.length; i++){
-        dropBtn[i].style.color = '#fff'
-      }
-      document.querySelector('.logo > img').src = "./img/Edulogy-logos_transparent.png";
-      document.getElementById('login-btn').style.color = '#fff';      
-    }
-  }
-}*/
-
 function showLoginForm(){
   var modal = document.getElementsByClassName("app")[0];
-  modal.style.display= 'block';
+  modal.classList.toggle('active');
 }
 
 function closeModalForm(){
   var modal = document.getElementsByClassName("app")[0];
-  modal.style.display= 'none';
+  modal.classList.remove('active');
+  var loginForm = document.querySelector(".login_form1");
+  loginForm.style.display = "flex";
+  var signupForm = document.querySelector(".signup");
+  signupForm.style.display = "none";
+}
+function openSignupform(){
+  var loginForm = document.querySelector(".login_form1");
+  loginForm.style.display = "none";
+  var signupForm = document.querySelector(".signup");
+  signupForm.style.display = "flex";
 }
 const nav = document.querySelector('.nav');
 let prevScrollpos = window.pageYOffset;

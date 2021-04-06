@@ -302,9 +302,7 @@
   height: 5em;
   font-size: 1em;
   border-radius: 0.5em;
-  background-color: black;
-  opacity: 0.3;
-  color: white;
+  color: black;
 }
 .pre-btn:hover, .next-btn:hover{
   opacity: 0.5;
@@ -326,30 +324,19 @@
   height: 100%;
   position: fixed;
   left: 0;
-  top: 0;
-  z-index: 3;
+  top: -100%;
+  z-index: 6;
   display: none;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: 0.4s;
 }
-
-.filter{
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  background-color: rgba(51, 51, 51, 0.596);
-}
-#modal_form{
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  width: 400px;
-  height: 550px;
-  z-index: 3;
-  opacity: 1;
-  margin-top: -275px;
-  margin-left: -175px;
-  background: #fff;
+.app.active{
+  top:0;
+  transition: 0.4s;
 }
 #close_form{
   color: rgb(105, 101, 101);
@@ -361,21 +348,21 @@
 #close_form:hover{
   color: #333;
 }
-.login_form .login_form_title{
+.login_form_title{
   font-weight: 600;
-  font-size: 30px;
+  font-size: 40px;
   display: block;
-  margin: auto;
-  color: #5a5a5a;
-  margin-top: 100px;
-  margin-bottom: 10px;
+  color: black;
 }
 .login_form{
-  width: 80%;
-  margin: auto;
+  width: 30%;
   display: flex;
   flex-direction: column;
   transition: 0.5s;
+  text-align: center;
+}
+.signup{
+  display: none;
 }
 .login_form input{
   margin-top: 20px;
@@ -397,14 +384,26 @@
   background:rgb(126, 208, 211) ;
 }
 .text_form{
-  display: inline-block;
   color: #333;
   font-weight: 700;
   text-align: center;
   margin-top: 10px;
+  position: relative;
+  border-bottom: 1px solid rgb(172, 168, 168);
+  height: 20px;
+}
+.text_form span{
+  display: inline-block;
+  position: absolute;
+  bottom: -14px;
+  padding: 5px 5px;
+  margin-left: -15px;
+  background: white;
+  z-index: 7;
 }
 .text_form2{
   font-weight: 400;
+  border: none;
 }
 .login_form #google_login_btn{
   width:60%;
@@ -426,15 +425,16 @@
 #google_login_btn:hover{
   background: red;
 }
-.login_form a{
+.login_form div{
   display: block;
   margin: auto;
   margin-top: 25px;
   color: #7b7d80;
   font-size: 14px;
 }
-.login_form a span{
+.login_form div span{
   color: #3988d3;
+  cursor: pointer;
 }
 .login_form a span:hover{
   color: #58aaf7;

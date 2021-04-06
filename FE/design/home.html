@@ -46,7 +46,7 @@
       </div>
     </div>
     <button id="login-btn" onclick="showLoginForm()">
-     <span id="login-btn_text">Login</span>
+     <span id="login-btn_text">Đăng nhập</span>
      <ion-icon name="person-circle"></ion-icon>
     </button>
   </div>
@@ -62,7 +62,7 @@
     <div style="text-align:center; font-size: 2em; font-weight: bold; margin-top: 1em;margin-bottom: 50px;">Chúng tôi hỗ trợ bạn</div>
     <div class="skill">
          <div class="skill_card">
-           <p class="card_name ">Reading</p>
+           <p class="card_name ">Đọc</p>
            <div class="card_background skill_1">
             <ion-icon name="book-outline"></ion-icon>        
            </div>
@@ -71,7 +71,7 @@
           </div>
          </div>
          <div class="skill_card ">
-          <p class="card_name">Listening</p>
+          <p class="card_name">Nghe</p>
           <div class="card_background skill_2">
           <ion-icon name="headset-outline"></ion-icon>
           </div>
@@ -80,7 +80,7 @@
           </div>
         </div>
         <div class="skill_card ">
-          <p class="card_name">Speaking</p>
+          <p class="card_name">Nói</p>
           <div class="card_background skill_3">
           <ion-icon name="chatbubbles-outline"></ion-icon>
           </div>
@@ -89,7 +89,7 @@
           </div>
         </div>
         <div class="skill_card ">
-          <p class="card_name">Writing</p>
+          <p class="card_name">Viết</p>
           <div class="card_background skill_4">
           <ion-icon name="pencil-outline"></ion-icon>
           </div>
@@ -283,22 +283,28 @@
       </div>
   </div>
   <div class="app">
-    <div class="filter"></div>
-      <div id="modal_form">
-        <button id="close_form" onclick="closeModalForm()"><i class="fas fa-times"></i></button>
-        <form action="" class="login_form" onsubmit="return false;">
-          <p class="login_form_title">Login</p>
-          <input type="text" placeholder="UserName" onfocus="this.placeholder = ''"
-          onblur="this.placeholder = 'UserName'">
-          <input type="password" placeholder="Password">
+        <button id="close_form" onclick="closeModalForm()"><i class="fas fa-times"></i></button>  
+        <form action="" class="login_form login_form1" onsubmit="return false;">
+          <p class="login_form_title">Đăng nhập</p>
+          <input type="text" placeholder="Tài khoản" onfocus="this.placeholder = ''"
+          onblur="this.placeholder = 'Tài khoản'">
+          <input type="password" placeholder="Mật khẩu">
           <button id="btn_login">Login</button>
-          <p class="text_form">or</p>
-          <p class="text_form text_form2">Login with</p>
+          <div class="text_form"><span>or</span></div>
           <button id="google_login_btn"><i class="fab fa-google-plus-g"></i></button>
-          <a href="" class="find_password">Forgot your password? <span>Sign Up.</span></a>
+          <button  class="find_password" onclick="openSignupform()">Quên mật khẩu? <span >Đăng ký.</span></button>
+        </form>
+        <form  class="login_form signup" onsubmit="return false;">
+          <p class="login_form_title">Đăng ký</p>
+          <input type="text" placeholder="Tài khoản" onfocus="this.placeholder = ''"
+          onblur="this.placeholder = 'Tài khoản'">
+          <input type="password" placeholder="Mật khẩu">
+          <button id="btn_login">Login</button>
+          <div class="text_form"><span>or</span></div>
+          <button id="google_login_btn"><i class="fab fa-google-plus-g"></i></button>
+          <div  class="find_password" onclick="openSignupform()">Quên mật khẩu? <span>Đăng ký.</span></div>
         </form>
       </div>
-    </div>
   </div>
 </div>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
