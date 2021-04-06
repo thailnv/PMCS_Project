@@ -1,148 +1,99 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: roboto,sans-serif;
-    text-decoration: none;
-}
-  button{
-    background-color: transparent;
-    border: none;
-  }
-  button:focus{
-      outline: none;
-  }
-  .nav {
+.sidebar{
+    width: 80px;
+    height: 100vh;
     position: fixed;
+    background-color: #15192b;
     left: 0;
     top: 0;
-    display: flex;
-    align-items: center;
-    max-height: 4em;
-    width: 100%;
-    z-index: 3;
-    background-color:#151a19d3;
-  }
-  .nav .dropdown {
-    margin-right: 3em;
-    position: relative;
-  
-  }
-  .nav .dropdown .dropdown-btn{
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 4em;
-    display: block;
-  }
-  .dropdown-list{
-    width: auto;
-    z-index: 3;
-    display: none;
-    opacity: 0;
-    transition: opacity 1s;
+    z-index: 2;
+    transition: width 0.2s ease;
+}
+#open_sidebar_btn{
     position: absolute;
-    background-color: white;
-    padding-right: 0.5em;
-    border-radius: 0.25em;
-    box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.5);
-  }
-  .dropdown:hover .dropdown-list{
-    display: block;
-    opacity: 1;
-  }
-  .dropdown-item:first-of-type{
-    padding-top: 1em;
-  }
-  .dropdown-item{
-    min-width: 15em;
-    padding-bottom: 1em;
-    padding-left: 1em;
-    display: block;
-    color: #3c3f42;
-    font-size: 0.875em;
-  }
-  .dropdown-item:hover{
-    color: #3988d3;
-  }
-.profile{  
-    height: 2.5em;
-    width: 2.5em;
-    margin-right: 2em;
-}
-.profile_link{
-    width: 100%;
+    right: -12px;
+    top: 0;
+    font-size: 20px;
+    background-color: #eda82a;
     border-radius: 100%;
-    border:1px solid black;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-#nav_menu_btn{
-    color: white;
-    font-size: 30px;
-    margin-left: 20px;
-    cursor: pointer;
-    border: none;
-}
-#nav_menu_btn:hover{
-    color: rgb(55, 196, 231);
-}
-#side_bar{
-    position: fixed;
-    top: 3.5em;
-    width:200px;
-    height:100%;
-    background-color: whitesmoke;
-    transition: all 0.2s linear;
-    left: 0;
+#open_sidebar_btn ion-icon{
+    color: black;
+    font-weight: bold;
 }
 .sidebar_menu{
-    list-style: none;
     display: flex;
     flex-direction: column;
-    margin-top: 50%;
+    list-style: none;
+    height: 100%;
+    align-items: center;
+    margin-top: 60px;
 }
-.sidebar_menu_item button{
+.sidebar_item{
     width: 100%;
-    color:  rgba(23, 67, 109, 0.637);
+}
+.sidebar_item_link{
+    display: flex;
+    align-items: center;
+    height: 80px;
     text-decoration: none;
+    color: #bcb9c2;
+    border-radius: 10px;
+}
+.sidebar_item_text{
+    opacity: 0;
+    transition: 0.1s ease;
+}
+.sidebar_item_link ion-icon{
+    min-width: 32px;
+    font-size: 30px;
+    border-radius: 10px;
+    margin: 0 16px;
+    margin-left: 20px;
     font-weight: bold;
-    line-height: 60px;
-    display: block;
-    padding-left: 20px;
+}
+/*Show sidebar*/
+.sidebar.active{
+    width: 16em;
+}
+.sidebar.active .sidebar_item_text{
+    opacity: 1;
+    transition: 0.2s ease;
+}
+.sidebar.active #open_sidebar_btn{
+    transform: rotate(180deg);
+}
+#dashboard_content.expander{
+    padding-left: 10em;
+    transition: 0.3s ease;
+}
+
+.sidebar_item_link:focus{
+    background-color:#eda82a ;
     transition: 0.2s;
-    text-align: left;
 }
-.sidebar_menu_item:hover button{
-    background-color: rgb(219, 217, 217);
+.sidebar_item_link:focus ion-icon{
+    color: rgb(77, 48, 6);
     transition: 0.2s;
 }
-.sidebar_menu_item button:focus{
-    background-color: rgb(219, 217, 217);
-    border-right: 10pxsolid rgb(55, 196, 231);
-    transition: 0.3s;
+.sidebar_item_link:focus .sidebar_item_text{
+    color: rgb(77, 48, 6);
+    transition: 0.2s;
 }
-.sidebar_menu_item button i{
-    padding-right: 10px;
-    font-size: 20px;
-}
-#side_bar.active{
-    left:-150px;
-    transition: all 0.2s linear;
-}
-#side_bar.active .sidebar_menu_item button i{
-    margin-left: 145px;
-    transition:  0.2s linear;
-}
-#side_bar.active .sidebar_menu_item button span{
-    display: none;
-    transition: 0.2s linear;
+.sidebar_item_link:hover{
+    background-color: #1d223b;
 }
 #dashboard_content{
-    position: absolute;
+    position: relative;
     top: 3.6em;
     left: 200px;
     width: 80%;
     display: none;
+    transition: 0.3s ease;
 }
 .dashboard_title{
     color: #3c3f42;

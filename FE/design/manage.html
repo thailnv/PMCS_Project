@@ -5,56 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="manage.css">
-    <script src="https://kit.fontawesome.com/2b3f16036e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/config.css">
+    <script src="https://kit.fontawesome.com/2b3f16036e.js" 
+    crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <title>Document</title>
 </head>
 <body>
-    <div class="nav">
-        <div class="logo" style="margin-left: 1em;">
-         <button onclick="toggleSidebar()" id="nav_menu_btn"><i class="fas fa-bars"></i></button>
-        </div>
-        <div style="margin-right: 0; margin-left: auto; display: flex;">
-          <div class="dropdown">
-            <a href="#" class="dropdown-btn">Trang chủ</a>
-          </div>
-          <div class="dropdown">
-            <a href="#" class="dropdown-btn">Kiểm tra +</a>
-              <div class="dropdown-list">
-                <a href="#" class="dropdown-item">Thi thử</a>
-                <a href="#" class="dropdown-item">Part I:  Hình ảnh</a>
-                <a href="#" class="dropdown-item">Part II: Hỏi đáp</a>
-                <a href="#" class="dropdown-item">Part V:  Câu không hoàn chỉnh</a>
-                <a href="#" class="dropdown-item">Part VI: Hoàn thành đoạn văn</a>
-                <a href="#" class="dropdown-item">Part VII: Đọc hiểu</a>
-              </div>
-          </div>
-          <div class="dropdown">
-            <a href="#" class="dropdown-btn">Thông tin kỳ thi</a>
-          </div>
-          <div class="dropdown">
-            <a href="#" class="dropdown-btn">Thảo luận</a>
-          </div>
-          <div class="dropdown">
-            <a href="#" class="dropdown-btn">Đóng góp</a>
-          </div>
-        </div>
-        <div class="profile">
-            <a href=""><img src="profile.jpg" alt="" class="profile_link"></a>
-        </div>
-      </div>
     <div class="sidebar" id="side_bar">
+        <button id="open_sidebar_btn" onclick="toggleSidebar()"><ion-icon name="chevron-forward-outline"></ion-icon></button>
         <ul class="sidebar_menu">
-            <li class="sidebar_menu_item">
-                <button onclick="showDashboard()"><i class="fas fa-home"></i><span>Dashboard</span></button>
+            <li class="sidebar_item">
+                <a href="#" class="sidebar_item_link" onclick="showDashboard()">
+                  <ion-icon name="home-outline"></ion-icon>
+                  <span class="sidebar_item_text">Dash board</span>
+                </a>
             </li>
-            <li class="sidebar_menu_item">
-                <button><i class="fas fa-sticky-note"></i><span>New test</span></button>
+            <li class="sidebar_item">
+              <a href="#" class="sidebar_item_link">
+                <ion-icon name="document-outline"></ion-icon>
+                <span class="sidebar_item_text">Add test</span>
+              </a>
             </li>
-            <li class="sidebar_menu_item">
-                <button><i class="fas fa-question-circle"></i><span>New question</span></button>
+            <li class="sidebar_item">
+              <a href="#" class="sidebar_item_link">
+                <ion-icon name="help-circle-outline"></ion-icon>
+                <span class="sidebar_item_text">Add question</span>
+              </a>
             </li>
-            <li class="sidebar_menu_item">
-                <button><i class="fas fa-envelope"></i><span>Inbox</span></button>
+            <li class="sidebar_item">
+              <a href="#" class="sidebar_item_link">
+                <ion-icon name="mail-outline"></ion-icon>
+                <span class="sidebar_item_text">Inbox</span>
+              </a>
             </li>
         </ul>
     </div>
@@ -76,7 +59,8 @@
 </body>
 <script>
     function toggleSidebar(){
-        document.getElementById("side_bar").classList.toggle('active')}
+        document.getElementById("side_bar").classList.toggle('active')
+      document.getElementById("dashboard_content").classList.toggle('expander');}
         function showDashboard() {
   document.getElementById("dashboard_content").style.display = "block";
 }
