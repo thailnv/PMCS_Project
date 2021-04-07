@@ -12,8 +12,18 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="nav">
+      <button id="open_sidebar_btn" onclick="toggleSidebar()"><ion-icon name="reorder-three-outline"></ion-icon></button>
+      <input type="search" name="" id="" style="border-radius: 20px;outline: none;border: 0.5px solid gray;height: 4vh;width: 15%;padding: 5px 10px;">
+    </div>
     <div class="sidebar" id="side_bar">
-        <button id="open_sidebar_btn" onclick="toggleSidebar()"><ion-icon name="caret-forward-outline"></ion-icon></button>
+        <div class="logo"><ion-icon name="laptop-outline"></ion-icon><span>Edulogy</span> </div>
+        <!-- <div class="profile">
+          <img src="img/profile.jpg" alt="">
+        </div> -->
+        <div class="profile">
+          <img src="img/profile.jpg" alt=""><span class="profile_content">Mark Zuckerberg</span>
+        </div>
         <ul class="sidebar_menu">
             <li class="sidebar_item">
                 <a href="#" class="sidebar_item_link" onclick="showDashboard()">
@@ -60,7 +70,8 @@
 <script>
     function toggleSidebar(){
         document.getElementById("side_bar").classList.toggle('active')
-      document.getElementById("dashboard_content").classList.toggle('expander');}
+      document.getElementById("dashboard_content").classList.toggle('expander');
+      document.getElementsByClassName("nav")[0].classList.toggle('expand')}
         function showDashboard() {
   document.getElementById("dashboard_content").style.display = "block";
 }
