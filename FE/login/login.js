@@ -1,5 +1,5 @@
 if(!location.href.includes("localhost")){
-  document.location = "http://localhost:5500/FE/login/loginWithGoogle.html";
+  document.location = "http://localhost:5501/FE/login/loginWithGoogle.html";
 }
 
 function signOut() {
