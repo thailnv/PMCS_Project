@@ -38,10 +38,10 @@ bower_components
 build/Release
 
 # Dependency directories
-BE/node_modules/
-BE/jspm_packages/
-FE/node_modules/
-FE/jspm_packages/
+edulogy_server/node_modules/
+edulogy_server/jspm_packages/
+edulogy_ui/node_modules/
+edulogy_ui/jspm_packages/
 
 # TypeScript v1 declaration files
 typings/
