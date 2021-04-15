@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { userActions } from '../actions/userActions' 
+import { appActions } from '../actions/appActions'
 import Input from './input';
 
 function LoginForm(props){
@@ -15,7 +16,7 @@ function LoginForm(props){
   const { email, password } = inputs;
   const dispatch = useDispatch();
 
-  const message = useSelector(store => store.authentication.message)
+  const message = useSelector(store => store.authentication.message);
 
   function validate(){
     let err = {};
@@ -66,7 +67,7 @@ function LoginForm(props){
           error= {errors.password}
           handleChange = {handleInputChange}
         />
-        <a href="#">Quên mật khẩu</a>
+        <a href="/quen-mat-khau">Quên mật khẩu</a>
         <button 
           id="login-btn"
           onClick = {handleSubmit}>

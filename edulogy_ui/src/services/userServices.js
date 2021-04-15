@@ -1,4 +1,4 @@
-import { constancts } from '../constants'
+import { constants } from '../constants'
 
 function login(email, password){
   console.log('user service');
@@ -7,7 +7,7 @@ function login(email, password){
     headers: { 'Content-Type': 'application/json'},
     body: JSON.stringify({email , password})
   }
-  return fetch(`${constancts.apiUrl}/users/login`, requestOption)
+  return fetch(`${constants.apiUrl}/users/login`, requestOption)
   .then(res => res.json())
   .then(json => {
       // store user details and jwt token in local storage to keep user logged in between page refreshes
@@ -20,6 +20,12 @@ function login(email, password){
     });
 }
 
+function logout(){
+  localStorage.removeItem('user');
+  localStorage.removeItem('token');
+}
+
 export const userService = {
-  login
+  login,
+  logout
 }

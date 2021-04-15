@@ -1,5 +1,5 @@
 import { userService } from '../services/userServices';
-import {constancts} from '../constants'
+import {constants} from '../constants'
 function login(email, password) {
   return dispatch => {
     userService.login(email, password)
@@ -13,10 +13,18 @@ function login(email, password) {
     );
   }
 
-  function success(user) { return { type: constancts.LOGIN_SUCCESS, user } }
-  function failure(message) { return { type: constancts.LOGIN_FAILURE, message } }
+  function success(user) { return { type: constants.LOGIN_SUCCESS, user } }
+  function failure(message) { return { type: constants.LOGIN_FAILURE, message } }
+}
+
+function logout(){
+  userService.logout();
+  return dispatch => {
+    dispatch({type: constants.LOGOUT})
+  }
 }
 
 export const userActions = {
-  login
+  login,
+  logout
 }

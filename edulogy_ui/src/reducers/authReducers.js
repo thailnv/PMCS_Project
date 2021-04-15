@@ -1,22 +1,24 @@
-import { constancts } from '../constants'
+import { constants } from '../constants'
 
 let user = JSON.parse(localStorage.getItem('user'));
 
 let initialState = user ? { loggedIn: true, user } : {}
 
 export function authentication (state = initialState ,action ){
-    console.log(action);
+    console.log('authReducer', action);
     switch(action.type)
     {
-      case constancts.LOGIN_SUCCESS:
+      case constants.LOGIN_SUCCESS:
         return {
           loggedIn: true,
           user: action.user
         };
-      case constancts.LOGIN_FAILURE:
+      case constants.LOGIN_FAILURE:
         return {
           message: action.message
         };
+      case constants.LOGOUT:
+        return {}
       default: return state;
     }
   }

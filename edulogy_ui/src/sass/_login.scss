@@ -7,7 +7,8 @@
   max-width: 1500px;
   display: flex;
   border-radius: 0.5em;
-  background-color: transparent;
+  overflow: hidden;
+  background-color: white;
   overflow: hidden;
   box-shadow: $shadow;
 }
@@ -22,7 +23,6 @@
 .login-container > .form-container {
   width: 50%;
   position: relative;
-  background-color: #fff;
 }
 
 .login-container > .img-container > img {
@@ -133,7 +133,7 @@
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) and (max-width: 767px) {
+@media only screen and (min-width: 600px) and (max-width: 768px) {
   .login-container > .img-container {
     width: 0%;
   }

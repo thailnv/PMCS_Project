@@ -1,12 +1,13 @@
 import React from 'react';
-import Login from './components/login'
+import { BrowserRouter } from 'react-router-dom';
+import HomePage from './pages/homepage';
 import './App.css';
 
 function App() {
   return (
-    <React.Fragment>
-      <Login/>
-    </React.Fragment>
+    <BrowserRouter>
+      <HomePage/>
+    </BrowserRouter>
   );
 }
 
