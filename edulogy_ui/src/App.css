@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -450,6 +451,77 @@ button.dropdown-item {
 .line {
   height: 0.25em;
   background: #3c3f42; }
+
+.main-wrapper {
+  background-color: #ebebeb;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px; }
+
+.content-wrapper {
+  margin: 70px 290px 0;
+  background-color: #fff; }
+
+.toeic-info {
+  padding: 40px 100px 100px;
+  text-align: justify; }
+
+p {
+  margin-top: 12px; }
+
+h2 {
+  margin-top: 64px;
+  margin-bottom: 20px;
+  color: #0ea4c6; }
+
+h3 {
+  color: #2fb6d4; }
+
+li {
+  margin-top: 12px; }
+
+ul, ol {
+  margin-left: 36px; }
+
+a {
+  color: #2babc7; }
+
+a:hover {
+  text-decoration: underline; }
+
+.title {
+  color: #c15757;
+  text-align: center; }
+
+.opening {
+  margin-top: 44px; }
+
+.toeic-location {
+  margin-top: 36px; }
+
+.toeic-location > h3 {
+  margin-top: 20px; }
+
+.toeic-location > ol > li > span {
+  margin-top: 3px;
+  display: inline-block; }
+
+.toeic-procedures-process > h3 {
+  margin-top: 48px; }
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 3px; }
+
+.procedures-img {
+  margin-top: 16px; }
+
+.answer-sheet-img {
+  margin-top: 12px; }
+
+.ending {
+  margin-top: 48px; }
 
 .App {
   width: 100vw;

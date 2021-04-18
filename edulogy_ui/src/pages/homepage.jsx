@@ -3,6 +3,7 @@ import Nav from '../components/nav';
 import Footer from '../components/footer';
 import Banner from '../components/banner';
 import Popup from '../components/popup';
+
 function HomePage(){
   return (
     <React.Fragment>
