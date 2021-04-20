@@ -1,12 +1,16 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import HomePage from './pages/homepage';
+import ToeicInfoPage from './pages/toeicInfoPage';
 import './App.css';
 
 function App() {
   return (
     <BrowserRouter>
-      <HomePage />
+      <Switch>
+        <Route exact path="/" component={HomePage}/>
+        <Route path="/thong-tin" component={ToeicInfoPage}/>
+      </Switch>
     </BrowserRouter>
   );
 }
