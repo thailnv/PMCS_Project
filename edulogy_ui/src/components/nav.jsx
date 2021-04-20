@@ -19,7 +19,7 @@ function Nav () {
     dispatch(userActions.logout());
   }
 
-  const buttonTitle = user ? 'Đăng xuất' : 'Đăng nhập';
+  const buttonTitle = user ? 'Thông tin tài khoản' : 'Đăng nhập';
 
   return (
     <div className="nav">

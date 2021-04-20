@@ -24,7 +24,7 @@ function Footer(){
           <i className="far fa-envelope"></i>info@edulogy.com
         </h4>
       </div>
-      <div className="footer__link">
+      <div className="footer__link footer-test-combo">
         <h4 className="link-title">
           Bộ Đề
         </h4>
@@ -39,7 +39,7 @@ function Footer(){
           <i className="fas fa-angle-double-right"></i>Economy Toeic
         </a>
       </div>
-      <div className="footer__link">
+      <div className="footer__link footer-test-link">
         <h4 className="link-title">
           Kiểm Tra
         </h4>

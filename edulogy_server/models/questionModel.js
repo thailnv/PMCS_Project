@@ -15,13 +15,11 @@ const questionSchema = new mongoose.Schema({
         trim: true
     },
     explanation: String,
-    type: {
-        type: String,
-        enum: ['incomplete sentence', 'paragraph'],
-        default: 'incomplete sentence'
-    },
+    type: String,
     part: Number,
-    imgURL: String,
+    number: Number,
+    imageURL: String,
+    audioURL: String,
     answers: [answerSchema]
 }, {
     versionKey: false
