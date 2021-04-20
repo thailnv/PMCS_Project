@@ -56,6 +56,26 @@ const dnLocations = [
 function ToeicInfo() {
     return (
         <div className="main-wrapper">
+            <div className="title-catalog">
+                <ul>
+                    <b>
+                        <li className="main-catalog"><a href="#toeic-location">1. Thi TOEIC ở đâu?</a></li>
+                        <li className="sub-catalog"><a href="#toeic-loc-hcm">Tại TP. Hồ Chí Minh</a></li>
+                        <li className="sub-catalog"><a href="#toeic-loc-hn">Tại Hà Nội</a></li>
+                        <li className="sub-catalog"><a href="#toeic-loc-dn">Tại Đà Nẵng</a></li>
+                        <li className="main-catalog"><a href="#toeic-procedures">2. Thủ tục và quá trình dự thi TOEIC</a></li>
+                        <li className="sub-catalog"><a href="#toeic-registration">Đăng ký dự thi online</a></li>
+                        <li className="sub-catalog"><a href="#toeic-fee">Lệ phí thi</a></li>
+                        <li className="sub-catalog"><a href="#toeic-preparation">Chuẩn bị trước khi đăng ký</a></li>
+                        <li className="sub-catalog"><a href="#toeic-schedule">Xem lịch thi và chọn ngày thi</a></li>
+                        <li className="sub-catalog"><a href="#toeic-receiving">Nhận được gì sau khi đăng ký thi?</a></li>
+                        <li className="sub-catalog"><a href="#toeic-modification">Chuyển thời gian thi/ Hủy thi TOEIC</a></li>
+                        <li className="sub-catalog"><a href="#toeic-go-contest">Khi đi thi</a></li>
+                        <li className="sub-catalog"><a href="#toeic-do-contest">Khi làm bài</a></li>
+                        <li className="main-catalog"><a href="#toeic-outcome">3. Nhận kết quả thi và giá trị bằng TOEIC</a></li>
+                    </b>
+                </ul>
+            </div>
             <div className="content-wrapper">
                 <div className="toeic-info">
                     <h1 className="title">Thi TOEIC ở đâu? Hướng dẫn thủ tục đăng ký thi TOEIC (Cập nhật tháng 11/2020)</h1>
@@ -66,7 +86,7 @@ function ToeicInfo() {
                         </p>
 
                         <div className="toeic-location">
-                            <h2>1. Thi TOEIC ở đâu: Danh sách địa điểm thi và đăng ký thi TOEIC</h2>
+                            <h2 id="toeic-location">1. Thi TOEIC ở đâu: Danh sách địa điểm thi và đăng ký thi TOEIC</h2>
                             <p>
                                 Tại Việt Nam, bạn có thể đăng ký thi TOEIC tại các văn phòng của IIG, đơn vị được ETS (đơn vị gốc ra đề thi TOEIC) ủy quyền cho tổ chức thi và cấp chứng chỉ tại Việt Nam:
                             </p>
@@ -98,7 +118,7 @@ function ToeicInfo() {
                             </ul>
                             <p>Còn dưới đây là danh sách các địa điểm tổ chức thi TOEIC:</p>
 
-                            <h3>Thi TOEIC ở đâu tại TP. Hồ Chí Minh?</h3>
+                            <h3 id="toeic-loc-hcm">Thi TOEIC ở đâu tại TP. Hồ Chí Minh?</h3>
                             <ol>
                                 {hcmLocations.map((location, index) => {
                                     return (
@@ -110,7 +130,7 @@ function ToeicInfo() {
                                 })}
                             </ol>
 
-                            <h3>Thi TOEIC ở đâu tại Hà Nội ?</h3>
+                            <h3 id="toeic-loc-hn">Thi TOEIC ở đâu tại Hà Nội ?</h3>
                             <ol>
                                 {hnLocations.map((location, index) => {
                                     return (
@@ -122,7 +142,7 @@ function ToeicInfo() {
                                 })}
                             </ol>
 
-                            <h3>Thi TOEIC ở đâu tại Đà Nẵng ?</h3>
+                            <h3 id="toeic-loc-dn">Thi TOEIC ở đâu tại Đà Nẵng ?</h3>
                             <ol>
                                 {dnLocations.map((location, index) => {
                                     return (
@@ -136,10 +156,10 @@ function ToeicInfo() {
                         </div>
 
                         <div className="toeic-procedures-process">
-                            <h2>2. Thủ tục đăng ký thi TOEIC + Toàn bộ quá trình dự thi TOEIC</h2>
+                            <h2 id="toeic-procedures">2. Thủ tục đăng ký thi TOEIC + Toàn bộ quá trình dự thi TOEIC</h2>
                             <img className="procedures-img" src="/img/dang_ky_va_du_thi.png" alt=""/>
 
-                            <h3>Quy trình đăng ký dự thi online (Áp dụng cho các bạn thi tại Hà Nội, TP. Hồ Chí Minh và Đà Nẵng)</h3>
+                            <h3 id="toeic-registration">Quy trình đăng ký dự thi online (Áp dụng cho các bạn thi tại Hà Nội, TP. Hồ Chí Minh và Đà Nẵng)</h3>
                             <p>
                                 Từ ngày 10/09/2020, các bạn muốn thi tại Hà Nội, TP. Hồ Chí Minh và Đà Nẵng cần làm thủ tục đăng ký dự thi online trước khi đến hoàn thiện thủ tục tại các quầy đăng ký của IIG Việt Nam.
                             </p>
@@ -186,10 +206,10 @@ function ToeicInfo() {
                                 </li>
                             </ol>
                             <p>
-                                Sau khi hoàn thành 3 bước trên, bạn chuẩn bị đầy đủ giấy tờ hợp lệ và có mặt 15 phút trước khung giờ đã hẹn trong form đăng ký online tại quầy thủ tục của IIG để người phụ trách kiểm tra tính hợp lệ của các giấy tờ bạn được yêu cầu mang theo. Bạn xem chi tiết giấy tờ cần chuẩn bị <a href="#preparation">tại đây</a>.
+                                Sau khi hoàn thành 3 bước trên, bạn chuẩn bị đầy đủ giấy tờ hợp lệ và có mặt 15 phút trước khung giờ đã hẹn trong form đăng ký online tại quầy thủ tục của IIG để người phụ trách kiểm tra tính hợp lệ của các giấy tờ bạn được yêu cầu mang theo. Bạn xem chi tiết giấy tờ cần chuẩn bị <a href="#toeic-preparation">tại đây</a>.
                             </p>
 
-                            <h3>Lệ phí thi TOEIC</h3>
+                            <h3 id="toeic-fee">Lệ phí thi TOEIC</h3>
                             <p>
                                 <b>Lệ phí thi TOEIC tại IIG Việt Nam</b> (cập nhật mới nhất vào tháng 11/2020) sẽ phân chia theo từng đối tượng thi như sau:
                             </p>
@@ -198,7 +218,7 @@ function ToeicInfo() {
                                 <li>Đối với học sinh, sinh viên, lệ phí thi TOEIC là <b>990.000 VNĐ</b></li>
                             </ul>
 
-                            <h3 id="preparation">Cần chuẩn bị những gì trước khi đăng ký thi TOEIC?</h3>
+                            <h3 id="toeic-preparation">Cần chuẩn bị những gì trước khi đăng ký thi TOEIC?</h3>
                             <p>Các bạn phải tự đến đăng ký dự thi TOEIC, không thể nhờ bố mẹ hoặc bạn bè đăng ký hộ.</p>
                             <p><b>Khi làm thủ tục đăng ký thi TOEIC hoặc hoàn thiện hồ sơ đăng ký dự thi online thì bạn cần mang theo những giấy tờ sau:</b></p>
                             <ol>
@@ -220,7 +240,7 @@ function ToeicInfo() {
                                 </li>
                             </ol>
 
-                            <h3>Xem lịch thi TOEIC và chọn ngày thi như thế nào?</h3>
+                            <h3 id="toeic-schedule">Xem lịch thi TOEIC và chọn ngày thi như thế nào?</h3>
                             <p>
                                 Về lịch thi TOEIC, các bạn nên liên hệ với đơn vị tổ chức thi sẽ có lịch thi cụ thể và chính xác nhất. Tốt nhất là bạn nên gọi điện hoặc đến trực tiếp trung tâm để có thể được báo về lịch thi TOEIC cập nhật mới nhất và đúng nhất.
                             </p>
@@ -231,13 +251,13 @@ function ToeicInfo() {
                                 Để đảm bảo thi được đúng ngày mình chọn, bạn nên đăng ký thi trước ngày dự tính thi ít nhất là 2 tuần nha, vì các địa điểm thi đều có rất nhiều thí sinh mới đăng ký mỗi ngày.
                             </p>
 
-                            <h3>Bạn sẽ nhận được gì sau khi đăng ký thi?</h3>
+                            <h3 id="toeic-receiving">Bạn sẽ nhận được gì sau khi đăng ký thi?</h3>
                             <ol>
                                 <li><b>Phiếu đăng ký</b> dự thi TOEIC</li>
                                 <li>Cuốn <b>Hướng dẫn dự thi TOEIC</b></li>
                             </ol>
 
-                            <h3>Chuyển thời gian thi/Hủy thi TOEIC</h3>
+                            <h3 id="toeic-modification">Chuyển thời gian thi/Hủy thi TOEIC</h3>
                             <p>
                                 Quy định về <b>chuyển thời gian thi và hủy thi </b>thì khác nhau giữa các đơn vị tổ chức thi. Riêng đối với <b>IIG </b>thì:
                             </p>
@@ -249,7 +269,7 @@ function ToeicInfo() {
                                 <li>Bạn có thể viết giấy ủy quyền theo mẫu và ủy quyền cho người khác đến làm thủ tục chuyển đổi/hủy ngày thi. Người được ủy quyền cần mang theo CMND của bạn và người được ủy quyền, giấy ủy quyền, giấy đăng ký dự thi để đến IIG làm thủ tục nhé.</li>
                             </ul>
 
-                            <h3>Khi đi thi</h3>
+                            <h3 id="toeic-go-contest">Khi đi thi</h3>
                             <ul>
                                 <li>
                                     Bạn cần mang theo:
@@ -261,7 +281,7 @@ function ToeicInfo() {
                                 <li>Bạn <b>KHÔNG</b> được mang theo bất cứ vật dụng cá nhân nào như viết chì, viết máy, đồng hồ, nước uống, giấy nháp vào phòng thi. Địa điểm tổ chức thi sẽ phát viết chì và gôm tẩy cho từng thí sinh.</li>
                             </ul>
 
-                            <h3>Khi làm bài thi + Answer Sheet TOEIC</h3>
+                            <h3 id="toeic-do-contest">Khi làm bài thi + Answer Sheet TOEIC</h3>
                             <ul>
                                 <li>
                                     Trong quá trình làm bài, bạn chọn đáp án bằng cách tô đậm vào các ô tròn trong khung Listening Section và Reading Section trong <b>Answer Sheet TOEIC - Phiếu trả lời</b>. Để chọn đáp án, bạn dùng viết chì để tô kín hoàn toàn vào vòng tròn A, B, C, D tương ứng.<br/>
@@ -279,7 +299,7 @@ function ToeicInfo() {
                         </div>
 
                         <div className="toeic-outcome">
-                            <h2>Nhận kết quả thi TOEIC & Giá trị của bằng TOEIC</h2>
+                            <h2 id="toeic-outcome">3. Nhận kết quả thi TOEIC & Giá trị của bằng TOEIC</h2>
                             <p>
                                 <b>Thời gian nhận kết quả thi TOEIC</b> là 5 ngày làm việc sau ngày thi (Hà Nội) và 7 ngày làm việc sau ngày thi (Đà Nẵng và TP. HCM), nghĩa là khoảng 10 đến 12 ngày thông thường.
                             </p>
