@@ -121,7 +121,7 @@
           &:checked ~ .checkmark {
             background-color: #2196F3;
           }
-          &:checked~ .checkmark:after {
+          &:checked ~ .checkmark:after {
             display: block;
           }
         }
@@ -145,10 +145,11 @@
             background: white;
           }
         }
-        &:hover{
-          input ~ .checkmark {
-            background-color: #ccc;
-          }
+        &:hover input ~ .checkmark {
+          background-color: #ccc;
+        }
+        &:hover input:checked ~ .checkmark {
+          background-color: #2196F3;
         }
       }    
     }

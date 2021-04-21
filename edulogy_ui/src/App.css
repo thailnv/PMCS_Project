@@ -573,6 +573,8 @@ button.dropdown-item {
           background: white; }
       .contribution-container .contribution-input-container .control-group .container:hover input ~ .checkmark {
         background-color: #ccc; }
+      .contribution-container .contribution-input-container .control-group .container:hover input:checked ~ .checkmark {
+        background-color: #2196F3; }
 
 .App {
   width: 100vw;
