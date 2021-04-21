@@ -1,0 +1,156 @@
+.contribution-container {
+  width: 80%;
+  height: 80%;
+  min-height: 470px;
+  min-width: 280px;
+  max-height: 700px;
+  max-width: 1500px;
+  display: flex;
+  border-radius: 0.5em;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: $shadow;
+
+  .contribution-input-container {
+    div {
+      margin-top: 1em;
+      font-size: 0.75em;
+    }
+    .btn{
+      height: 3em;
+      width: 50%;
+      color: white;
+      margin-top: 1em;
+      background-color: $blue;
+      margin: 5px;
+      border-radius: 0.25em;
+      display: block;
+
+      &:hover{
+        background-color: $blue-light;
+      }
+    }
+    
+    div button {
+      color: $blue;
+      font-size: 1em;
+    }
+    
+    input {
+      border-radius: 0.25em;
+      display: block;
+      width: 100%;
+      margin-top: 1em;
+      height: 3.5em;
+      padding: 1em;
+      border: $border;
+      &:focus {
+        border: $blue solid 1px;
+      }
+    }
+
+    .control-group {
+      display: flex;
+      vertical-align: top;
+      background: #fff;
+      justify-content: space-between;
+      .select {
+        position: relative;
+        display: inline-block;
+        margin: 5px;
+        width: 100%;
+
+        select {
+          display: inline-block;
+          width: 100%;
+          cursor: pointer;
+          padding: 10px 15px;
+          outline: 0;
+          border: 0;
+          border-radius: 0;
+          background: #e6e6e6;
+          color: #7b7b7b;
+          appearance: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          &::-ms-expand {
+            display: none;
+          }
+          &:hover,select:focus {
+            color: #000;
+            background: #ccc;
+          }
+          &:hover ~ .select__arrow,.select select:focus ~ .select__arrow {
+            border-top-color: #000;
+          }
+        }        
+      }
+      .select__arrow {
+        position: absolute;
+        top: 8px;
+        right: 15px;
+        width: 0;
+        height: 0;
+        pointer-events: none;
+        border-style: solid;
+        border-width: 8px 5px 0 5px;
+        border-color: #7b7b7b transparent transparent transparent;
+      }
+
+      .container {
+        display: block;
+        position: relative;
+        padding-left: 25px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 16px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        div {
+          margin-top: 0;
+        }
+        input {
+          width: 0;
+          height: 0;
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+          &:checked ~ .checkmark {
+            background-color: #2196F3;
+          }
+          &:checked~ .checkmark:after {
+            display: block;
+          }
+        }
+        .checkmark {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 16px;
+          width: 16px;
+          background-color: #eee;
+          border-radius: 50%;
+          &:after{
+            content: "";
+            position: absolute;
+            display: none;
+            top: 6px;
+            left: 6px;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: white;
+          }
+        }
+        &:hover{
+          input ~ .checkmark {
+            background-color: #ccc;
+          }
+        }
+      }    
+    }
+  }
+}

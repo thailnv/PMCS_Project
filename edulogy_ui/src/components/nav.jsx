@@ -19,6 +19,10 @@ function Nav () {
     dispatch(userActions.logout());
   }
 
+  function handleContributionClick(){
+    //return
+    dispatch(appActions.changePopup(constants.POPUP_CONTRIBUTION));
+  }
   const buttonTitle = user ? 'Đăng xuất' : 'Đăng nhập';
 
   return (
@@ -45,7 +49,12 @@ function Nav () {
           <a href="/thao-luan" className="dropdown-btn">Thảo luận</a>
         </div>
         <div className="dropdown">
+          <button 
+            id="contribution-btn" 
+            onClick={handleContributionClick}
+          >
           <Link to='/dong-gop' className="dropdown-btn">Đóng góp</Link>
+          </button> 
         </div>
         <div className="dropdown">
           <button 

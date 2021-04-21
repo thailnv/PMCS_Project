@@ -451,6 +451,129 @@ button.dropdown-item {
   height: 0.25em;
   background: #3c3f42; }
 
+.contribution-container {
+  width: 80%;
+  height: 80%;
+  min-height: 470px;
+  min-width: 280px;
+  max-height: 700px;
+  max-width: 1500px;
+  display: flex;
+  border-radius: 0.5em;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 0 0.5em #7e7e7e; }
+  .contribution-container .contribution-input-container div {
+    margin-top: 1em;
+    font-size: 0.75em; }
+  .contribution-container .contribution-input-container .btn {
+    height: 3em;
+    width: 50%;
+    color: white;
+    margin-top: 1em;
+    background-color: #006eff;
+    margin: 5px;
+    border-radius: 0.25em;
+    display: block; }
+    .contribution-container .contribution-input-container .btn:hover {
+      background-color: #3289fa; }
+  .contribution-container .contribution-input-container div button {
+    color: #006eff;
+    font-size: 1em; }
+  .contribution-container .contribution-input-container input {
+    border-radius: 0.25em;
+    display: block;
+    width: 100%;
+    margin-top: 1em;
+    height: 3.5em;
+    padding: 1em;
+    border: #d6d6d6 solid 1px; }
+    .contribution-container .contribution-input-container input:focus {
+      border: #006eff solid 1px; }
+  .contribution-container .contribution-input-container .control-group {
+    display: flex;
+    vertical-align: top;
+    background: #fff;
+    justify-content: space-between; }
+    .contribution-container .contribution-input-container .control-group .select {
+      position: relative;
+      display: inline-block;
+      margin: 5px;
+      width: 100%; }
+      .contribution-container .contribution-input-container .control-group .select select {
+        display: inline-block;
+        width: 100%;
+        cursor: pointer;
+        padding: 10px 15px;
+        outline: 0;
+        border: 0;
+        border-radius: 0;
+        background: #e6e6e6;
+        color: #7b7b7b;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none; }
+        .contribution-container .contribution-input-container .control-group .select select::-ms-expand {
+          display: none; }
+        .contribution-container .contribution-input-container .control-group .select select:hover, .contribution-container .contribution-input-container .control-group .select select select:focus {
+          color: #000;
+          background: #ccc; }
+        .contribution-container .contribution-input-container .control-group .select select:hover ~ .select__arrow, .contribution-container .contribution-input-container .control-group .select select .select select:focus ~ .select__arrow {
+          border-top-color: #000; }
+    .contribution-container .contribution-input-container .control-group .select__arrow {
+      position: absolute;
+      top: 8px;
+      right: 15px;
+      width: 0;
+      height: 0;
+      pointer-events: none;
+      border-style: solid;
+      border-width: 8px 5px 0 5px;
+      border-color: #7b7b7b transparent transparent transparent; }
+    .contribution-container .contribution-input-container .control-group .container {
+      display: block;
+      position: relative;
+      padding-left: 25px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      font-size: 16px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none; }
+      .contribution-container .contribution-input-container .control-group .container div {
+        margin-top: 0; }
+      .contribution-container .contribution-input-container .control-group .container input {
+        width: 0;
+        height: 0;
+        position: absolute;
+        opacity: 0;
+        cursor: pointer; }
+        .contribution-container .contribution-input-container .control-group .container input:checked ~ .checkmark {
+          background-color: #2196F3; }
+        .contribution-container .contribution-input-container .control-group .container input:checked ~ .checkmark:after {
+          display: block; }
+      .contribution-container .contribution-input-container .control-group .container .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 16px;
+        width: 16px;
+        background-color: #eee;
+        border-radius: 50%; }
+        .contribution-container .contribution-input-container .control-group .container .checkmark:after {
+          content: "";
+          position: absolute;
+          display: none;
+          top: 6px;
+          left: 6px;
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background: white; }
+      .contribution-container .contribution-input-container .control-group .container:hover input ~ .checkmark {
+        background-color: #ccc; }
+
 .App {
   width: 100vw;
   height: 100vh;

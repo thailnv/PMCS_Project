@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux'
 
 import React from 'react';
 import Login from './login';
+import Contribution from './contribution'
 
 function Popup(){
 
@@ -10,6 +11,7 @@ function Popup(){
   console.log(popupType);
 
   let currentPopup = {
+    contribution: <Contribution/>,
     login: <Login/>,
   }
 
