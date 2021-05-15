@@ -2,27 +2,31 @@ import React from 'react';
 
 import SkillCard from '../common/skillCard';
 
-function SkillList(){
+function ListSkill(){
   return (
     <div className="skill">
       <SkillCard 
-        skillName="Luyện nghe"
-        skillImg="/img/listening.png"
+        skillName="Linh hoạt"
+        skillImg="/img/online.png"
+        description="Edulogy là nền tảng học tiếng anh trực tuyến giúp học viên có kế hoạch linh hoạt, chủ động."
       />
       <SkillCard 
-        skillName="Luyện nói"
-        skillImg="/img/speaking.png"
-      />
+          skillName="Miễn phí"
+          skillImg="/img/money.png"
+          description="Edulogy hoàn toàn miễn phí chúng tôi cam kết không thu bất kỳ loại chi phí nào từ học viên."
+        />
       <SkillCard 
-        skillName="Luyện đọc"
-        skillImg="/img/reading.png"
-      />
+        skillName="Cộng đồng"
+        skillImg="/img/member.png"
+        description="Edulogy có lượng người dùng đông đảo, học viên có thể hỗ trợ lẫn nhau trên các diễn đàng."
+        />
       <SkillCard 
-        skillName="Luyện viết"
-        skillImg="/img/writing.png"
+        skillName="Tiến độ"
+        skillImg="/img/record.png"
+        description="Edulogy cung cấp chức năng ghi lại thông tin làm bài giúp kiểm tra tiến độ học của các thành viên."
       />
     </div>
   )
 }
 
-export default SkillList
+export default ListSkill

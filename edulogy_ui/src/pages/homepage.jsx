@@ -3,15 +3,17 @@ import Nav from '../components/nav';
 import Footer from '../components/footer';
 import Banner from '../components/banner';
 import Popup from '../components/popup';
-import ListService from '../components/listService';
+import ListSkill from '../components/listSkills';
+import NewTest from '../components/newTest';
 function HomePage(){
   return (
     <React.Fragment>
-      <Nav/>
+      <Nav currentPage={"home"}/>
       <Banner/>
-      <ListService/>
-      <Popup/>
+      <ListSkill/>
+      <NewTest/>
       <Footer/>
+      <Popup/>
     </React.Fragment>
   )
 }

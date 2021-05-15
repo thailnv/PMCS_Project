@@ -41,7 +41,8 @@ input[type="number"] {
 .row {
   width: 100%;
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  align-items: center; }
 
 .input-error {
   border: red solid 1px !important; }
@@ -78,6 +79,9 @@ input[type="number"] {
 .close-btn:hover {
   background-color: rgba(51, 51, 51, 0.2); }
 
+.black-color {
+  color: #726a6a !important; }
+
 .login-container {
   width: 80%;
   height: 80%;
@@ -90,7 +94,7 @@ input[type="number"] {
   overflow: hidden;
   background-color: white;
   overflow: hidden;
-  box-shadow: 0 0 0.5em #7e7e7e; }
+  box-shadow: 0 0 0.25em #a8a8a8; }
 
 .login-container > .img-container {
   width: 50%;
@@ -293,7 +297,7 @@ button.dropdown-item {
   color: #2d7bc4; }
 
 #account-btn {
-  border: #568ed8 1px solid;
+  border: #568ed8 2px solid;
   border-radius: 2em;
   height: 3em;
   width: 10em;
@@ -539,22 +543,23 @@ button.dropdown-item {
 
 .skill {
   width: 100%;
-  height: 50vh;
+  padding: 0.5em;
   padding-left: 10%;
   padding-right: 10%;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center; }
+  justify-content: space-between; }
 
 .skill-card {
-  width: 18vw;
+  margin-top: 2em;
+  box-shadow: 0 0 0.25em #a8a8a8;
+  padding: 0.5em;
+  width: 19vw;
   border-radius: 0.25em;
   background-color: white;
   z-index: 2;
-  position: relative;
-  border: white 0.5em solid; }
+  position: relative; }
 
 .skill-card > .name {
   font-size: 22px;
@@ -580,6 +585,119 @@ button.dropdown-item {
   margin-left: auto;
   margin-right: auto;
   display: block; }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .skill-card {
+    width: 70vw;
+    margin: auto;
+    margin-top: 1em;
+    margin-bottom: 1em; } }
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .skill-card {
+    width: 35vw; } }
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .skill {
+    padding-left: 5%;
+    padding-right: 5%; }
+  .skill-card {
+    width: 21vw; } }
+
+.new-test {
+  position: relative;
+  width: 100%;
+  background-image: url(https://dental-clinic.cmsmasters.net/wp-content/uploads/2015/07/content-dot2.jpg); }
+  .new-test #preBtn,
+  .new-test #nextBtn {
+    position: absolute;
+    top: 43%;
+    font-size: 1.25em;
+    height: 2.5em;
+    width: 1.25em;
+    color: black;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0.4;
+    z-index: 1; }
+  .new-test #preBtn {
+    left: 0.5em; }
+  .new-test #nextBtn {
+    right: 0.5em; }
+  .new-test h3 {
+    font-size: 22px;
+    padding-top: 1.5em;
+    color: #333; }
+  .new-test .slider-container {
+    width: 100%;
+    padding: 3%;
+    padding-top: 2em;
+    display: flex;
+    justify-content: space-around;
+    margin: auto; }
+    .new-test .slider-container .test-card {
+      background-color: white;
+      box-shadow: 0 0 0.25em #a8a8a8;
+      border: #d6d6d6 solid 1px;
+      width: 25%;
+      padding: 1em;
+      border-radius: 0.25em;
+      margin: 1em;
+      margin-top: 0; }
+      .new-test .slider-container .test-card .img-container {
+        width: 70%;
+        margin: auto;
+        margin-bottom: 0.75em;
+        margin-top: 0.75em; }
+        .new-test .slider-container .test-card .img-container img {
+          display: block;
+          margin: auto;
+          width: 80%; }
+      .new-test .slider-container .test-card a {
+        width: 7em;
+        color: #2ad8ac;
+        border: #2ad8ac 2px solid;
+        border-radius: 1em;
+        line-height: 1.5em;
+        text-align: center; }
+      .new-test .slider-container .test-card a:hover {
+        color: #0ab68b;
+        border: #0ab68b 2px solid; }
+      .new-test .slider-container .test-card p {
+        color: #868686;
+        font-size: 14px;
+        margin-top: 0.25em; }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .new-test .slider-container {
+    padding: 8%; }
+    .new-test .slider-container .test-card a {
+      width: 6em; } }
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .new-test #preBtn {
+    left: 0.25em; }
+  .new-test #nextBtn {
+    right: 0.25em; }
+  .new-test .slider-container {
+    padding: 3%; }
+    .new-test .slider-container .test-card a {
+      width: 6em; } }
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .new-test #preBtn {
+    left: 0.25em; }
+  .new-test #nextBtn {
+    right: 0.25em; }
+  .new-test .slider-container {
+    padding: 3%; }
+    .new-test .slider-container .test-card a {
+      width: 6em; } }
 
 .App {
   width: 100vw;

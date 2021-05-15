@@ -1,12 +1,16 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import HomePage from './pages/homepage';
+import TestPage from './pages/testPage';
 import './App.css';
 
 function App() {
   return (
     <BrowserRouter>
-      <HomePage/>
+    <Switch>
+      <Route path="/" exact component={HomePage}/>
+      <Route path="/kiem-tra" component={TestPage}/>
+    </Switch>
     </BrowserRouter>
   );
 }

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
 
 function SkillCard(props){
   return (
@@ -8,7 +7,7 @@ function SkillCard(props){
       <img src={props.skillImg} alt=""/>
     </div>
     <div className="name">{props.skillName}</div>
-    <Link to="/">Luyện tập</Link>
+    <p className="skill-description">{props.description}</p>
   </div>
   )
 }
