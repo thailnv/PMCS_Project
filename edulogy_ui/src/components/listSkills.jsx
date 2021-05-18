@@ -2,22 +2,22 @@ import React from 'react';
 
 import SkillCard from '../common/skillCard';
 
-function SkillList(){
+function SkillList() {
   return (
     <div className="skill">
-      <SkillCard 
+      <SkillCard
         skillName="Luyện nghe"
         skillImg="/img/listening.png"
       />
-      <SkillCard 
+      <SkillCard
         skillName="Luyện nói"
         skillImg="/img/speaking.png"
       />
-      <SkillCard 
+      <SkillCard
         skillName="Luyện đọc"
         skillImg="/img/reading.png"
       />
-      <SkillCard 
+      <SkillCard
         skillName="Luyện viết"
         skillImg="/img/writing.png"
       />

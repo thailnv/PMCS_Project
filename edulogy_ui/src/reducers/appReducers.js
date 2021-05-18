@@ -1,6 +1,8 @@
 import {constants} from '../constants';
 
-const initialState = {popupType : ''};
+const initialState = {
+  popupType : ''
+};
 
 export function application (state = initialState, action){
   console.log('appReducers', action);

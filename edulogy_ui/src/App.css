@@ -581,6 +581,94 @@ button.dropdown-item {
   margin-right: auto;
   display: block; }
 
+.account-info-sidebar .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 3;
+  display: none;
+  animation: fadeIn 0.8s; }
+
+.account-info-sidebar .sidebar {
+  background: #fff;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 340px;
+  z-index: 3;
+  transform: translateX(100%);
+  transition: 0.8s; }
+  .account-info-sidebar .sidebar .icon {
+    width: 100%;
+    height: 80px;
+    color: #b3e0d6;
+    margin-top: 42px; }
+  .account-info-sidebar .sidebar .user-info {
+    text-align: center;
+    margin-top: 22px; }
+    .account-info-sidebar .sidebar .user-info .user-name {
+      font-weight: bold;
+      font-size: 20px;
+      margin-bottom: 12px; }
+  .account-info-sidebar .sidebar .options {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    list-style: none; }
+    .account-info-sidebar .sidebar .options li {
+      cursor: pointer;
+      text-align: center;
+      height: 44px;
+      line-height: 44px;
+      border-top: 1px solid #f0f0f0; }
+      .account-info-sidebar .sidebar .options li:hover {
+        background: #b3e0d6; }
+  .account-info-sidebar .sidebar .test-history {
+    display: none;
+    animation: fadeIn 0.8s; }
+  .account-info-sidebar .sidebar .contribution-history {
+    border-right: 1px solid #f0f0f0;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 100%;
+    width: 430px;
+    overflow-y: scroll;
+    display: none;
+    animation: fadeIn 0.8s; }
+    .account-info-sidebar .sidebar .contribution-history::-webkit-scrollbar {
+      display: none; }
+    .account-info-sidebar .sidebar .contribution-history .contribution-card {
+      background: #b3e0d6;
+      margin: 8px 8px;
+      padding: 10px 16px; }
+      .account-info-sidebar .sidebar .contribution-history .contribution-card .title {
+        font-weight: bold;
+        font-size: 17px;
+        margin-bottom: 4px; }
+
+.account-info-sidebar.active .overlay {
+  display: block; }
+
+.account-info-sidebar.active .sidebar {
+  transform: translateX(0); }
+  .account-info-sidebar.active .sidebar .test-history.active {
+    display: block; }
+  .account-info-sidebar.active .sidebar .contribution-history.active {
+    display: block; }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
 .App {
   width: 100vw;
   height: 100vh;

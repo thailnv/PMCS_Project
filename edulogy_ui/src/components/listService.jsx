@@ -10,7 +10,7 @@ function ServiceList(){
         skillImg="/img/online.png"
         description="Edulogy là nền tảng học tiếng anh trực tuyến giúp học viên có kế hoạch linh hoạt, chủ động."
       />
-      <SkillCard 
+      <SkillCard
           skillName="Miễn phí"
           skillImg="/img/money.png"
           description="Edulogy hoàn toàn miễn phí chúng tôi cam kết không thu bất kỳ loại chi phí nào từ học viên."
