@@ -1,10 +1,11 @@
 .nav {
-  position: fixed;
+  position: relative;
   left: 0;
   top: 0;
   display: flex;
   align-items: center;
-  max-height: 4em;
+  height: 4em;
+  background: white;
   width: 100%;
   z-index: 3;
 }
@@ -27,7 +28,7 @@
   position: relative;
 }
 .nav .dropdown .dropdown-btn {
-  color: whitesmoke;
+  color: rgb(88, 88, 88);
   text-decoration: none;
   font-weight: 600;
   font-size: 14px;
@@ -84,11 +85,22 @@ button.dropdown-item {
 }
 
 @media only screen and (max-width: 600px) {
+  .nav {
+    position: relative;
+    width: 100vw;
+    height: 3em;
+  }
   .logo {
     padding-left: 0em;
     width: 100%;
+    img {
+      height: 50%;
+      width: 100px;
+      object-fit: contain;
+    }
   }
   .dropdown-container {
+    display: none;
     width: 0%;
   }
   .nav .dropdown {

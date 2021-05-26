@@ -1,128 +1,275 @@
-.new-test {
-  position: relative;
-  width: 100%;
-  background-image: url(https://dental-clinic.cmsmasters.net/wp-content/uploads/2015/07/content-dot2.jpg);
-  #preBtn,
-  #nextBtn {
-    position: absolute;
-    top: 43%;
-    font-size: 1.25em;
-    height: 2.5em;
-    width: 1.25em;
-    color: black;
-    background-color: rgba($color: #000000, $alpha: 0.3);
-    opacity: 0.4;
-    z-index: 1;
-  }
-  #preBtn {
-    left: 0.5em;
-  }
-  #nextBtn {
-    right: 0.5em;
-  }
-  h3 {
-    font-size: 22px;
-    padding-top: 1.5em;
-    color: #333;
-  }
-  .slider-container {
-    width: 100%;
-    padding: 3%;
-    padding-top: 2em;
-    display: flex;
-    justify-content: space-around;
-    margin: auto;
-    .test-card {
-      background-color: white;
-      box-shadow: $shadow;
-      border: $border;
-      width: 25%;
-      padding: 1em;
-      border-radius: 0.25em;
-      margin: 1em;
-      margin-top: 0;
-      .img-container {
-        width: 70%;
-        margin: auto;
-        margin-bottom: 0.75em;
-        margin-top: 0.75em;
-        img {
-          display: block;
-          margin: auto;
-          width: 80%;
-        }
+.test-page {
+  width: 90%;
+  background: white;
+  margin: auto;
+  margin-top: 5em;
+  margin-bottom: 1em;
+  display: flex;
+  .main-view {
+    padding: 1em;
+    width: 65%;
+    .list-part {
+      margin-top: 1.5em;
+      display: flex;
+      div {
+        width: 6.5em;
+        height: 3em;
+        line-height: 3em;
+        text-align: center;
+        background: rgb(219, 219, 219);
+        font-size: 14px;
+        margin-right: 0.5em;
+        color: #333;
+        cursor: pointer;
       }
-      a {
-        width: 7em;
-        color: rgb(42, 216, 172);
-        border: rgb(42, 216, 172) 2px solid;
-        border-radius: 1em;
-        line-height: 1.5em;
+      .part-active {
+        background: $test-page-main-color;
+        color: white;
+      }
+    }
+    h2 {
+      font-size: 22px;
+    }
+    .part-direction {
+      border: 1px rgb(197, 197, 197) solid;
+      width: 100%;
+      line-height: 1.25em;
+      font-weight: bold;
+      font-size: 15px;
+      padding: 0.5em;
+      margin-top: 1em;
+    }
+    img {
+      width: 420px;
+      max-width: 100%;
+      margin: auto;
+      margin-top: 2em;
+      display: block;
+    }
+    audio {
+      margin: auto;
+      margin-top: 0.5em;
+      display: block;
+      width: 300px;
+    }
+    span {
+      margin-top: 1em;
+      font-weight: bold;
+      font-size: 15px;
+    }
+    .content-display {
+      margin-top: 1em;
+      margin-bottom: 1em;
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+    }
+    .answers-display {
+      margin-left: 1em;
+      margin-top: 0.5em;
+    }
+    .answer {
+      display: flex;
+      align-items: center;
+    }
+    .true-answer {
+      font-weight: bold !important;
+      color: rgb(0, 216, 169);
+    }
+    .false-answer {
+      color: #ff6666;
+    }
+    .answer span {
+      font-weight: normal;
+      margin-top: 0.5em;
+      margin-left: 0.5em;
+      max-width: calc(100% - 2.75em);
+    }
+    .answer button {
+      margin-top: 0.5em;
+      height: 1.75em;
+      width: 1.75em;
+      border-radius: 100%;
+      border: $border;
+      line-height: 1.75em;
+      text-align: center;
+      font-size: 14px;
+      color: rgb(105, 105, 105);
+    }
+    .answer button:hover {
+      background: rgb(104, 104, 104);
+      color: white;
+    }
+    .answer-active {
+      background: rgb(104, 104, 104);
+      color: white !important;
+    }
+    .action {
+      width: fit-content;
+      margin: auto;
+      #submitBtn {
+        width: 6em;
+        height: 2.75em;
+        border: $border;
+        background: $test-page-main-color;
+        color: white;
+      }
+      #nextBtn {
+        margin-left: 1em;
+        width: 6em;
+        height: 2.75em;
+        border: $border;
+      }
+      #prevBtn {
+        margin-right: 1em;
+        width: 6em;
+        height: 2.75em;
+        border: $border;
+      }
+    }
+  }
+  .sub-view {
+    width: 35%;
+    padding: 1em;
+    .timer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: $test-page-main-color;
+      color: white;
+      padding: 0.5em;
+      div {
         text-align: center;
       }
-      a:hover {
-        color: rgb(10, 182, 139);
-        border: rgb(10, 182, 139) 2px solid;
+      span {
+        font-size: 22px;
+        font-weight: lighter;
       }
-      p {
-        color: #868686;
-        font-size: 14px;
-        margin-top: 0.25em;
+    }
+    .redo,
+    .submit {
+      cursor: pointer;
+    }
+    .list-question {
+      padding: 0.5em;
+      display: flex;
+      flex-wrap: wrap;
+      .auto-padding {
+        padding: calc(50% - 1em);
       }
+      button {
+        display: block;
+        line-height: 100%;
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        border: $border;
+      }
+      button:hover {
+        background: rgb(104, 104, 104);
+        color: white;
+      }
+      .question-active {
+        background: rgb(104, 104, 104);
+        color: white;
+      }
+      .question-wrong {
+        border: 2px solid #ff6666;
+      }
+      .question-true {
+        border: 2px solid rgb(4, 163, 129);
+      }
+    }
+  }
+}
+
+.test_card {
+  width: 20%;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  margin-bottom: 1em;
+  .card_container {
+    box-shadow: 0 0 4px 0 #333;
+    padding-bottom: 1em;
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
+    .name {
+      margin-top: 0.5em;
+      margin-left: 0.5em;
+      margin-right: 0.5em;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .level,
+    .time {
+      margin-top: 0.25em;
+      margin-left: 0.5em;
+      margin-right: 0.5em;
+      font-size: 14px;
+      color: $mini-text-color;
     }
   }
 }
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-  .new-test {
-    .slider-container {
-      padding: 8%;
-      .test-card {
-        a {
-          width: 6em;
-        }
+  .test-page {
+    margin-top: 1em;
+    flex-wrap: wrap;
+    width: 90%;
+    .main-view {
+      width: 100%;
+      padding: 1em;
+      .action {
+        margin-top: 1em;
       }
     }
+    .sub-view {
+      width: 100%;
+    }
+  }
+  .test_card {
+    width: 50%;
   }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) and (max-width: 768px) {
-  .new-test {
-    #preBtn {
-      left: 0.25em;
+  .test-page {
+    flex-wrap: wrap;
+    width: 90%;
+    .main-view {
+      width: 100%;
+      padding: 1em;
     }
-    #nextBtn {
-      right: 0.25em;
+    .sub-view {
+      width: 100%;
     }
-    .slider-container {
-      padding: 3%;
-      .test-card {
-        a {
-          width: 6em;
-        }
-      }
-    }
+  }
+  .test_card {
+    width: 33.3333%;
   }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .new-test {
-    #preBtn {
-      left: 0.25em;
+  .test-page {
+    width: 100%;
+    .main-view {
+      padding-left: 0;
+      padding-right: 0;
     }
-    #nextBtn {
-      right: 0.25em;
+    .sub-view {
+      padding-left: 0;
+      padding-right: 0;
     }
-    .slider-container {
-      padding: 3%;
-      .test-card {
-        a {
-          width: 6em;
-        }
-      }
-    }
+  }
+  .test_card {
+    width: 25%;
   }
 }

@@ -1,9 +1,9 @@
 import React from 'react';
- 
-function Banner(){
-  return(
+
+function Banner() {
+  return (
     <div className="banner">
-      <img src="/img/banner.jpg" alt=""/>
+      <img src="/img/banner.jpg" alt="" />
       <div></div>
     </div>
   )

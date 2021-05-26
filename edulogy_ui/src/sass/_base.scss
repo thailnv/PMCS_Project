@@ -11,6 +11,7 @@
 
 body {
   position: relative;
+  background: whitesmoke;
 }
 
 button {
@@ -52,7 +53,24 @@ input[type="number"] {
   justify-content: space-between;
   align-items: center;
 }
-
+.flex {
+  display: flex;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+}
+.col1-7 {
+  width: calc(100% / 7);
+}
+.square {
+  width: 100%;
+  padding-top: 100%;
+  position: relative;
+}
+.round {
+  border-radius: 100%;
+}
 .input-error {
   border: red solid 1px !important;
 }
@@ -96,4 +114,14 @@ input[type="number"] {
 
 .black-color {
   color: rgb(114, 106, 106) !important;
+}
+
+.show {
+  display: block !important;
+}
+.show_flex {
+  display: flex !important;
+}
+.hide {
+  display: none !important;
 }

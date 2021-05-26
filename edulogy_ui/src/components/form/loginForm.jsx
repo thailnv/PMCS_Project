@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { userActions } from '../actions/userActions' 
-import { appActions } from '../actions/appActions'
-import Input from './input';
+import { userActions } from '../../actions/userActions'
+import Input from '../../common/input';
 
-function LoginForm(props){
+function LoginForm(props) {
   const [inputs, setInputs] = useState({
     email: '',
     password: ''
@@ -18,24 +17,24 @@ function LoginForm(props){
 
   const message = useSelector(store => store.authentication.message);
 
-  function validate(){
+  function validate() {
     let err = {};
-    if(!email)
+    if (!email)
       err.email = "Vui lòng nhập email!";
-    if(!password)
+    if (!password)
       err.password = "Vui lòng nhập mật khẩu!";
     return err;
   }
 
-  function handleInputChange(e){
+  function handleInputChange(e) {
     const { name, value } = e.target;
-    setInputs(inputs => ({...inputs, [name]: value}));
+    setInputs(inputs => ({ ...inputs, [name]: value }));
   }
 
-  function handleSubmit(e){
+  function handleSubmit(e) {
     e.preventDefault();
     let error = validate();
-    if(Object.keys(error).length){
+    if (Object.keys(error).length) {
       setErrors(error);
       return;
     }
@@ -51,30 +50,30 @@ function LoginForm(props){
         <div>Xin chào, vui lòng nhập thông tin đăng nhập.</div>
       </div>
       <div className="input-container">
-        <Input 
-          type="text" 
-          name="email" 
-          value= {email}
+        <Input
+          type="text"
+          name="email"
+          value={email}
           placeholder="Email"
-          error= {errors.email}
-          handleChange ={handleInputChange}
+          error={errors.email}
+          handleChange={handleInputChange}
         />
-        <Input 
-          type="password"  
-          name="password" 
+        <Input
+          type="password"
+          name="password"
           value={password}
-          placeholder="Mật khẩu đăng nhập" 
-          error= {errors.password}
-          handleChange = {handleInputChange}
+          placeholder="Mật khẩu đăng nhập"
+          error={errors.password}
+          handleChange={handleInputChange}
         />
         <a href="/quen-mat-khau">Quên mật khẩu</a>
-        <button 
+        <button
           id="login-btn"
-          onClick = {handleSubmit}>
+          onClick={handleSubmit}>
           Đăng nhập
         </button>
-        {message && <div className="center-text text-error">Email hoặc mật khẩu không đúng!</div> }        
-        <div>Chưa có tài khoản? <button onClick={props.onToggle}>Đăng ký ngay</button> </div>         
+        {message && <div className="center-text text-error">Email hoặc mật khẩu không đúng!</div>}
+        <div>Chưa có tài khoản? <button onClick={props.onToggle}>Đăng ký ngay</button> </div>
       </div>
     </form>
   )

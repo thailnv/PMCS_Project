@@ -1,18 +1,16 @@
 .skill {
   width: 100%;
-  padding: 0.5em;
-  padding-left: 10%;
-  padding-right: 10%;
   margin: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 .skill-card {
-  margin-top: 2em;
   box-shadow: $shadow;
   padding: 0.5em;
-  width: 19vw;
+  width: 24%;
   border-radius: 0.25em;
   background-color: white;
   z-index: 2;
@@ -46,6 +44,9 @@
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+  .skill {
+    display: none;
+  }
   .skill-card {
     width: 70vw;
     margin: auto;
@@ -56,6 +57,9 @@
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) and (max-width: 768px) {
+  .skill {
+    display: none;
+  }
   .skill-card {
     width: 35vw;
   }
@@ -63,11 +67,4 @@
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .skill {
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-  .skill-card {
-    width: 21vw;
-  }
 }

@@ -3,19 +3,17 @@ import { useSelector } from 'react-redux'
 import React from 'react';
 import Login from './login';
 
-function Popup(){
+function Popup() {
 
   const popupType = useSelector(state => state.application.popupType);
 
-  console.log(popupType);
-
   let currentPopup = {
-    login: <Login/>,
+    login: <Login />,
   }
 
   let className = 'popup';
 
-  if(popupType)
+  if (popupType)
     className += ' block';
 
   return (

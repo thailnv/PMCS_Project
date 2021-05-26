@@ -1,21 +1,20 @@
-import {constants} from '../constants';
+import { constants } from "../constants";
 
-const initialState = {popupType : ''};
+const initialState = { popupType: "" };
 
-export function application (state = initialState, action){
-  console.log('appReducers', action);
-  switch(action.type){
+export function application(state = initialState, action) {
+  switch (action.type) {
     case constants.POPUP_LOGIN:
-      return{
+      return {
         ...state,
-        popupType : 'login',
-      }
+        popupType: "login",
+      };
     case constants.HIDE_POPUP:
-      return{
-        ...state, 
-        popupType : ''
-      }
-    default: 
-      return state
+      return {
+        ...state,
+        popupType: "",
+      };
+    default:
+      return state;
   }
 }
