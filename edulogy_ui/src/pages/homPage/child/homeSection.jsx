@@ -3,15 +3,14 @@ import React from "react";
 import TestCard from "../../../components/card/testCard";
 
 export default function HomeSection(props) {
+  console.log(props.tests);
   return (
     <React.Fragment>
       <div className="home_section">
         <div className="section_container">
-          <TestCard img="/img/hqdefault.jpg" />
-          <TestCard img="/img/testbn.jpg" />
-          <TestCard img="/img/testbn1.png" />
-          <TestCard img="/img/p2bn.png" />
-          <TestCard img="/img/testbn.jpg" />
+          {
+            props.tests.map((v, i) => <TestCard key={i} img={v.img} id={v._id} name={v.name} time={v.time} level={v.level} />)
+          }
         </div>
       </div>
     </React.Fragment>

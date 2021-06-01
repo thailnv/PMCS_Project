@@ -2,7 +2,7 @@
   width: 90%;
   background: white;
   margin: auto;
-  margin-top: 5em;
+  margin-top: 1em;
   margin-bottom: 1em;
   display: flex;
   .main-view {
@@ -177,10 +177,10 @@
         color: white;
       }
       .question-wrong {
-        border: 2px solid #ff6666;
+        border: 1px solid #e25959;
       }
       .question-true {
-        border: 2px solid rgb(4, 163, 129);
+        border: 1px solid rgb(0, 182, 142);
       }
     }
   }
@@ -199,11 +199,18 @@
       object-fit: contain;
     }
     .name {
+      color: #333;
       margin-top: 0.5em;
       margin-left: 0.5em;
       margin-right: 0.5em;
       font-size: 14px;
+      height: 2.25em;
       font-weight: bold;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     .level,
     .time {
@@ -216,12 +223,47 @@
   }
 }
 
+.list-test-page {
+  min-height: calc(100vh - 6em);
+  margin: 1em;
+  padding: 1em;
+  padding-top: 0;
+  padding-bottom: 0;
+  background: white;
+  .row {
+    min-height: 3em;
+    border-bottom: rgb(117, 117, 117) solid 1px;
+    margin-bottom: 1em;
+  }
+  span {
+    font-size: 20px;
+    color: $test-page-main-color;
+    font-weight: bold;
+  }
+  button {
+    width: 8em;
+    height: 2.55em;
+    margin-left: 1em;
+    background: rgb(117, 117, 117);
+    border-radius: 0;
+    color: white;
+  }
+  button:hover {
+    background: $test-page-main-color;
+  }
+  .list-tests {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .test-page {
     margin-top: 1em;
     flex-wrap: wrap;
-    width: 90%;
+    width: 100%;
     .main-view {
       width: 100%;
       padding: 1em;
@@ -235,6 +277,23 @@
   }
   .test_card {
     width: 50%;
+  }
+  .list-test-page {
+    margin-left: 0;
+    margin-right: 0;
+    .row {
+      padding-top: 0.5em;
+      padding-bottom: 0.5em;
+      flex-direction: column;
+      .flex {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        button {
+          margin-top: 0.5em;
+        }
+      }
+    }
   }
 }
 
@@ -253,6 +312,14 @@
   }
   .test_card {
     width: 33.3333%;
+  }
+  .list-test-page {
+    margin-left: 0;
+    margin-right: 0;
+    .row {
+      padding-top: 0.5em;
+      padding-bottom: 0.5em;
+    }
   }
 }
 

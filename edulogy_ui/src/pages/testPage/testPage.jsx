@@ -7,11 +7,12 @@ import Footer from "../../common/footer";
 import MainView from "./child/mainView";
 import SubView from "./child/subView";
 import LoadingPage from "../loadingPage";
+import MenuSidebar from "../../common/menuSidebar";
 import { testActions } from "../../actions/testActions";
 import { showScore } from "../../helper";
 import { constants as c } from "../../constants";
 
-function TestPage() {
+function TestPage(props) {
 
   let test = useSelector(state => state.test.test);
   let dispatch = useDispatch();
@@ -74,7 +75,7 @@ function TestPage() {
 
   useEffect(() => {
     if (!test)
-      dispatch(testActions.getTestById("609ff98108cfa82328e44fce"))
+      dispatch(testActions.getTestById(props.match.params.id))
     else {
       if (!listPart.length) {
         let lpart = [-1, -1, -1, -1, -1, -1, -1, -1];
@@ -86,7 +87,7 @@ function TestPage() {
         setListPart(lpart);
       }
     }
-  }, [test, dispatch, listPart]);
+  }, [test, dispatch, listPart, props.match.params.id]);
 
   return (
     <React.Fragment>
@@ -124,6 +125,7 @@ function TestPage() {
       </div>
       <Footer />
       <Popup />
+      <MenuSidebar />
     </React.Fragment>
   )
 }

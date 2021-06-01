@@ -6,6 +6,8 @@ const controller = require("../controllers/commentController");
 
 router.get("/", controller.getAll);
 
+router.get("/:id", controller.getOne);
+
 router.use(auth.protect);
 
 router.post("/reply/:id", validator(validate), controller.reply);

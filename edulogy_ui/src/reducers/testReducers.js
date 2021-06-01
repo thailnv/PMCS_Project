@@ -9,11 +9,17 @@ export function test(state = initialState, action) {
         test: action.test,
         status: c.SUCCESS,
       };
-    case c.GET_TEST_FAILURE: {
+    case c.GET_TEST_FAILURE:
+    case c.GET_TESTS_FAILURE: {
       return {
         status: c.FAILURE,
       };
     }
+    case c.GET_TESTS_SUCCESS:
+      return {
+        status: c.SUCCESS,
+        tests: action.tests,
+      };
     default:
       return state;
   }

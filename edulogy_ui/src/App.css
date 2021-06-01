@@ -107,8 +107,21 @@ input[type="number"] {
 .show_flex {
   display: flex !important; }
 
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+
 .hide {
   display: none !important; }
+
+@media only screen and (max-width: 600px) {
+  .mobile-display {
+    display: block !important;
+    margin-left: 0 !important; }
+  .desktop-display {
+    display: none !important; } }
 
 .login-container {
   width: 80%;
@@ -197,6 +210,8 @@ input[type="number"] {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+  .login-container {
+    width: 95%; }
   .login-container > .img-container {
     width: 0%; }
   .login-container > .form-container {
@@ -260,6 +275,82 @@ input[type="number"] {
   background: white;
   width: 100%;
   z-index: 3; }
+  .nav .mobile-display {
+    display: none; }
+    .nav .mobile-display img {
+      width: 20px;
+      object-fit: contain; }
+
+.menu-sidebar {
+  position: fixed;
+  transition: width 0.5s;
+  width: 0px;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  background: white;
+  z-index: 4;
+  overflow: hidden; }
+  .menu-sidebar .item-container {
+    padding: 1em;
+    position: relative;
+    height: 100%; }
+  .menu-sidebar .close-sidebar-btn {
+    position: absolute;
+    border-radius: 2em;
+    height: 3em;
+    width: 15em;
+    background: #00949e;
+    color: whitesmoke;
+    font-weight: 600;
+    font-size: 14px;
+    margin: auto;
+    bottom: 5em;
+    left: calc(50% - 7.5em);
+    display: block; }
+
+.sidebar-subitem {
+  height: 0;
+  overflow: hidden;
+  transition: 0.3s; }
+  .sidebar-subitem .sub-item {
+    color: #333;
+    display: block;
+    font-size: 15px;
+    height: 2.25em;
+    line-height: 2.25em;
+    margin-left: 1.5em;
+    text-transform: uppercase;
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 0.5px #a8a8a8 solid;
+    white-space: nowrap; }
+
+#menuSidebar img {
+  width: 15px;
+  object-fit: contain;
+  margin-top: calc(1.5em - 8px); }
+
+#menuSidebar #closeSidebarBtn {
+  position: absolute;
+  right: 25px;
+  display: block; }
+
+.sidebar-item {
+  color: #333;
+  font-size: 16px;
+  height: 2.5em;
+  line-height: 2.5em;
+  text-transform: uppercase;
+  width: 100%;
+  overflow: hidden;
+  border-bottom: 0.5px #a8a8a8 solid;
+  white-space: nowrap; }
+  .sidebar-item img {
+    margin: 0 !important; }
+
+.sidebar-item a {
+  color: #333; }
 
 .logo {
   padding-left: 2em;
@@ -342,22 +433,21 @@ button.dropdown-item {
     height: 3em; }
   .logo {
     padding-left: 0em;
-    width: 100%; }
+    width: calc(100% - 2.5em); }
     .logo img {
       height: 50%;
       width: 100px;
       object-fit: contain; }
   .dropdown-container {
-    display: none;
-    width: 0%; }
+    margin-left: 0; }
   .nav .dropdown {
-    margin-left: 2em; }
+    display: none; }
   #account-btn {
     margin-right: 0em;
     width: 8em; } }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) and (max-width: 768px) {
+@media only screen and (min-width: 601px) and (max-width: 768px) {
   .logo {
     padding-left: 0em;
     display: none; }
@@ -382,27 +472,29 @@ button.dropdown-item {
 
 .banner {
   width: 100%;
-  height: 50vh;
+  height: fit-content;
   position: relative; }
-
-.banner > img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1; }
-
-.banner > div {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%; }
+  .banner .img-container {
+    display: block;
+    width: 100%;
+    padding-top: 23.5%;
+    /* 1:1 Aspect Ratio */
+    position: relative; }
+    .banner .img-container img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
+    .banner .img-container .mobile-display {
+      display: none; }
 
 @media only screen and (max-width: 600px) {
-  .banner {
-    height: 30vh; }
-  .banner > div {
-    box-shadow: inset 0 0 8em black; } }
+  .banner .img-container {
+    padding-top: 37.5%; } }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) and (max-width: 768px) {
@@ -605,7 +697,7 @@ button.dropdown-item {
   width: 90%;
   background: white;
   margin: auto;
-  margin-top: 5em;
+  margin-top: 1em;
   margin-bottom: 1em;
   display: flex; }
   .test-page .main-view {
@@ -750,9 +842,9 @@ button.dropdown-item {
         background: #686868;
         color: white; }
       .test-page .sub-view .list-question .question-wrong {
-        border: 2px solid #ff6666; }
+        border: 1px solid #e25959; }
       .test-page .sub-view .list-question .question-true {
-        border: 2px solid #04a381; }
+        border: 1px solid #00b68e; }
 
 .test_card {
   width: 20%;
@@ -766,11 +858,18 @@ button.dropdown-item {
       width: 100%;
       object-fit: contain; }
     .test_card .card_container .name {
+      color: #333;
       margin-top: 0.5em;
       margin-left: 0.5em;
       margin-right: 0.5em;
       font-size: 14px;
-      font-weight: bold; }
+      height: 2.25em;
+      font-weight: bold;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis; }
     .test_card .card_container .level,
     .test_card .card_container .time {
       margin-top: 0.25em;
@@ -779,12 +878,41 @@ button.dropdown-item {
       font-size: 14px;
       color: gray; }
 
+.list-test-page {
+  min-height: calc(100vh - 6em);
+  margin: 1em;
+  padding: 1em;
+  padding-top: 0;
+  padding-bottom: 0;
+  background: white; }
+  .list-test-page .row {
+    min-height: 3em;
+    border-bottom: #757575 solid 1px;
+    margin-bottom: 1em; }
+  .list-test-page span {
+    font-size: 20px;
+    color: #00949e;
+    font-weight: bold; }
+  .list-test-page button {
+    width: 8em;
+    height: 2.55em;
+    margin-left: 1em;
+    background: #757575;
+    border-radius: 0;
+    color: white; }
+  .list-test-page button:hover {
+    background: #00949e; }
+  .list-test-page .list-tests {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; }
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .test-page {
     margin-top: 1em;
     flex-wrap: wrap;
-    width: 90%; }
+    width: 100%; }
     .test-page .main-view {
       width: 100%;
       padding: 1em; }
@@ -793,7 +921,20 @@ button.dropdown-item {
     .test-page .sub-view {
       width: 100%; }
   .test_card {
-    width: 50%; } }
+    width: 50%; }
+  .list-test-page {
+    margin-left: 0;
+    margin-right: 0; }
+    .list-test-page .row {
+      padding-top: 0.5em;
+      padding-bottom: 0.5em;
+      flex-direction: column; }
+      .list-test-page .row .flex {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; }
+        .list-test-page .row .flex button {
+          margin-top: 0.5em; } }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) and (max-width: 768px) {
@@ -806,7 +947,13 @@ button.dropdown-item {
     .test-page .sub-view {
       width: 100%; }
   .test_card {
-    width: 33.3333%; } }
+    width: 33.3333%; }
+  .list-test-page {
+    margin-left: 0;
+    margin-right: 0; }
+    .list-test-page .row {
+      padding-top: 0.5em;
+      padding-bottom: 0.5em; } }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -841,7 +988,6 @@ button.dropdown-item {
     height: 400px;
     background: white;
     border-radius: 0.25em;
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -903,8 +1049,6 @@ button.dropdown-item {
 .home {
   display: flex;
   margin: 1em;
-  margin-top: 1em;
-  margin-bottom: 1em;
   background: white; }
   .home .main-view {
     width: 100%;
@@ -990,6 +1134,170 @@ button.dropdown-item {
       padding-bottom: 0.5em; } }
 
 /* Medium devices (landscape tablets, 768px and up) */
+.toeic-info {
+  height: calc(100vh - 6em);
+  width: 100%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  display: flex; }
+  .toeic-info .tab-container {
+    width: calc(25% - 1em);
+    background: white;
+    padding: 1em; }
+    .toeic-info .tab-container button {
+      display: block;
+      height: 2.5em;
+      font-size: 18px;
+      width: 90%;
+      margin: auto;
+      border-bottom: 1px #333 solid;
+      border-radius: 0; }
+    .toeic-info .tab-container button:hover {
+      background: #00949e;
+      color: white; }
+    .toeic-info .tab-container .button-active {
+      background: #00949e;
+      color: white; }
+  .toeic-info .info-container {
+    overflow-y: scroll;
+    width: 75%;
+    margin-left: 1em;
+    height: 100%;
+    background: white;
+    padding: 1em;
+    position: relative; }
+    .toeic-info .info-container .toeic-location,
+    .toeic-info .info-container .toeic-outcome,
+    .toeic-info .info-container .toeic-procedures-process {
+      background: white;
+      width: 100%; }
+    .toeic-info .info-container b {
+      display: block;
+      margin-top: 1em; }
+    .toeic-info .info-container h2 {
+      text-align: center; }
+    .toeic-info .info-container h3 {
+      color: #00949e;
+      margin-top: 1em;
+      font-size: 20px; }
+  .toeic-info .info-container::-webkit-scrollbar {
+    display: none; }
+  .toeic-info .info-container {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */ }
+
+@media only screen and (max-width: 600px) {
+  .toeic-info {
+    width: 100%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-left: 0em;
+    padding-right: 0em;
+    display: flex;
+    flex-direction: column; }
+    .toeic-info .tab-container {
+      background: white;
+      width: 100%;
+      padding: 0em;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap; }
+      .toeic-info .tab-container button {
+        display: inline-block;
+        height: 2.5em;
+        width: fit-content;
+        border-bottom: none;
+        background: #7a7a7a;
+        color: white;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        margin-top: 0.5em; }
+    .toeic-info .info-container {
+      overflow-y: scroll;
+      width: 100%;
+      margin-left: 0em;
+      height: 100%;
+      background: white;
+      padding: 1em;
+      position: relative; }
+      .toeic-info .info-container .toeic-location,
+      .toeic-info .info-container .toeic-outcome,
+      .toeic-info .info-container .toeic-procedures-process {
+        background: white;
+        width: 100%; } }
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+  .toeic-info {
+    width: 100%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    display: flex;
+    flex-direction: column; }
+    .toeic-info .tab-container {
+      background: white;
+      width: 100%;
+      padding: 1em;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap; }
+      .toeic-info .tab-container button {
+        display: inline-block;
+        height: 2.5em;
+        width: fit-content;
+        border-bottom: none;
+        background: #7a7a7a;
+        color: white;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        margin-top: 0.5em; }
+    .toeic-info .info-container {
+      overflow-y: scroll;
+      width: 100%;
+      margin-left: 0em;
+      height: 100%;
+      background: white;
+      padding: 1em;
+      position: relative; }
+      .toeic-info .info-container .toeic-location,
+      .toeic-info .info-container .toeic-outcome,
+      .toeic-info .info-container .toeic-procedures-process {
+        background: white;
+        width: 100%; } }
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 769px) and (max-width: 991px) {
+  .toeic-info {
+    width: 100%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-left: 0em;
+    padding-right: 0em;
+    display: flex; }
+    .toeic-info .tab-container {
+      background: white;
+      width: calc(30% - 1em);
+      padding: 1em; }
+    .toeic-info .info-container {
+      overflow-y: scroll;
+      width: 70%;
+      margin-left: 1em;
+      height: 100%;
+      background: white;
+      padding: 1em;
+      position: relative; }
+      .toeic-info .info-container .toeic-location,
+      .toeic-info .info-container .toeic-outcome,
+      .toeic-info .info-container .toeic-procedures-process {
+        background: white;
+        width: 100%; } }
+
 .App {
   width: 100vw;
   height: 100vh;

@@ -14,6 +14,21 @@ function getTestById(id) {
     });
 }
 
+function getTest(query) {
+  let queryString = Object.keys(query).reduce((rs, v) => {
+    return rs + `${v}=${query[v]}&`;
+  }, "?");
+
+  queryString = queryString.substr(0, queryString.length - 1);
+
+  return fetch(`${c.apiUrl}/tests${queryString}`)
+    .then((res) => res.json())
+    .then((json) => {
+      return json;
+    });
+}
+
 export const testService = {
   getTestById,
+  getTest,
 };

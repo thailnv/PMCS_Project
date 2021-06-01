@@ -23,8 +23,18 @@ exports.getOne = async (req, res, next) => {
   }
 };
 exports.getAll = async (req, res, next) => {
+  console.log(req.query);
   try {
-    let doc = await Test.find().populate("questions");
+    let { type, page, pagesize } = req.query;
+
+    page = parseInt(page);
+    pagesize = parseInt(pagesize);
+    type = type ? { type } : {};
+
+    let doc = await Test.find(type)
+      .select("level img time name type")
+      .limit(pagesize)
+      .skip((page - 1) * pagesize);
     if (doc) {
       res.status(200).json({
         doc,

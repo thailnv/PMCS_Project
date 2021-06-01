@@ -3,8 +3,10 @@ import React from 'react';
 function Banner() {
   return (
     <div className="banner">
-      <img src="/img/banner.jpg" alt="" />
-      <div></div>
+      <div className="img-container">
+        <img className="desktop-display" src="/img/banner2.png" alt="" />
+        <img className="mobile-display" src="/img/banner3.png" alt="" />
+      </div>
     </div>
   )
 }

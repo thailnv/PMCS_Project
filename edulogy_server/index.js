@@ -9,6 +9,7 @@ const questionRoutes = require("./routes/questionRoute");
 const testRoutes = require("./routes/testRoute");
 const problemRoutes = require("./routes/problemRoute");
 const commentRoutes = require("./routes/commentRoute");
+const siteRoutes = require("./routes/siteRoute");
 const db = require("./config/database");
 
 const app = express();
@@ -40,6 +41,7 @@ app.use("/api/questions", questionRoutes);
 app.use("/api/tests", testRoutes);
 app.use("/api/problems", problemRoutes);
 app.use("/api/comments", commentRoutes);
+app.use("/api", siteRoutes);
 
 app.use("*", (req, res) => {
   res.status(400).send("Undefined route !");

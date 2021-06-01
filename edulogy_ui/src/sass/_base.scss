@@ -122,6 +122,21 @@ input[type="number"] {
 .show_flex {
   display: flex !important;
 }
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 .hide {
   display: none !important;
+}
+@media only screen and (max-width: 600px) {
+  .mobile-display {
+    display: block !important;
+    margin-left: 0 !important;
+  }
+  .desktop-display {
+    display: none !important;
+  }
 }

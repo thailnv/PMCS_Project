@@ -16,6 +16,22 @@ function getTestById(id) {
   }
 }
 
+function getTest(query) {
+  return (dispatch) => {
+    testService.getTest(query).then((res) => {
+      if (res.doc) dispatch(success(res.doc));
+      else dispatch(failure(res.message));
+    });
+  };
+  function success(tests) {
+    return { type: c.GET_TESTS_SUCCESS, tests };
+  }
+  function failure(message) {
+    return { type: c.GET_TESTS_FAILURE, message };
+  }
+}
+
 export const testActions = {
+  getTest,
   getTestById,
 };
