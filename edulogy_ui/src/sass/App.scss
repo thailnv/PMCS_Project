@@ -1,11 +1,14 @@
 @import "./variable";
 @import "./base";
+@import "./textError";
 @import "./login";
 @import "./nav";
 @import "./banner";
 @import "./footer";
 @import "./listSkills";
 @import "./accInfoSidebar";
+@import "./discussionsSection";
+
 .App {
   width: 100vw;
   height: 100vh;

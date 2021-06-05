@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   padding: 0;
   margin: 0;
@@ -77,6 +78,11 @@ input[type="number"] {
 
 .close-btn:hover {
   background-color: rgba(51, 51, 51, 0.2); }
+
+.text-error {
+  color: red;
+  margin-left: 2px;
+  font-size: 12px; }
 
 .login-container {
   width: 80%;
@@ -668,6 +674,188 @@ button.dropdown-item {
     opacity: 0; }
   to {
     opacity: 1; } }
+
+.all-discussions {
+  margin-top: 4em; }
+  .all-discussions .section-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -4px;
+    margin-right: -4px; }
+    .all-discussions .section-wrapper .discussion-posting-area {
+      padding-left: 4px;
+      padding-right: 4px;
+      flex: 0 0 33.33333%;
+      max-width: 33.33333%; }
+      .all-discussions .section-wrapper .discussion-posting-area .discussion-posting-wrapper {
+        display: flex;
+        flex-direction: column;
+        margin: 16px 14px;
+        padding: 16px;
+        border-radius: 4px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; }
+        .all-discussions .section-wrapper .discussion-posting-area .discussion-posting-wrapper label,
+        .all-discussions .section-wrapper .discussion-posting-area .discussion-posting-wrapper input,
+        .all-discussions .section-wrapper .discussion-posting-area .discussion-posting-wrapper textarea {
+          display: block;
+          margin-bottom: 4px; }
+        .all-discussions .section-wrapper .discussion-posting-area .discussion-posting-wrapper label {
+          margin-left: 2px;
+          font-weight: 600; }
+        .all-discussions .section-wrapper .discussion-posting-area .discussion-posting-wrapper input,
+        .all-discussions .section-wrapper .discussion-posting-area .discussion-posting-wrapper textarea {
+          width: 100%;
+          border: 1px solid #cbcbcb;
+          border-radius: 4px;
+          padding: 14px;
+          font-size: 16px; }
+        .all-discussions .section-wrapper .discussion-posting-area .discussion-posting-wrapper input {
+          height: 40px; }
+        .all-discussions .section-wrapper .discussion-posting-area .discussion-posting-wrapper textarea {
+          height: 15vw; }
+        .all-discussions .section-wrapper .discussion-posting-area .discussion-posting-wrapper #image[type="file"] {
+          display: none; }
+        .all-discussions .section-wrapper .discussion-posting-area .discussion-posting-wrapper label[for="image"]:hover:not(:focus)::before {
+          content: "Tải ảnh lên";
+          display: block;
+          position: absolute;
+          text-align: center;
+          top: calc(100% + 3px);
+          width: 70px;
+          background: #f1eeee;
+          padding: 3px 0;
+          font-size: 12px;
+          font-weight: 300;
+          transform: translateX(-40%);
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+          animation: fadeIn 2s forwards; }
+        .all-discussions .section-wrapper .discussion-posting-area .discussion-posting-wrapper label[for="image"]:hover:not(:focus)::after {
+          content: "";
+          position: absolute;
+          top: calc(100% - 11px);
+          right: 0;
+          border-width: 7px 10px;
+          border-style: solid;
+          border-color: transparent transparent #f1eeee transparent;
+          animation: fadeIn 1.5s forwards; }
+        .all-discussions .section-wrapper .discussion-posting-area .discussion-posting-wrapper .form-control {
+          position: relative;
+          margin-bottom: 10px;
+          width: 100%; }
+          .all-discussions .section-wrapper .discussion-posting-area .discussion-posting-wrapper .form-control .image-upload {
+            position: absolute;
+            top: 2px;
+            right: -1px;
+            margin: 0;
+            height: 20px;
+            cursor: pointer; }
+            .all-discussions .section-wrapper .discussion-posting-area .discussion-posting-wrapper .form-control .image-upload:hover .image-upload-icon {
+              opacity: 0.7; }
+          .all-discussions .section-wrapper .discussion-posting-area .discussion-posting-wrapper .form-control .image-upload-icon {
+            width: 20px;
+            height: 20px;
+            color: #545454; }
+          .all-discussions .section-wrapper .discussion-posting-area .discussion-posting-wrapper .form-control .uploaded-images-area {
+            display: flex;
+            flex-wrap: wrap; }
+            .all-discussions .section-wrapper .discussion-posting-area .discussion-posting-wrapper .form-control .uploaded-images-area .uploaded-img {
+              background-color: #dbdbdb;
+              margin: 2px;
+              border-radius: 10px;
+              padding: 2px 0 2px 8px;
+              font-size: 12px;
+              display: flex;
+              align-items: center; }
+              .all-discussions .section-wrapper .discussion-posting-area .discussion-posting-wrapper .form-control .uploaded-images-area .uploaded-img span {
+                line-height: 13px; }
+              .all-discussions .section-wrapper .discussion-posting-area .discussion-posting-wrapper .form-control .uploaded-images-area .uploaded-img .remove-img-icon {
+                cursor: pointer;
+                width: 16px;
+                height: 16px;
+                margin: 0 3px 0 1px; }
+        .all-discussions .section-wrapper .discussion-posting-area .discussion-posting-wrapper .btn-group {
+          display: flex;
+          justify-content: space-between; }
+          .all-discussions .section-wrapper .discussion-posting-area .discussion-posting-wrapper .btn-group button {
+            background-color: #c2d1d1;
+            height: 36px;
+            width: 49%;
+            cursor: pointer;
+            font-size: 15px; }
+            .all-discussions .section-wrapper .discussion-posting-area .discussion-posting-wrapper .btn-group button:hover {
+              background-color: #8fabab; }
+    .all-discussions .section-wrapper .all-discussions-area {
+      padding-left: 4px;
+      padding-right: 4px;
+      flex: 0 0 66.66667%;
+      max-width: 66.66667%;
+      border-left: 1px solid #ddd; }
+      .all-discussions .section-wrapper .all-discussions-area .all-discussions-wrapper {
+        padding: 0 18px; }
+        .all-discussions .section-wrapper .all-discussions-area .all-discussions-wrapper .title {
+          font-size: 30px;
+          font-weight: 500;
+          margin-top: 12px; }
+        .all-discussions .section-wrapper .all-discussions-area .all-discussions-wrapper .discussions-quantity {
+          margin: 28px 0 18px 0;
+          font-size: 18px; }
+        .all-discussions .section-wrapper .all-discussions-area .all-discussions-wrapper .divider {
+          border-bottom: 1px solid #ccc;
+          margin-left: -22px;
+          margin-right: -18px; }
+        .all-discussions .section-wrapper .all-discussions-area .all-discussions-wrapper .discussion-card {
+          display: flex;
+          border-bottom: 1px solid #eee;
+          padding: 12px 0; }
+          .all-discussions .section-wrapper .all-discussions-area .all-discussions-wrapper .discussion-card .author-and-replies {
+            text-align: center; }
+            .all-discussions .section-wrapper .all-discussions-area .all-discussions-wrapper .discussion-card .author-and-replies .author-avatar {
+              width: 36px;
+              height: 36px;
+              background-color: #c6bbbb;
+              margin: 0 auto;
+              line-height: 36px;
+              border-radius: 4px; }
+            .all-discussions .section-wrapper .all-discussions-area .all-discussions-wrapper .discussion-card .author-and-replies .author-name {
+              margin-top: 6px;
+              font-size: 14px;
+              color: #09a5d4; }
+            .all-discussions .section-wrapper .all-discussions-area .all-discussions-wrapper .discussion-card .author-and-replies .reply-quantity {
+              margin-top: 8px;
+              font-size: 22px; }
+            .all-discussions .section-wrapper .all-discussions-area .all-discussions-wrapper .discussion-card .author-and-replies .reply-quantity-suffix {
+              font-size: 14px;
+              margin-top: 2px; }
+          .all-discussions .section-wrapper .all-discussions-area .all-discussions-wrapper .discussion-card .content-detail {
+            margin-left: 20px; }
+            .all-discussions .section-wrapper .all-discussions-area .all-discussions-wrapper .discussion-card .content-detail .discussion-title {
+              font-size: 20px;
+              font-weight: 600;
+              cursor: pointer; }
+              .all-discussions .section-wrapper .all-discussions-area .all-discussions-wrapper .discussion-card .content-detail .discussion-title, .all-discussions .section-wrapper .all-discussions-area .all-discussions-wrapper .discussion-card .content-detail .discussion-title:visited, .all-discussions .section-wrapper .all-discussions-area .all-discussions-wrapper .discussion-card .content-detail .discussion-title:active {
+                color: #0987ad; }
+              .all-discussions .section-wrapper .all-discussions-area .all-discussions-wrapper .discussion-card .content-detail .discussion-title:hover {
+                color: #08aee0; }
+            .all-discussions .section-wrapper .all-discussions-area .all-discussions-wrapper .discussion-card .content-detail .discussion-content {
+              margin-top: 4px;
+              line-height: 20px;
+              overflow: hidden;
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 2;
+              text-overflow: ellipsis; }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes fadeOut {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
 
 .App {
   width: 100vw;
