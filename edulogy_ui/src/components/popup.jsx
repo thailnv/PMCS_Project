@@ -10,7 +10,12 @@ function Popup(){
   console.log(popupType);
 
   let currentPopup = {
+<<<<<<< Updated upstream
     login: <Login/>,
+=======
+    login: <Login />,
+    
+>>>>>>> Stashed changes
   }
 
   let className = 'popup';

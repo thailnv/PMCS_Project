@@ -7,10 +7,11 @@ function Input (props) {
     name, 
     error, 
     placeholder, 
-    handleChange
+    handleChange,
+    classname
   } = props;
 
-  let className = error ? 'input-error' : '';
+  let className = error ? `${classname} input-error` : classname;
   placeholder = error ? error : placeholder;
   return (  
   <input 
