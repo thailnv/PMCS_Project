@@ -1,6 +1,6 @@
 import { constants } from "../constants";
 
-const initialState = { dashboardType: "dashboard_question", status: constants.LOADING };
+const initialState = { dashboardType: "dashboard_test", status: constants.LOADING };
 
 export function dashboard(state = initialState, action) {
   switch (action.type) {

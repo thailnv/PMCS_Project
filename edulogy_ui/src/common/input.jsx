@@ -8,7 +8,8 @@ function Input (props) {
     error, 
     placeholder, 
     handleChange,
-    classname
+    classname,
+    id
   } = props;
 
   let className = error ? `${classname} input-error` : classname;
@@ -21,6 +22,7 @@ function Input (props) {
     value= {value}
     placeholder={placeholder} 
     onChange ={handleChange}
+    id = {id}
   />)        
 }
 

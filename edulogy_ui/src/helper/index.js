@@ -33,4 +33,12 @@ function toggleSubitem() {
   else subitem.style.height = "0";
 }
 
-export { showScore, showSidebar, closeSidebar, toggleSubitem, toogleDashboardControl };
+function openFilter(){
+  document.getElementById('filter').style.display = 'block';
+}
+function closeFilter(){
+  document.getElementById('filter').style.display = 'none';
+}
+
+
+export { showScore, showSidebar, closeSidebar, toggleSubitem, toogleDashboardControl, openFilter, closeFilter };

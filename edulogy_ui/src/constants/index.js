@@ -1,17 +1,7 @@
 exports.constants = {
   //apiUrl
-  apiUrl : 'http://localhost:3000/api',
+  apiUrl : 'https://fathomless-castle-76283.herokuapp.com/api',
   //action type
-<<<<<<< Updated upstream
-  LOGIN_SUCCESS : 'LOGIN_SUCCESS',
-  LOGIN_FAILURE: 'LOGIN_FAILURE',
-  LOGOUT: 'LOGOUT',
-  REGISTER_SUCCESS: 'REGISTER_SUCCESS',
-  REGISTER_FAILURE: 'REGISTER_FAILURE',
-  POPUP_LOGIN: 'POPUP_LOGIN',
-  HIDE_POPUP: 'HIDE_POPUP'
-}
-=======
   LOGIN_SUCCESS: "LOGIN_SUCCESS",
   LOGIN_FAILURE: "LOGIN_FAILURE",
   LOGOUT: "LOGOUT",
@@ -40,4 +30,4 @@ exports.constants = {
   SUBMITED_MODE: "SUBMITED_MODE",
   SHOW_EXPLANATION_MODE: "SHOW_EXPLANATION_MODE",
 };
->>>>>>> Stashed changes
+

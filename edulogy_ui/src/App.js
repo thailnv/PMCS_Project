@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import HomePage from './pages/homepage';
 import './App.css';
+import { AdminPage } from './pages/adminPage/adminPage';
 
 function App() {
   return (
     <BrowserRouter>
-      <HomePage/>
+      <AdminPage/>
     </BrowserRouter>
   );
 }

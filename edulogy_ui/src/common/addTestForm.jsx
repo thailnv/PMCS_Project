@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import Input from '../../common/input';
-import { constants } from '../../constants';
+import Input from '../common/input';
+
 
 
 
@@ -60,7 +60,7 @@ function AddTestForm() {
   
   return (
       <div class = "addtest_container">
-          <h2>Add Test Form</h2>
+          <h2 style={{paddingTop:"30px"}}>Add Test</h2>
           <form onSubmit={handleSubmit} class = "editques_frm">
               <Input
               type="text" 
@@ -93,6 +93,7 @@ function AddTestForm() {
               value={time}
               handleChange={handleInputChange}
               classname = "text_input"
+              placeholder = "time"
               />
               <Input 
               class="text_input"
@@ -102,6 +103,7 @@ function AddTestForm() {
               value={type}
               classname ="text_input"
               handleChange={handleInputChange}
+              placeholder = "type"
               />
               <div style={{display:"flex",justifyContent:"space-between",width:"100%",marginBottom:"30px"}}>
                 <button onClick={handleSubmit} id="saveupdate_btn">Save</button>

@@ -1168,9 +1168,9 @@ button.dropdown-item {
         width: 100%; } }
 .table_container{
   font-family: 'Poppins', sans-serif;
-  width: 60%;
-  margin-left: 50px;
+  width: 64%;
   box-sizing: border-box;
+  box-shadow: 0 0 3px black;
 }
 .viewtest_btn{
   color: #11993f;
@@ -1192,11 +1192,11 @@ button.dropdown-item {
   position: relative; }
 .editques_container{
   background-color: white;
-  box-shadow: 0 0  5px black;
-  position: absolute;
-  top: 50px;
-  left: 550px;
-  width: 50vw;
+  box-shadow: 0 0  3px black;
+  position: fixed;
+  top: 20vh;
+  left: calc(50vw - 175px);
+  width: 350px;
   height: 60vh;
   display: flex;
   flex-direction: column;
@@ -1206,7 +1206,7 @@ button.dropdown-item {
 .addques_container{
   background-color: white;
   box-shadow: 0 0  5px black;
-  width: 450px;
+  width: 400px;
   height: 70vh;
   display: flex;
   flex-direction: column;
@@ -1216,7 +1216,7 @@ button.dropdown-item {
 .addtest_container{
   background-color: white;
   box-shadow: 0 0  5px black;
-  width: 450px;
+  width: 400px;
   height: 77vh;
   display: flex;
   flex-direction: column;
@@ -1249,7 +1249,7 @@ button.dropdown-item {
   color: #00949e;
   position: absolute;
   top: 10px;
-  right: 50px;
+  right: 20px;
 }
 #saveupdate_btn{
   width: 45%;
@@ -1278,12 +1278,12 @@ button.dropdown-item {
 }
 .dashboard{
  display: none;
- position: absolute;
- top: 0;
- left: 0;
- width: 100vw;
- height: 100vh;
+ width: 90vw;
+ margin: auto;
+ justify-content: space-between;
  flex-wrap: wrap;
+ box-sizing: border-box;
+ padding: 0 20px;
 }
 .dashboard.flex{
   display: flex;
@@ -1293,7 +1293,7 @@ button.dropdown-item {
   width:6vw;
   position: fixed;
   bottom: 50px;
-  right: 200px;
+  right: 50px;
   z-index: 9999;
   font-size: 15px;
 }
@@ -1332,3 +1332,49 @@ button.dropdown-item {
   margin-top: 20px;
   margin-left: 80px;
 }
+
+.card_container{
+  width: 400px;
+  height: 20vh;
+  box-shadow: 0 0 3px black;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.card_title{
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card_title h2{
+ margin-bottom: 20px;
+ font-size: 30px;
+}
+.card_information{
+  font-size: 20px;
+}
+.card_logo{
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+  #filter{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(128, 128, 128, 0.24);
+    z-index: 99;
+    display: none;
+  }
+  

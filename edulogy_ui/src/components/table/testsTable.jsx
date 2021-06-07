@@ -34,10 +34,13 @@ function TableTests() {
             }
         })
     }
+
+  const Title = (<h2 style={{color:"#00949e"}}> Tests </h2>)
+  
   return (
       <div class="table_container">
           <MaterialTable
-          title = "Tests"
+          title = {Title}
           data = {data}
           isLoading ={isLoading}
           columns = {[

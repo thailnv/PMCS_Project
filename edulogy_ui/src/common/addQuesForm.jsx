@@ -1,6 +1,7 @@
+import Input from './input'
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { constants } from '../../constants';
+
 
 
 
@@ -34,8 +35,8 @@ function AddQuesForm(props) {
 
   function validate() {
     let err = {};
-    if (!content)
-      err.content = "vui long nhap noi dung cau hoi !";
+    if (!content && inputs.part !== '1')
+      err.content = "please enter content of question !";
     if (!answerA && !answerB &&!answerC)
       err.answer = "Vui lòng nhập câu trả lời !"
     return err;
@@ -81,31 +82,37 @@ function AddQuesForm(props) {
 
   return (
       <div class = "addques_container">
-          <h2>Add Question Form</h2>
-          <form action="" class = "editques_frm">
-              <input
-              class="text_input content"
+          <h2 style={{marginTop:"20px"}}>Add Question</h2>
+          <form onSubmit={handleSubmit} action="" class = "editques_frm">
+              <Input
+              classname="text_input content"
               type="text" 
               name = "content"
               value={content}
-              onChange={handleInputChange}
+              placeholder = "content"
+              handleChange={handleInputChange}
+              error = {errors.content}
               />
-              <div>
-              <label style={{fontWeight:"bold"}} for="selectTrueQues">TrueQuestion</label>
-              <select onChange = {handleSelectChange} name ="selectTrueQues"  style={{width:"20%",height:"3vh",color:"blue",marginRight:"30px"}}>
-                <option value="0">Answer A</option>
-                <option value="1">Answer B</option>
-                <option value="2">Answer C</option>
-                <option value="3">Answer D</option>
-              </select>
-              <label style={{fontWeight:"bold"}} for="">Part number</label>
-              <select onChange = {handleInputChange} name ="part"  style={{width:"20%",height:"3vh",color:"blue"}}  id="">
-                  <option value="1">part 1</option>
-                  <option value="2">part 2</option>
-                  <option value="3">part 3</option>
-                  <option value="4">part 4</option>
-                  <option value="5">part 5</option>
-              </select>
+              <div style={{display:"flex",width:"100%",justifyContent:"space-around"}}>
+                <div style={{display:"flex",flexDirection:"column"}}>
+                  <label style={{fontWeight:"bold"}} for="selectTrueQues">TrueQuestion</label>
+                  <select onChange = {handleSelectChange} name ="selectTrueQues"  style={{width:"100%",height:"3vh",color:"blue",marginRight:"30px"}}>
+                    <option value="0">Answer A</option>
+                    <option value="1">Answer B</option>
+                    <option value="2">Answer C</option>
+                    <option value="3">Answer D</option>
+                  </select>
+                </div>
+                <div style={{display:"flex",flexDirection:"column"}}>
+                  <label style={{fontWeight:"bold"}} for="">Part number</label>
+                  <select onChange = {handleInputChange} name ="part"  style={{width:"100%",height:"3vh",color:"blue"}}  id="">
+                      <option value="1">part 1</option>
+                      <option value="2">part 2</option>
+                      <option value="3">part 3</option>
+                      <option value="4">part 4</option>
+                      <option value="5">part 5</option>
+                  </select>
+                </div>
               </div>
                 <label class="choosefile_btn">
                   {Imgurl} <input type="file" name="Imgurl" style={{display: "none",}} onChange = {handleFileChange} />
@@ -113,40 +120,46 @@ function AddQuesForm(props) {
                 <label class="choosefile_btn">
                   {Scripturl} <input type="file" name = "Scripturl" style={{display: "none",}} onChange = {handleFileChange} />
                 </label>
-              <input
+              <Input
               id ="0"
-              class="text_input"
+              classname="text_input"
               type="text" 
               name = "answer"
               value={answerA}
-              onChange={handleInputChange}
+              handleChange={handleInputChange}
+              error = {errors.answer}
+              placeholder="answer A"
               />
-              <input 
+              <Input 
               id ="1"
-              class="text_input"
+              classname="text_input"
               type="text" 
               name = "answer"
               value={answerB}
-              onChange={handleInputChange}
+              handleChange={handleInputChange}
+              error = {errors.answer}
+              placeholder = "answer B"
               />
-              <input
+              <Input
               id ="2"
-              class="text_input"
+              classname="text_input"
               type="text" 
               name = "answer"
               value={answerC}
-              onChange={handleInputChange}
+              handleChange={handleInputChange}
+              placeholder = "answer C"
               />
-              <input 
+              <Input 
               id ="3"
-              class="text_input"
+              classname="text_input"
               type="text" 
               name = "answer"
               value={answerD}
-              onChange={handleInputChange}
+              handleChange={handleInputChange}
+              placeholder = "answer D"
               />
               <div style={{display:"flex",justifyContent:"space-between",width:"100%",marginBottom:"30px"}}>
-                <button id="saveupdate_btn">Save</button>
+                <button onClick={handleSubmit} id="saveupdate_btn">Save</button>
                 <button id="cancelupdate_btn">Cancel</button>
               </div>
           </form>

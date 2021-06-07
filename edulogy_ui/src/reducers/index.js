@@ -1,13 +1,4 @@
 import { combineReducers } from 'redux';
-
-<<<<<<< Updated upstream
-import { authentication } from './authReducers';
-import { application } from './appReducers'
-
-const rootReducer = combineReducers({
-  authentication,
-  application
-=======
 import { authentication } from "./authReducers";
 import { application } from "./appReducers";
 import { test } from "./testReducers";
@@ -19,7 +10,6 @@ const rootReducer = combineReducers({
   test,
   question,
   dashboard
->>>>>>> Stashed changes
 });
 
 export default rootReducer;

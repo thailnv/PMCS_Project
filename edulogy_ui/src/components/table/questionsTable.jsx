@@ -4,7 +4,8 @@ import { testActions } from '../../actions/testActions';
 import MaterialTable from "material-table";
 import { questionActions } from '../../actions/questionActions';
 import Popup from '../popup';
-import EditQuesForm from '../form/editQuesForm';
+import EditQuesForm from '../../common/editQuesForm';
+import { openFilter } from '../../helper';
 function TableQuestions() {
 
   const [questions, setQuestions] = useState();
@@ -40,10 +41,13 @@ function TableQuestions() {
     function editQues(ele){
         setQuestion(questions[ele.target.id])
         setIsEdit(true);
+        openFilter();
     }
-    const Title = (<h2 style={{color:"#00949e"}}> Questions </h2>)
+  const Title = (<h2 style={{color:"#00949e"}}> Questions </h2>)
+
   return (
       <div class="table_container">
+        <div id="filter"></div>
           <MaterialTable
           title = {Title}
           data = {data}

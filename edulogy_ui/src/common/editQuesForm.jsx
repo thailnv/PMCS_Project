@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { constants } from '../../constants';
+import { closeFilter } from '../helper';
+
 
 function EditQuesForm(props) {
     let IstrueAns ;
@@ -46,7 +47,8 @@ function EditQuesForm(props) {
     return err;
   }
   function closeForm(){
-    props.SetForm(false)
+    props.SetForm(false);
+    closeFilter();
   }
   function handleSelectChange(e){
     const{value} = e.target;
@@ -97,23 +99,27 @@ function EditQuesForm(props) {
               onChange={handleInputChange}
               />
               <div>
-              <label style={{fontWeight:"bold"}} for="selectTrueQues">TrueQuestion</label>
-              <select onChange = {handleSelectChange} name ="selectTrueQues" defaultValue = {IstrueAns} style={{width:"20%",height:"3vh",color:"blue",marginRight:"30px"}}>
-                 {
-                   inputs.answers.map((answer,index)=>{
-                     return(
-                     <option value={index}>answer {AnsName[index]}</option>)
-                   })
-                 }
-              </select>
-              <label style={{fontWeight:"bold"}} for="">Part number</label>
-              <select onChange = {handleInputChange} name ="part" defaultValue = {inputs.part} style={{width:"20%",height:"3vh",color:"blue"}}  id="">
-                  <option value="1">part 1</option>
-                  <option value="2">part 2</option>
-                  <option value="3">part 3</option>
-                  <option value="4">part 4</option>
-                  <option value="5">part 5</option>
-              </select>
+                <div style={{display:"flex",flexDirection:"column"}}>
+                  <label style={{fontWeight:"bold"}} for="selectTrueQues">TrueQuestion</label>
+                  <select onChange = {handleSelectChange} name ="selectTrueQues" defaultValue = {IstrueAns} style={{width:"100%",height:"3vh",color:"blue",marginRight:"30px"}}>
+                    {
+                      inputs.answers.map((answer,index)=>{
+                        return(
+                        <option value={index}>answer {AnsName[index]}</option>)
+                      })
+                    }
+                  </select>
+                </div>
+                <div style={{display:"flex",flexDirection:"column"}}>
+                  <label style={{fontWeight:"bold"}} for="">Part number</label>
+                  <select onChange = {handleInputChange} name ="part" defaultValue = {inputs.part} style={{width:"100%",height:"3vh",color:"blue"}}  id="">
+                      <option value="1">part 1</option>
+                      <option value="2">part 2</option>
+                      <option value="3">part 3</option>
+                      <option value="4">part 4</option>
+                      <option value="5">part 5</option>
+                  </select>
+                </div>
               </div>
                 <label class="choosefile_btn">
                   {Imgurl} <input type="file" name="Imgurl" style={{display: "none",}} onChange = {handleFileChange} />
