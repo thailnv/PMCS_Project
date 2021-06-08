@@ -53,9 +53,9 @@ function TableQuestions() {
           data = {data}
           isLoading ={isLoading}
           columns = {[
-              {title:"Index",field:"index",cellStyle: rowData => ({ color:"#333",fontFamily:"'Poppins', sans-serif" }),headerStyle:{zIndex:"3"}},
-              {title:"PartNumber",field:"part",cellStyle: rowData => ({ color:"#00949e",fontFamily:"'Poppins', sans-serif",fontWeight:"400" }),headerStyle:{zIndex:"3"}},
-              {title:"Action",field:"action",headerStyle:{zIndex:"3"}},
+              {title:"Index",field:"index",cellStyle: rowData => ({ color:"#333",fontFamily:"'Poppins', sans-serif" }),headerStyle:{zIndex:"1"}},
+              {title:"PartNumber",field:"part",cellStyle: rowData => ({ color:"#00949e",fontFamily:"'Poppins', sans-serif",fontWeight:"400" }),headerStyle:{zIndex:"1"}},
+              {title:"Action",field:"action",headerStyle:{zIndex:"1"}},
             ]}
             options={{
                 headerStyle: {

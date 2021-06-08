@@ -44,11 +44,11 @@ function TableTests() {
           data = {data}
           isLoading ={isLoading}
           columns = {[
-              {title:"Name",field:"name",cellStyle: rowData => ({ color:"#333",fontFamily:"'Poppins', sans-serif" }),headerStyle:{zIndex:"3"}},
-              {title:"Level",field:"level",cellStyle: rowData => ({ color:"orange",fontFamily:"'Poppins', sans-serif" }),headerStyle:{zIndex:"3"}},
-              {title:"Time",field:"time",cellStyle: rowData => ({ color:"#56a4fb",fontFamily:"'Poppins', sans-serif" }),headerStyle:{zIndex:"3"}},
-              {title:"Type",field:"type",cellStyle: rowData => ({ color:"#333",fontFamily:"'Poppins', sans-serif" }),headerStyle:{zIndex:"3"}},
-              {title: "", field:"action",cellStyle: rowData => ({ color:"#333",fontFamily:"'Poppins', sans-serif" }),headerStyle:{zIndex:"3"}}
+              {title:"Name",field:"name",cellStyle: rowData => ({ color:"#333",fontFamily:"'Poppins', sans-serif" }),headerStyle:{zIndex:"1"}},
+              {title:"Level",field:"level",cellStyle: rowData => ({ color:"orange",fontFamily:"'Poppins', sans-serif" }),headerStyle:{zIndex:"1"}},
+              {title:"Time",field:"time",cellStyle: rowData => ({ color:"#56a4fb",fontFamily:"'Poppins', sans-serif" }),headerStyle:{zIndex:"1"}},
+              {title:"Type",field:"type",cellStyle: rowData => ({ color:"#333",fontFamily:"'Poppins', sans-serif" }),headerStyle:{zIndex:"1"}},
+              {title: "", field:"action",cellStyle: rowData => ({ color:"#333",fontFamily:"'Poppins', sans-serif" }),headerStyle:{zIndex:"1"}}
             ]}
             options={{
                 headerStyle: {
