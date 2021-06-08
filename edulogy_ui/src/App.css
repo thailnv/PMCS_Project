@@ -1175,8 +1175,7 @@ button.dropdown-item {
 .viewtest_btn{
   color: #11993f;
   background-color: #e1fff8;
-  width: 6vw;
-  height: 5vh;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1206,7 +1205,7 @@ button.dropdown-item {
 .addques_container{
   background-color: white;
   box-shadow: 0 0  5px black;
-  width: 400px;
+  width: 25vw;
   height: 70vh;
   display: flex;
   flex-direction: column;
@@ -1216,8 +1215,7 @@ button.dropdown-item {
 .addtest_container{
   background-color: white;
   box-shadow: 0 0  5px black;
-  width: 400px;
-  height: 77vh;
+  width: 25vw;
   display: flex;
   flex-direction: column;
   bottom: 30px;
@@ -1252,17 +1250,17 @@ button.dropdown-item {
   right: 20px;
 }
 #saveupdate_btn{
-  width: 45%;
-  height:5vh;
-  background-color: #00949e;
+  background-color: #5ec198;
   color: white;
-
+  width: 48%;
+  height: 5vh;
 }
 #cancelupdate_btn{
-  width: 45%;
-  height:5vh;
-  background-color: #00949e;
+
+  background-color: #5ec198;
   color: white;
+  width: 48%;
+  height: 5vh;
 }
 .choosefile_btn{
   cursor: pointer;
@@ -1270,8 +1268,8 @@ button.dropdown-item {
   height: 30px;
   margin-right: 20px;
   margin-bottom: 20px;
-  color: #00949e;
-  border: 2px solid #00949e;
+  color: #5ec198;
+  border: 2px solid #5ec198;
   padding: 5px 10px;
   border-radius: 5px;
   box-sizing: border-box;
@@ -1284,6 +1282,8 @@ button.dropdown-item {
  flex-wrap: wrap;
  box-sizing: border-box;
  padding: 0 20px;
+ margin-top: 50px;
+ margin-bottom: 50px;
 }
 .dashboard.flex{
   display: flex;
@@ -1310,7 +1310,7 @@ button.dropdown-item {
   height: 4vh;
   width: 100px;
   padding: 5px;
-  background: #00949e;
+  background: #5ec198;
   color: white;
   margin-top: 10px;
   display: flex;
@@ -1328,13 +1328,13 @@ button.dropdown-item {
   width: 30px;
   height: 20px;
   font-size: 20px;
-  color: #00949e;
+  color: #5ec198;
   margin-top: 20px;
   margin-left: 80px;
 }
 
 .card_container{
-  width: 400px;
+  width: 25vw;
   height: 20vh;
   box-shadow: 0 0 3px black;
   padding-left: 10px;
@@ -1377,4 +1377,71 @@ button.dropdown-item {
     z-index: 99;
     display: none;
   }
+  @media only screen and (max-width: 600px) {
+      .dashboard{
+        width: 100vw;
+      }
+      .table_container{
+        width: 90vw;
+        margin-top: 30px;
+      }
+      .addtest_container,.addques_container{
+        margin-top: 30px;
+        width: 90vw;
+      }
+      .card_container{
+        width: 90vw;
+        margin: auto;
+        margin-top: 30px;
+        height: 20vh;
+      }
+  }
   
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 601px) and (max-width: 768px) {
+    .dashboard{
+      width: 100vw;
+    }
+    .table_container{
+      width: 90vw;
+      margin-top: 30px;
+    }
+    .addtest_container,.addques_container{
+      margin-top: 30px;
+      width: 90vw;
+    }
+    .addtest_container form{
+      width: 60%;
+    }.addques_container form{
+      width: 60%;
+    }
+    .card_container{
+      width: 90vw;
+      margin-top: 30px;
+      height: 20vh;
+    }
+}
+  
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 769px) and (max-width: 991px) {
+    .table_container{
+      width: 65%;
+    }
+    .addtest_container,.addques_container{
+      width: 30%;
+      height: 50vh;
+    }
+    .addtest_container form{
+      width: 90%;
+      height: 40vh;
+      font-size: 12px;
+    }
+    .addques_container form{
+      width: 90%;
+      height: 40vh;
+      font-size: 12px;
+    }
+    .card_container{
+      width: 25vw;
+    }
+  }

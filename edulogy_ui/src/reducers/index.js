@@ -9,7 +9,7 @@ const rootReducer = combineReducers({
   application,
   test,
   question,
-  dashboard
+  dashboard,
 });
 
 export default rootReducer;

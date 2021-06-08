@@ -9,6 +9,9 @@ import CardInfor from '../../common/infoCard';
 import { constants } from '../../constants';
 import { testActions } from '../../actions/testActions';
 import { questionActions } from '../../actions/questionActions';
+import Nav from '../../components/nav'
+import Popup from '../../components/popup';
+import Footer from '../../components/footer'
 
 function AdminPage() {
   const cardTestLogo = <i class="far fa-sticky-note"></i>
@@ -38,7 +41,7 @@ function AdminPage() {
       setNumberoFTests(tests.length);
       setNumberOfQuestions(questions.length);
     }
-  },[tests,testStatus, dispatch])
+  },[tests,testStatus])
 
   const dashboardType = useSelector(state=>state.dashboard.dashboardType)
 
@@ -64,6 +67,8 @@ function AdminPage() {
 
   return (
     <React.Fragment>
+      <Nav/>
+      <Popup/>
      <div className={className}>
       <CardInfor Infor = {!IsLoading? numberOfTests:Loading} Logo = {cardTestLogo} Title = "Tests" Color = "orange"/>
       <CardInfor Infor = {!IsLoading?numberOfQuestions:Loading} Logo = {cardQuestionLogo} Title = "Questions" Color = "green"/>
@@ -71,6 +76,7 @@ function AdminPage() {
       {currentDashboard[dashboardType]}
       <DashboardControl/>
     </div>
+    <Footer/>
     </React.Fragment >
   )
 }

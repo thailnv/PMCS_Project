@@ -1,6 +1,7 @@
 import Input from './input'
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { imgService } from '../services/uploadServices';
 
 
 
@@ -24,9 +25,9 @@ function AddQuesForm(props) {
   const answerC = inputs.answers[2].content;
   const answerD = inputs.answers[3].content;
 
-  const [fileurls,setFileurls] = useState({Imgurl:'Choose img',Scripturl:'Chooes file script'})
+  const [fileurls,setFileurls] = useState({url:'Choose img',script:'Chooes file script'})
 
-  const {Imgurl,Scripturl} = fileurls;
+  const {url,script} = fileurls;
 
   const [errors, setErrors] = useState({});
 
@@ -54,9 +55,19 @@ function AddQuesForm(props) {
   }
   
   function handleFileChange(e){
-    const {name, value} = e.target;
-    setFileurls(fileurls=>({...fileurls,[name]:value}))
-   }
+    const {name,value, files} = e.target;
+    if(name === 'url')
+       {
+        value.replace('C:\\fakepath\\', '')
+         let url;
+         imgService.uploadImage(files[0])
+         .then((res)=>{
+           if(res.data)
+            setFileurls(fileUrls=>({...fileUrls,url:res.data.url}))
+         })
+        }
+  }
+
 
   function handleInputChange(e) {
     const { name, value, id } = e.target;
@@ -82,8 +93,9 @@ function AddQuesForm(props) {
 
   return (
       <div class = "addques_container">
-          <h2 style={{marginTop:"20px"}}>Add Question</h2>
+          <h2 style={{marginTop:"20px",color:"#5ec198"}}>Add Question</h2>
           <form onSubmit={handleSubmit} action="" class = "editques_frm">
+              {inputs.part != 1 &&
               <Input
               classname="text_input content"
               type="text" 
@@ -92,7 +104,7 @@ function AddQuesForm(props) {
               placeholder = "content"
               handleChange={handleInputChange}
               error = {errors.content}
-              />
+              />}
               <div style={{display:"flex",width:"100%",justifyContent:"space-around"}}>
                 <div style={{display:"flex",flexDirection:"column"}}>
                   <label style={{fontWeight:"bold"}} for="selectTrueQues">TrueQuestion</label>
@@ -100,26 +112,26 @@ function AddQuesForm(props) {
                     <option value="0">Answer A</option>
                     <option value="1">Answer B</option>
                     <option value="2">Answer C</option>
-                    <option value="3">Answer D</option>
+                    {inputs.part != 2 &&<option value="3">Answer D</option>}
                   </select>
                 </div>
                 <div style={{display:"flex",flexDirection:"column"}}>
                   <label style={{fontWeight:"bold"}} for="">Part number</label>
                   <select onChange = {handleInputChange} name ="part"  style={{width:"100%",height:"3vh",color:"blue"}}  id="">
-                      <option value="1">part 1</option>
-                      <option value="2">part 2</option>
-                      <option value="3">part 3</option>
-                      <option value="4">part 4</option>
-                      <option value="5">part 5</option>
+                      <option value= {1} >part 1</option>
+                      <option value= {2} >part 2</option>
+                      <option value= {3} >part 3</option>
+                      <option value= {4} >part 4</option>
+                      <option value= {5} >part 5</option>
                   </select>
                 </div>
               </div>
                 <label class="choosefile_btn">
-                  {Imgurl} <input type="file" name="Imgurl" style={{display: "none",}} onChange = {handleFileChange} />
+                  {url} <input type="file" name="url" style={{display: "none",}} onChange = {handleFileChange} />
                 </label>
-                <label class="choosefile_btn">
-                  {Scripturl} <input type="file" name = "Scripturl" style={{display: "none",}} onChange = {handleFileChange} />
-                </label>
+               {inputs.part != 5 && <label class="choosefile_btn">
+                  {script} <input type="file" name = "script" style={{display: "none",}} onChange = {handleFileChange} />
+                </label>}
               <Input
               id ="0"
               classname="text_input"
@@ -149,6 +161,7 @@ function AddQuesForm(props) {
               handleChange={handleInputChange}
               placeholder = "answer C"
               />
+              {inputs.part != 2 &&
               <Input 
               id ="3"
               classname="text_input"
@@ -157,7 +170,7 @@ function AddQuesForm(props) {
               value={answerD}
               handleChange={handleInputChange}
               placeholder = "answer D"
-              />
+              />}
               <div style={{display:"flex",justifyContent:"space-between",width:"100%",marginBottom:"30px"}}>
                 <button onClick={handleSubmit} id="saveupdate_btn">Save</button>
                 <button id="cancelupdate_btn">Cancel</button>

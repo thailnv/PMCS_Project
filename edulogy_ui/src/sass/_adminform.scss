@@ -1,86 +1,85 @@
 .editques_container{
-    background-color: white;
-    box-shadow: 0 0  3px black;
-    position: fixed;
-    top: 20vh;
-    left: calc(50vw - 175px);
-    width: 350px;
-    height: 60vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 99;
-  }
-  .addques_container{
-    background-color: white;
-    box-shadow: 0 0  5px black;
-    width: 400px;
-    height: 70vh;
-    display: flex;
-    flex-direction: column;
-    bottom: 30px;
-    align-items: center;
-  }
-  .addtest_container{
-    background-color: white;
-    box-shadow: 0 0  5px black;
-    width: 400px;
-    height: 77vh;
-    display: flex;
-    flex-direction: column;
-    bottom: 30px;
-    align-items: center;
-  }
-  .editques_frm{
-    width: 80%;
-    height: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin-top: 50px;
-  }
-  .text_input{
-    height: 5vh;
-    border: 2px solid gray;
-    padding-left: 10px;
-    margin-bottom: 5px;
-  }
-  .text_input.content{
-    font-weight: 500;
-    font-size: 20px;
-    height: 7vh;
-  }
-  #closeEditfrm_btn{
-    font-size: 30px;
-    width: 20px;
-    height: 30px;
-    color: #00949e;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-  }
-  #saveupdate_btn{
-    width: 45%;
-    height:5vh;
-    background-color: #00949e;
-    color: white;
-  
-  }
-  #cancelupdate_btn{
-    width: 45%;
-    height:5vh;
-    background-color: #00949e;
-    color: white;
-  }
-  .choosefile_btn{
-    cursor: pointer;
-    width:auto;
-    height: 30px;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    color: #00949e;
-    border: 2px solid #00949e;
-    padding: 5px 10px;
-    border-radius: 5px;
-    box-sizing: border-box;
-  }
+  background-color: white;
+  box-shadow: 0 0  3px black;
+  position: fixed;
+  top: 20vh;
+  left: calc(50vw - 175px);
+  width: 350px;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 99;
+}
+.addques_container{
+  background-color: white;
+  box-shadow: 0 0  5px black;
+  width: 25vw;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  bottom: 30px;
+  align-items: center;
+}
+.addtest_container{
+  background-color: white;
+  box-shadow: 0 0  5px black;
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  bottom: 30px;
+  align-items: center;
+}
+.editques_frm{
+  width: 80%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+.text_input{
+  height: 5vh;
+  border: 2px solid gray;
+  padding-left: 10px;
+  margin-bottom: 5px;
+}
+.text_input.content{
+  font-weight: 500;
+  font-size: 20px;
+  height: 7vh;
+}
+#closeEditfrm_btn{
+  font-size: 30px;
+  width: 20px;
+  height: 30px;
+  color: #00949e;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+#saveupdate_btn{
+  background-color: #5ec198;
+  color: white;
+  width: 48%;
+  height: 5vh;
+}
+#cancelupdate_btn{
+
+  background-color: #5ec198;
+  color: white;
+  width: 48%;
+  height: 5vh;
+}
+.choosefile_btn{
+  cursor: pointer;
+  width:auto;
+  height: 30px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  color: #5ec198;
+  border: 2px solid #5ec198;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-sizing: border-box;
+}

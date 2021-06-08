@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Input from '../common/input';
-
-
+import { constants } from '../constants';
+import { imgService } from '../services/uploadServices';
 
 
 function AddTestForm() {
@@ -17,9 +17,9 @@ function AddTestForm() {
    
   const {name,level,time, type} = inputs;
 
-  const [fileUrls, setFileUrls] = useState({ImgUrl:"Choose file img",ScriptUrl:"Choose file script"})
+  const [fileUrls, setFileUrls] = useState({url:'Choose file img',script:"Choose file script"})
 
-  const {ImgUrl, ScriptUrl } = fileUrls;
+  const {url, script } = fileUrls;
 
   const [errors, setErrors] = useState({});
 
@@ -41,12 +41,20 @@ function AddTestForm() {
 
   function handleInputChange(e) {
     const { name, value } = e.target;
-    setInputs(inputs => ({ ...inputs, [name]: value }));
+    setInputs(inputs=>({...inputs,[name]:value}));
   }
- 
   function handleFileChange(e){
-    const {name,value} = e.target;
-    setFileUrls(fileUrls=>({...fileUrls,[name]:value}))
+    const {name,value, files} = e.target;
+    if(name === 'url')
+       {
+        value.replace('C:\\fakepath\\', '')
+         let url;
+         imgService.uploadImage(files[0])
+         .then((res)=>{
+           if(res.data)
+            setFileUrls(fileUrls=>({...fileUrls,url:res.data.url}))
+         })
+        }
   }
 
   function handleSubmit(e) {
@@ -60,7 +68,7 @@ function AddTestForm() {
   
   return (
       <div class = "addtest_container">
-          <h2 style={{paddingTop:"30px"}}>Add Test</h2>
+          <h2 style={{paddingTop:"30px",color:"#5ec198"}}>Add Test</h2>
           <form onSubmit={handleSubmit} class = "editques_frm">
               <Input
               type="text" 
@@ -80,10 +88,10 @@ function AddTestForm() {
               </select>
               </div>
                 <label class="choosefile_btn">
-                  {ImgUrl} <input type="file" name = "ImgUrl"  style={{display: "none",}} onChange ={handleFileChange} />
+                  {url} <input type="file" name = "url"  style={{display: "none",}} onChange ={handleFileChange} />
                 </label>
                 <label class="choosefile_btn">
-                  {ScriptUrl} <input type="file" name = "ScriptUrl" style={{display: "none",}} onChange ={handleFileChange} />
+                  {script} <input type="file" name = "script" style={{display: "none",}} onChange ={handleFileChange} />
                 </label>
               <Input
               class="text_input"

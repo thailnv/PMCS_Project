@@ -29,13 +29,13 @@ function TableTests() {
                 time:test.time,
                 type:test.type,
                 action:(
-                    <button id="viewtest_btn">view <i class="far fa-eye" style={{marginLeft:"5px"}}></i></button>
+                    <button class="viewtest_btn">view <i class="far fa-eye" style={{marginLeft:"5px"}}></i></button>
                 )
             }
         })
     }
 
-  const Title = (<h2 style={{color:"#00949e"}}> Tests </h2>)
+  const Title = (<h2 style={{color:"#5ec198"}}> Tests </h2>)
   
   return (
       <div class="table_container">
@@ -44,11 +44,11 @@ function TableTests() {
           data = {data}
           isLoading ={isLoading}
           columns = {[
-              {title:"Name",field:"name",cellStyle: rowData => ({ color:"#333",fontFamily:"'Poppins', sans-serif" })},
-              {title:"Level",field:"level",cellStyle: rowData => ({ color:"orange",fontFamily:"'Poppins', sans-serif" })},
-              {title:"Time",field:"time",cellStyle: rowData => ({ color:"#56a4fb",fontFamily:"'Poppins', sans-serif" })},
-              {title:"Type",field:"type",cellStyle: rowData => ({ color:"#333",fontFamily:"'Poppins', sans-serif" })},
-              {title: "", field:"action",cellStyle: rowData => ({ color:"#333",fontFamily:"'Poppins', sans-serif" })}
+              {title:"Name",field:"name",cellStyle: rowData => ({ color:"#333",fontFamily:"'Poppins', sans-serif" }),headerStyle:{zIndex:"3"}},
+              {title:"Level",field:"level",cellStyle: rowData => ({ color:"orange",fontFamily:"'Poppins', sans-serif" }),headerStyle:{zIndex:"3"}},
+              {title:"Time",field:"time",cellStyle: rowData => ({ color:"#56a4fb",fontFamily:"'Poppins', sans-serif" }),headerStyle:{zIndex:"3"}},
+              {title:"Type",field:"type",cellStyle: rowData => ({ color:"#333",fontFamily:"'Poppins', sans-serif" }),headerStyle:{zIndex:"3"}},
+              {title: "", field:"action",cellStyle: rowData => ({ color:"#333",fontFamily:"'Poppins', sans-serif" }),headerStyle:{zIndex:"3"}}
             ]}
             options={{
                 headerStyle: {

@@ -1,3 +1,8 @@
+
+
+
+
+
 function showScore(s) {
   document.getElementById("modal").classList.add("show_flex");
   document.getElementById("scorePopup").classList.add("show_flex");
@@ -39,6 +44,5 @@ function openFilter(){
 function closeFilter(){
   document.getElementById('filter').style.display = 'none';
 }
-
 
 export { showScore, showSidebar, closeSidebar, toggleSubitem, toogleDashboardControl, openFilter, closeFilter };
