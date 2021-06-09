@@ -1,5 +1,5 @@
 .all-discussions {
-  margin-top: 4em;
+  margin-top: 2em;
 
   .section-wrapper {
     display: flex;
@@ -8,6 +8,7 @@
     margin-right: -4px;
 
     .all-discussions-area {
+      position: relative;
       padding-left: 4px;
       padding-right: 4px;
       flex: 0 0 66.66667%;

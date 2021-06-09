@@ -1,84 +1,190 @@
 Part 1
 Question 1:
+SCRIPT https://drive.google.com/file/d/1yBE0PzghDWelp2HmBEhT-sOTsMfnQZx-/view?usp=sharing
+IMG https://drive.google.com/file/d/1CdppOMvIL6QkJgp-iIxG_ljZXk_YEapc/view?usp=sharing
 TRUE One of the woman is handing some paper to the man. 
 They are all using laptops. 
 The lady is typing on the laptop. 
 The man is presenting in the office.
 Question 2:
+SCRIPT https://drive.google.com/file/d/1MaSyxdUfyiHNzLR_cR-T4ARihTmvVFHx/view?usp=sharing
+IMG https://drive.google.com/file/d/1MEJUZbsDKXAciXU5ppxY7mmXsBGtNf6F/view?usp=sharing
 The waiter is writing in his notepad. 
 The man is driking a cup of coffee. 
 TRUE The woman is ordering some food.
 The waiter is talking to the man.
 Question 3:
+SCRIPT https://drive.google.com/file/d/1sTWvRfSkNXxJ-zgyCO1BgjtBiYMUN3JP/view?usp=sharing
+IMG https://drive.google.com/file/d/1IrVc6h6NoA_KwDPDBO4ewx0KJLNyI6cY/view?usp=sharing
 There are cleaners in the lecture hall. 
 The lecture hall is occupied. 
 There are many people in the lecture hall. 
 TRUE The lecture hall is unoccupied.
 Question 4:
+SCRIPT https://drive.google.com/file/d/16o910Rw4Dc9_faBMr3x3yKTmQbhvUZPB/view?usp=sharing
+IMG https://drive.google.com/file/d/1vNlwgjQqhJPbE5ek76sPo9diIK-UzUWg/view?usp=sharing
 TRUE The man is holding the umbrella with his hand. 
 The woman is strolling along the path. 
 They are boarding the train. 
 The are lined up against the wall.
 Question 5:
+SCRIPT https://drive.google.com/file/d/1V0nWOzx-6zgl0Z99wzgfdW6pa2-ul9Jn/view?usp=sharing
+IMG https://drive.google.com/file/d/1-JrDIZkIBkKth5W-HDcFlyDGRn50gvVK/view?usp=sharing
 The woman is boiling water in the pot.
 The woman is putting pepper into the pot. 
 TRUE The woman is pouring oil into the pan.
 The woman is wearing a chef's hat.
-Question 6:
+Question 6: 
+SCRIPT https://drive.google.com/file/d/1hjMk5yXvjOnkdcTkFo2FgOXzFCb98GoK/view?usp=sharing
+IMG https://drive.google.com/file/d/1C9U32GEn6CoTT-kMx6xQXsZNxICI91eB/view?usp=sharing
 They are signing a contract. 
 TRUE They are shaking hands with each other. 
 They are sitting next to each other. 
 They are sharing business cards with each other.
-Question 7:
 Part 2
-Question 1:
+Question 7:
+SCRIPT https://drive.google.com/file/d/1fd-9CG3eaEOTmCr7c_7H1ULLDYdBFjmQ/view?usp=sharing
+CONTENT How often should I replace the battery in this device?
+It is in place.
+TRUE At least once a year.
+He often goes on business trips.
+Question 8:
+SCRIPT https://drive.google.com/file/d/1TEOkruigLbnX8n2Lj2r5_cPZL4KeNopV/view?usp=sharing
+CONTENT Where do you keep the spare tire?
+TRUE In the trunk of the car.
+For an unexpected emergency.
+Yes, I'm a little bit tired.
+Question 9:
+SCRIPT https://drive.google.com/file/d/1BJfTy3kQgeCzK43dK0RTC3VnRcsBs_Ga/view?usp=sharing
+CONTENT Weren't you going to send an e-mail with corrections to the document?
+Driving directions.
+I'll change the format.
+TRUE It's not finished yet.
+Question 10:
+SCRIPT https://drive.google.com/file/d/1YX7T0mrh-EdQZmY4kUoO7qSElMreu7Qu/view?usp=sharing
 CONTENT Did you sign up for the special workshop on Monday ?
 TRUE Yes , I'm looking forward to it. 
 No , I didn't see the road sign. 
 He rescheduled the appointment.
-Question 2: 
+Question 11: 
+SCRIPT https://drive.google.com/file/d/1qGtT9NYBsKrdgPn7IBOQvc423B5lDutP/view?usp=sharing
 CONTENT Haven't you backed up your files yet?
 She installed the hardware. 
 TRUE Actually, it does so automaticall.
 She'll be back soon.
-Question 3: 
+Question 12: 
+SCRIPT https://drive.google.com/file/d/1w8fi2z6hwDkOLJni6BDv6kAHD-7yCTup/view?usp=sharing
 CONTENT When did I talk to you last?
 No, not right now. 
 TRUE Sometime last winter.
 I'll take you there immediately.
-Question 4: 
+Question 13: 
+SCRIPT https://drive.google.com/file/d/1fp60yybvfr6WQh5McAEdL_h2yqximO8V/view?usp=sharing
 CONTENT The reservation is for 8:00 P.M., isn't it?
 The dinner was a vegetarian meal. 
 He worked all night. 
 TRUE Let me check the schedule.
-Question 5: 
+Question 14: 
+SCRIPT https://drive.google.com/file/d/1S4ZYBdHaJSFHDSDziuHwLuriXPqOWZ3m/view?usp=sharing
 CONTENT We'd appreciate it if you would not park near the entrance
 The park closes before midnight. 
 TRUE I won't do that.
 Between the two buildings.
-Question 6: 
+Question 15:
+SCRIPT https://drive.google.com/file/d/1jnLqhsxB8Ct35FPa9vIPlKXonnl69eBX/view?usp=sharing
 CONTENT Which paint would be best for these walls? 
 Probably three or four cans. 
 Yes, we ordered it already. 
 TRUE Light blue would look nice.
-Question 7: 
+Question 16:
+SCRIPT https://drive.google.com/file/d/1xeUUJfv-Jyd2Nsi0Krvx1pK_eFIiS_f0/view?usp=sharing
 CONTENT I can't find our tickets anywhere.
 TRUE You should check your backpack. 
 She already boarded the airplane. 
 It's more expensive than expected.
-Question 8: 
+Question 17:
+SCRIPT https://drive.google.com/file/d/1y4RoJjBBgmYyqraXJSiY7Ja_t_vzOTsC/view?usp=sharing
 CONTENT Who will be giving the keynote speech at the conference?
 Mr. Franks wrote a reference letter. 
 It was very impressive. 
 TRUE A famous novelist.
-Question 9: 
+Question 18: 
+SCRIPT https://drive.google.com/file/d/1KkpxYEM27tGyXaiJlIO0FhusWNSxEJ9T/view?usp=sharing
 CONTENT How do you get to work each day?
 I have to leave home before 8:00. 
 TRUE I ride my bike or walk.
 The office on the first floor.
-Question 10: 
+Question 19: 
+SCRIPT https://drive.google.com/file/d/1InzXSqh4ChcEnMLTcTpbEPfTSOeN1tGU/view?usp=sharing
 CONTENT Will the contest be held in the courtyard or the auditorium?
 TRUE On a stage would be preferable.
 He will announce the winner. 
 I'm too tired to go.
-Question 11:
+Question 20:
+SCRIPT https://drive.google.com/file/d/17vRNo8IE1gScwkVuWIehhQv7txB6-aqL/view?usp=sharing
+CONTENT Could you move the air conditioner to the other room?
+Yes , I've moved into a new apartment.
+What is the temperature?
+TRUE I'll need help to do that.
+Part 5
+Question 21:
+CONTENT While the director of communications is away, all e-mails and calls will be forwarded to -------assistant.
+she
+TRUE her
+hers
+herself
+Question 22:
+CONTENT Mr. Srour’s flight arrived ------- late for him to attend the reception.
+so
+TRUE too
+ever
+already
+Question 23:
+CONTENT Mr. Wagner will arrange the schedule of events for the------ of the flagship store.
+TRUE opening
+openess
+openly
+opens
+Question 24:
+CONTENT -------the final award had been presented, Ms. Ryu acknowledged the support of the event's sponsors.
+During
+Then
+TRUE After 
+Next
+Question 25:
+CONTENT Chunto Consultancy Service recommended a ------ way of balancing the annual budget.
+successed
+success
+TRUE successful
+successfully
+Question 26:
+CONTENT Press lightly-------the pedal with your left foot to release the vehicle’s parking brake
+to 
+TRUE on 
+of
+in
+Question 27:
+CONTENT Hikers are invited------ the information center for trail maps of Far Valley Park.
+visiting
+TRUE to visit
+visits
+have visited
+Question 28:
+CONTENT Danton Estate Brokerage offers an online educational program to help------ home buyers choose a property.
+unmistakable
+incomplete
+unused
+TRUE inexperienced
+Question 29:
+CONTENT Lolana Dance Troupe stands out because the group knows-------to integrate a variety of dance styles.
+TRUE how
+that 
+since
+about
+Question 30:
+CONTENT The Lafayette Hill Public Library requires that the -------of mobile phones be restricted to the conversation rooms.
+TRUE use
+model
+time 
+call
+Part 6

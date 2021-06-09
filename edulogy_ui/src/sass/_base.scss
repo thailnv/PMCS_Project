@@ -11,6 +11,7 @@
 
 body {
   position: relative;
+  background: whitesmoke;
 }
 
 button {
@@ -50,8 +51,26 @@ input[type="number"] {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
-
+.flex {
+  display: flex;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+}
+.col1-7 {
+  width: calc(100% / 7);
+}
+.square {
+  width: 100%;
+  padding-top: 100%;
+  position: relative;
+}
+.round {
+  border-radius: 100%;
+}
 .input-error {
   border: red solid 1px !important;
 }
@@ -91,4 +110,33 @@ input[type="number"] {
 
 .close-btn:hover {
   background-color: rgba($color: #333, $alpha: 0.2);
+}
+
+.black-color {
+  color: rgb(114, 106, 106) !important;
+}
+
+.show {
+  display: block !important;
+}
+.show_flex {
+  display: flex !important;
+}
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.hide {
+  display: none !important;
+}
+@media only screen and (max-width: 600px) {
+  .mobile-display {
+    display: block !important;
+    margin-left: 0 !important;
+  }
+  .desktop-display {
+    display: none !important;
+  }
 }

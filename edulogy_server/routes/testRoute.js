@@ -1,12 +1,22 @@
-const router = require('express').Router();
+const router = require("express").Router();
+var multer = require("multer");
+var storage = multer.memoryStorage();
+var upload = multer({ storage: storage });
 
-const testController = require('../controllers/testController');
-const validator = require('../middleware/validate');
-const { validate } = require('../models/testModel');
+const testController = require("../controllers/testController");
+const { extractQuestion } = require("../middleware/upload");
+const validator = require("../middleware/validate");
+const auth = require("../middleware/auth");
+const { validate } = require("../models/testModel");
 
-router.get('/', testController.getAll);
-router.get('/:id', testController.getOne);
-router.post('/', validator(validate), testController.addOne);
-router.delete('/:id', testController.deleteOne);
+router.get("/", testController.getAll);
+router.get("/:id", testController.getOne);
+router.post("/", upload.single("file"), extractQuestion, testController.addOne);
+
+router.use(auth.protect);
+router.use(auth.restrictTo("admin"));
+
+router.put("/:id", validator(validate), testController.updateOne);
+router.delete("/:id", testController.deleteOne);
 
 module.exports = router;

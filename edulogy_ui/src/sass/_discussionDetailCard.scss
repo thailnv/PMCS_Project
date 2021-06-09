@@ -1,7 +1,7 @@
 .discussion-detail-card {
   display: flex;
   // align-items: center;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #e2e2e2;
   padding: 12px 0;
 
   .voting-area {
@@ -34,6 +34,7 @@
   .comment-content {
     margin-left: 10px;
     text-align: justify;
+    flex-grow: 1;
   }
 
   .author {
