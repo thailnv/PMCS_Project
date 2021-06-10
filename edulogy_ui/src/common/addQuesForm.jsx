@@ -1,7 +1,7 @@
 import Input from './input'
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { imgService } from '../services/uploadServices';
+import { uploadService } from '../services/uploadServices';
 
 
 
@@ -10,22 +10,24 @@ function AddQuesForm(props) {
 
   const [inputs, setInputs] = useState({
     content: "",
-    part: 1,
+    part: "",
     answers:[
         {content:"", isTrue:false},
         {content:"", isTrue:false},
         {content:"", isTrue:false},
         {content:"", isTrue:false}
     ],
+    url:'',
+    script:'',
   });
    
   const {part,content} = inputs;
-  const answerA = inputs.answers[0].content;
-  const answerB = inputs.answers[1].content;
-  const answerC = inputs.answers[2].content;
-  const answerD = inputs.answers[3].content;
+  const answerA = inputs.answers[0];
+  const answerB = inputs.answers[1];
+  const answerC = inputs.answers[2];
+  const answerD = inputs.answers[3];
 
-  const [fileurls,setFileurls] = useState({url:'Choose img',script:'Chooes file script'})
+  const [fileurls,setFileUrls] = useState({url:'Choose img',script:'Chooes file script'})
 
   const {url,script} = fileurls;
 
@@ -36,10 +38,18 @@ function AddQuesForm(props) {
 
   function validate() {
     let err = {};
+    if(!part)
+      err.part = "please choose part number !";
+    if(!answerA.isTrue&&!answerB.isTrue&&!answerC.isTrue&&!answerD.isTrue)
+      err.istrue = "please choose is true answer !"
     if (!content && inputs.part !== '1')
       err.content = "please enter content of question !";
-    if (!answerA && !answerB &&!answerC)
-      err.answer = "Vui lòng nhập câu trả lời !"
+    if(part == 2)
+      {if (!answerA.content || !answerB.content||!answerC.content)
+        err.answer = "please enter answer !"
+    }
+    else{if (!answerA.content || !answerB.content||!answerC.content || !answerD.content)
+      err.answer = "please enter answer !"}
     return err;
   }
 
@@ -56,18 +66,23 @@ function AddQuesForm(props) {
   
   function handleFileChange(e){
     const {name,value, files} = e.target;
+    value.replace('C:\\fakepath\\', '')
     if(name === 'url')
-       {
-        value.replace('C:\\fakepath\\', '')
-         let url;
-         imgService.uploadImage(files[0])
-         .then((res)=>{
-           if(res.data)
-            setFileurls(fileUrls=>({...fileUrls,url:res.data.url}))
-         })
-        }
-  }
-
+       { 
+         if(files[0].type === 'image/jpeg'){
+           setFileUrls(fileUrls=>({...fileUrls,[name]:value}))
+           setInputs(inputs=>({...inputs,[name]:files[0]}))
+       }
+       else alert('please choose file .jpg/.jpeg');
+       }
+     else{
+       if(files[0].type === 'audio/mpeg'){
+         setFileUrls(fileUrls=>({...fileUrls,[name]:value}))
+         setInputs(inputs=>({...inputs,[name]:files[0]}))
+     }
+     else alert('please choose file .mp3');
+     }
+ }
 
   function handleInputChange(e) {
     const { name, value, id } = e.target;
@@ -86,9 +101,37 @@ function AddQuesForm(props) {
     e.preventDefault();
     let error = validate();
     if (Object.keys(error).length) {
+      if(error.part)
+        alert(error.part);
+      if(error.istrue)
+        alert(error.istrue);
       setErrors(error);
       return;
     }
+    let urlData;
+    let scriptData;
+    uploadService.uploadImage(inputs.url)
+    .then((res)=>{
+      if(res.data)
+            urlData = res.data.url;
+      uploadService.GetAcesstoken(inputs.script)
+      .then((res)=>{
+        if(res)
+          scriptData = `http://drive.google.com/open?id= ${res.id}`;
+        const data = {...inputs,'url':urlData,'script':scriptData};
+        console.log(data);
+        //Submit(data);
+      })
+    })
+
+  }
+
+  function Submit(data){
+    let requestOption = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: data,
+    };
   }
 
   return (
@@ -137,7 +180,7 @@ function AddQuesForm(props) {
               classname="text_input"
               type="text" 
               name = "answer"
-              value={answerA}
+              value={answerA.content}
               handleChange={handleInputChange}
               error = {errors.answer}
               placeholder="answer A"
@@ -147,7 +190,7 @@ function AddQuesForm(props) {
               classname="text_input"
               type="text" 
               name = "answer"
-              value={answerB}
+              value={answerB.content}
               handleChange={handleInputChange}
               error = {errors.answer}
               placeholder = "answer B"
@@ -157,9 +200,10 @@ function AddQuesForm(props) {
               classname="text_input"
               type="text" 
               name = "answer"
-              value={answerC}
+              value={answerC.content}
               handleChange={handleInputChange}
               placeholder = "answer C"
+              error = {errors.answer}
               />
               {inputs.part != 2 &&
               <Input 
@@ -167,9 +211,10 @@ function AddQuesForm(props) {
               classname="text_input"
               type="text" 
               name = "answer"
-              value={answerD}
+              value={answerD.content}
               handleChange={handleInputChange}
               placeholder = "answer D"
+              error = {errors.answer}
               />}
               <div style={{display:"flex",justifyContent:"space-between",width:"100%",marginBottom:"30px"}}>
                 <button onClick={handleSubmit} id="saveupdate_btn">Save</button>
