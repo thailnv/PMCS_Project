@@ -87,7 +87,7 @@ function AddTestForm() {
       uploadService.GetAcesstoken(inputs.script)
       .then((res)=>{
         if(res)
-          scriptData = `http://drive.google.com/open?id= ${res.id}`;
+          scriptData = `http://drive.google.com/open?id=${res.id}`;
         const data = {...inputs,'url':urlData,'script':scriptData};
         console.log(data);
         //Submit(data);

@@ -67,21 +67,24 @@ function AddQuesForm(props) {
   function handleFileChange(e){
     const {name,value, files} = e.target;
     value.replace('C:\\fakepath\\', '')
-    if(name === 'url')
-       { 
-         if(files[0].type === 'image/jpeg'){
-           setFileUrls(fileUrls=>({...fileUrls,[name]:value}))
-           setInputs(inputs=>({...inputs,[name]:files[0]}))
-       }
-       else alert('please choose file .jpg/.jpeg');
-       }
-     else{
-       if(files[0].type === 'audio/mpeg'){
-         setFileUrls(fileUrls=>({...fileUrls,[name]:value}))
-         setInputs(inputs=>({...inputs,[name]:files[0]}))
-     }
-     else alert('please choose file .mp3');
-     }
+    if(files[0])
+    {
+        if(name === 'url')
+        { 
+          if(files[0].type === 'image/jpeg'){
+            setFileUrls(fileUrls=>({...fileUrls,[name]:value}))
+            setInputs(inputs=>({...inputs,[name]:files[0]}))
+        }
+        else alert('please choose file .jpg/.jpeg');
+        }
+      else{
+        if(files[0].type === 'audio/mpeg'){
+          setFileUrls(fileUrls=>({...fileUrls,[name]:value}))
+          setInputs(inputs=>({...inputs,[name]:files[0]}))
+      }
+      else alert('please choose file .mp3');
+      }
+    }
  }
 
   function handleInputChange(e) {
@@ -117,7 +120,7 @@ function AddQuesForm(props) {
       uploadService.GetAcesstoken(inputs.script)
       .then((res)=>{
         if(res)
-          scriptData = `http://drive.google.com/open?id= ${res.id}`;
+          scriptData = `http://drive.google.com/open?id=${res.id}`;
         const data = {...inputs,'url':urlData,'script':scriptData};
         console.log(data);
         //Submit(data);
