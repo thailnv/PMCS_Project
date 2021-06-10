@@ -449,12 +449,15 @@ button.dropdown-item {
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 601px) and (max-width: 768px) {
   .logo {
-    padding-left: 0em;
-    display: none; }
+    padding-left: 0em; }
+    .logo img {
+      width: 100px; }
   .dropdown-container {
     width: 100%; }
+  .nav {
+    height: 3.5em; }
   .nav .dropdown {
-    margin-left: 2em; }
+    margin-left: 1em; }
   #account-btn {
     margin-right: 0em;
     width: 8em; } }
@@ -1020,7 +1023,7 @@ button.dropdown-item {
       font-weight: lighter;
       text-align: center;
       border-radius: 100%;
-      background: #ff6666;
+      background: #00949e;
       color: white;
       display: block; }
 

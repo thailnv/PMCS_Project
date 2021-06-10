@@ -6,7 +6,7 @@ const problemSchema = mongoose.Schema({
   user: { type: mongoose.Types.ObjectId, ref: "user" },
   imgs: [String],
   comments: [{ type: mongoose.Types.ObjectId, ref: "comment" }],
-  like: { type: Number, default: 0 },
+  like: [{ type: mongoose.Types.ObjectId, ref: "user" }],
 });
 
 const validate = (problem) => {
@@ -15,7 +15,7 @@ const validate = (problem) => {
     content: joi.string().required(),
     user: joi.string().required(),
     comments: joi.array(),
-    like: joi.number(),
+    like: joi.array(),
     imgs: joi.array().items(joi.string()),
   });
 

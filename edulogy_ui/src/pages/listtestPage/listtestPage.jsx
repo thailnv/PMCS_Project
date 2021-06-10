@@ -40,12 +40,9 @@ function ListTestPage(props) {
 
 
   useEffect(() => {
+    document.title = "Danh sách đề thi"
     if (status === c.LOADING)
       dispatch(testActions.getTest(query));
-    else {
-      console.log(currentTest);
-    }
-
   })
 
   return (

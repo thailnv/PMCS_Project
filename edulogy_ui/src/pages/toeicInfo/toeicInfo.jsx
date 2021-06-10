@@ -8,6 +8,9 @@ import Popup from "../../components/popup";
 import React, { useState } from "react";
 
 function ToeicInfoPage() {
+
+  document.title = "Thông tin Toeic"
+
   const [customStyle, setCustomStyle] = useState({ location: "block", process: "none", output: "none" });
 
   function handleChangeTab(tab) {

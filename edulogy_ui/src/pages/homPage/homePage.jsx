@@ -26,6 +26,7 @@ function HomePage() {
   }
 
   useEffect(() => {
+    document.title = "Edulogy - Trang chủ"
     if (homeStatus === c.LOADING)
       dispatch(appActions.getHomeInfo());
     else

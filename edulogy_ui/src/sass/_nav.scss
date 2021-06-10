@@ -197,13 +197,18 @@ button.dropdown-item {
 @media only screen and (min-width: 601px) and (max-width: 768px) {
   .logo {
     padding-left: 0em;
-    display: none;
+    img {
+      width: 100px;
+    }
   }
   .dropdown-container {
     width: 100%;
   }
+  .nav {
+    height: 3.5em;
+  }
   .nav .dropdown {
-    margin-left: 2em;
+    margin-left: 1em;
   }
   #account-btn {
     margin-right: 0em;

@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import React from 'react';
-
+import { Link } from "react-router-dom"
 import { showSidebar } from "../helper";
 import { appActions } from '../actions/appActions';
 import { userActions } from '../actions/userActions';
@@ -19,7 +19,7 @@ function Nav(props) {
     dispatch(userActions.logout());
   }
 
-  const buttonTitle = user ? 'Thông tin tài khoản' : 'Đăng nhập';
+  const buttonTitle = user ? 'Đăng xuất' : 'Đăng nhập';
 
   function handleShowSidebar() {
     showSidebar();
@@ -43,7 +43,7 @@ function Nav(props) {
     <React.Fragment>
       <div className="nav" style={navStyle.background}>
         <div className="logo">
-          <a href="/"><img src={navStyle.logo} alt="" /></a>
+          <Link to="/"><img src={navStyle.logo} alt="" /></Link>
         </div>
         <div className="dropdown-container">
           <div className="dropdown">
@@ -56,7 +56,7 @@ function Nav(props) {
             </div>
           </div>
           <div className="dropdown">
-            <a href="/thong-tin" className={"dropdown-btn" + navStyle.btnColor}>Thông tin Toeic</a>
+            <Link to="/thong-tin" className={"dropdown-btn" + navStyle.btnColor}>Thông tin Toeic</Link>
           </div>
           <div className="dropdown">
             <a href="/thao-luan" className={"dropdown-btn" + navStyle.btnColor}>Thảo luận</a>

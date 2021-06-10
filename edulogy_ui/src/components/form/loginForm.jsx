@@ -72,7 +72,7 @@ function LoginForm(props) {
           onClick={handleSubmit}>
           Đăng nhập
         </button>
-        {message && <div className="center-text text-error">Email hoặc mật khẩu không đúng!</div>}
+        {message && <div className="center-text text-error">{message}</div>}
         <div>Chưa có tài khoản? <button onClick={props.onToggle}>Đăng ký ngay</button> </div>
       </div>
     </form>

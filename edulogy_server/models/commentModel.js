@@ -4,7 +4,7 @@ const joi = require("joi");
 const commentSchema = mongoose.Schema({
   content: String,
   user: { type: mongoose.Types.ObjectId, ref: "user" },
-  like: { type: Number, default: 0 },
+  like: [{ type: mongoose.Types.ObjectId, ref: "user" }],
   imgs: [String],
   subComments: [{ type: mongoose.Types.ObjectId, ref: "comment" }],
 });
@@ -12,8 +12,7 @@ const commentSchema = mongoose.Schema({
 const validate = (comment) => {
   const schema = joi.object({
     content: joi.string().required(),
-    user: joi.string().required(),
-    like: joi.number(),
+    like: joi.array(),
     imgs: joi.array().items(joi.string()),
     subComments: joi.array().items(joi.string()),
   });

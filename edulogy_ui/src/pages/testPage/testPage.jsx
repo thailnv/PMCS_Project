@@ -77,6 +77,7 @@ function TestPage(props) {
     if (!test)
       dispatch(testActions.getTestById(props.match.params.id))
     else {
+      document.title = test.name;
       if (!listPart.length) {
         let lpart = [-1, -1, -1, -1, -1, -1, -1, -1];
         for (let i = 0; i < test.questions.length; i++) {
@@ -85,6 +86,7 @@ function TestPage(props) {
           }
         }
         setListPart(lpart);
+        setCurrrentPart(test.questions[0].part)
       }
     }
   }, [test, dispatch, listPart, props.match.params.id]);
