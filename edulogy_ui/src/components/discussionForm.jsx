@@ -4,6 +4,7 @@ import * as Yup from 'yup';
 import TextError from './textError';
 import { IoIosClose } from "react-icons/io";
 import { MdCameraAlt } from "react-icons/md";
+import axios from 'axios';
 
 const initialValues = {
   title: '',
@@ -15,32 +16,68 @@ const validationSchema = Yup.object({
   content: Yup.string().required('Không được bỏ trống nội dung')
 });
 
-const onSubmit = (values) => {
-  console.log(values);
-}
-
-function DiscussionForm() {
+function DiscussionForm({ refetch }) {
   const [selectedImages, setSelectedImages] = useState([]);
+
+  const getImagesUrl = async () => {
+    let imagesUrl = [];
+
+    for (const image of selectedImages) {
+      var form = new FormData();
+      form.append('key', '92375a8cb3c4edce26332a38805e6251');
+      form.append('image', image);
+
+      const response = await axios.post('https://api.imgbb.com/1/upload', form);
+      imagesUrl.push(response.data.data.image.url);
+    }
+
+    return imagesUrl;
+  }
+
+  const onSubmit = async (values, { resetForm }) => {
+    // console.log(values);
+    const images = await getImagesUrl();
+
+    const config = {
+      headers: {
+        Authorization: JSON.parse(localStorage.getItem('token'))
+      }
+    }
+
+    const data = {
+      title: values.title,
+      content: values.content,
+      imgs: images
+    }
+
+    axios.post('https://fathomless-castle-76283.herokuapp.com/api/problems', data, config)
+      .then(response => {
+        console.log(response.data);
+        resetForm();
+        setSelectedImages([]);
+        refetch();
+      })
+      .catch(error => {
+        console.log(error);
+      })
+  }
 
   const handleImagesChoose = (e) => {
     if (e.target.files) {
-      // console.log(e.target.files[0]);
-      const fileArray = Array.from(e.target.files).map(file => ({
-        name: file.name,
-        url: URL.createObjectURL(file)
-      }));
-
+      const fileArray = Array.from(e.target.files);
       const expectedImages = [...selectedImages].concat(fileArray);
-
       setSelectedImages(expectedImages);
-
-      Array.from(e.target.files).map(file => URL.revokeObjectURL(file));
     }
   }
 
   const handleRemoveImageClick = (image) => {
     const expectedImages = selectedImages.filter(img => img.url !== image.url);
     setSelectedImages(expectedImages);
+  }
+
+  const handleCancelClick = (resetForm) => {
+    resetForm();
+    setSelectedImages([]);
   }
 
   return (
@@ -79,7 +116,7 @@ function DiscussionForm() {
               </div>
 
               <div className="btn-group">
-                <button type="button" className="clear-btn" onClick={() => formik.resetForm()}>Hủy</button>
+                <button type="button" className="clear-btn" onClick={() => handleCancelClick(formik.resetForm)}>Hủy</button>
                 <button type="submit" className="submit-btn">Gửi</button>
               </div>
             </Form>

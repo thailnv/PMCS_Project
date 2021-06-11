@@ -9,6 +9,12 @@ export function application(state = initialState, action) {
         ...state,
         popupType: "login",
       };
+    case constants.LOGIN_SUCCESS:
+    case constants.REGISTER_SUCCESS:
+      return {
+        ...state,
+        popupType: "",
+      };
     case constants.HIDE_POPUP:
       return {
         ...state,

@@ -10,7 +10,7 @@ function AllDiscussions() {
   const [discussions, setDiscussions] = useState([]);
   const [totalPages, setTotalPages] = useState(1);
 
-  const { data, isLoading, isError } = useQuery(['discussions'], async () => {
+  const { data, isLoading, isError, refetch } = useQuery(['discussions'], async () => {
     const response = await axios.get(`https://fathomless-castle-76283.herokuapp.com/api/problems`);
     return response.data;
   });
@@ -26,7 +26,7 @@ function AllDiscussions() {
   return (
     <div className="all-discussions">
       <div className="section-wrapper">
-        <DiscussionForm />
+        <DiscussionForm refetch={refetch} />
 
         <div className="all-discussions-area">
           {isLoading && <BoxLoading color='#00949e' />}
@@ -37,7 +37,7 @@ function AllDiscussions() {
 
             <div className="divider"></div>
 
-            {data.doc.map(discussion => (
+            {[...data.doc].reverse().map(discussion => (
               <DiscussionCard discussion={discussion} />
             ))}
           </div>}

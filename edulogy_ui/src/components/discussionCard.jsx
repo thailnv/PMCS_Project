@@ -5,8 +5,8 @@ function DiscussionCard({ discussion }) {
   return (
     <div className="discussion-card">
       <div className="author-and-replies">
-        <div className="author-avatar">T</div>
-        <div className="author-name">Tuấn</div>
+        <div className="author-avatar">{discussion.user.name.split(" ").pop().charAt(0)}</div>
+        <div className="author-name">{discussion.user.name.split(" ").pop()}</div>
         <div className="reply-quantity">{discussion.comments.length}</div>
         <div className="reply-quantity-suffix">trả lời</div>
       </div>
