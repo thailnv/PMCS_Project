@@ -4,24 +4,21 @@ import DiscussionForm from './discussionForm';
 import { useQuery } from 'react-query';
 import axios from 'axios';
 import { BoxLoading } from 'react-loadingg';
+import ReactPaginate from "react-paginate";
 
 function AllDiscussions() {
-  const [page, setPage] = useState(1);
-  const [discussions, setDiscussions] = useState([]);
+  const [page, setPage] = useState(0);
   const [totalPages, setTotalPages] = useState(1);
 
-  const { data, isLoading, isError, refetch } = useQuery(['discussions'], async () => {
-    const response = await axios.get(`https://fathomless-castle-76283.herokuapp.com/api/problems`);
+  const { data, isLoading, isError, refetch } = useQuery(['discussions', page], async () => {
+    const response = await axios.get(`https://fathomless-castle-76283.herokuapp.com/api/problems?page=${page + 1}&pageSize=3`);
+    setTotalPages(response.data.totalPage);
     return response.data;
   });
 
-  useEffect(() => {
-    if (data) {
-      console.log(data)
-      // setTotalPages(data.totalPages);
-      // setDiscussions(data.products);
-    }
-  }, [data]);
+  const handlePageChange = ({ selected }) => {
+    setPage(selected);
+  }
 
   return (
     <div className="all-discussions">
@@ -30,16 +27,31 @@ function AllDiscussions() {
 
         <div className="all-discussions-area">
           {isLoading && <BoxLoading color='#00949e' />}
-          {isError && <div style={{ lineHeight: '50vh', textAlign: 'center'}}>Something went wrong</div>}
+          {isError && <div style={{ lineHeight: '50vh', textAlign: 'center' }}>Something went wrong</div>}
           {data && <div className="all-discussions-wrapper">
-            <h2 className="title">Tất cả câu hỏi</h2>
-            <div className="discussions-quantity">142 câu hỏi</div>
+            <h2 className="title">Tất cả chủ đề</h2>
+            <div className="discussions-quantity">{data.doc.length} chủ đề</div>
 
             <div className="divider"></div>
 
-            {[...data.doc].reverse().map(discussion => (
+            {data.doc.map(discussion => (
               <DiscussionCard discussion={discussion} />
             ))}
+
+            <ReactPaginate
+              previousLabel={"Prev"}
+              nextLabel={"Next"}
+              pageCount={totalPages}
+              onPageChange={handlePageChange}
+              containerClassName={"pagination"}
+              pageClassName={"paginated-btn"}
+              breakClassName={"paginated-btn"}
+              previousClassName={"prev-btn"}
+              nextClassName={"next-btn"}
+              disabledClassName={"disabled-btn"}
+              activeClassName={"active-btn"}
+              forcePage={page}
+            />
           </div>}
         </div>
       </div>

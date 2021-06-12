@@ -71,7 +71,7 @@ function DiscussionForm({ refetch }) {
   }
 
   const handleRemoveImageClick = (image) => {
-    const expectedImages = selectedImages.filter(img => img.url !== image.url);
+    const expectedImages = selectedImages.filter(img => img !== image);
     setSelectedImages(expectedImages);
   }
 
@@ -91,13 +91,13 @@ function DiscussionForm({ refetch }) {
         {formik => {
           return (
             <Form className="discussion-posting-wrapper">
-              <div className="form-control">
+              <div className="input-control">
                 <label htmlFor="title">Tiêu đề</label>
                 <Field type="text" id="title" name="title" />
                 <ErrorMessage name="title" component={TextError} />
               </div>
 
-              <div className="form-control">
+              <div className="input-control">
                 <label htmlFor="content">Nội dung</label>
                 <Field as="textarea" id="content" name="content" />
                 <ErrorMessage name="content" component={TextError} />
@@ -108,7 +108,7 @@ function DiscussionForm({ refetch }) {
                 <div className="uploaded-images-area">
                   {selectedImages.map((image) => (
                     <span className="uploaded-img">
-                      <span>{image.name}</span>
+                      <span className="img-name">{image.name}</span>
                       <IoIosClose className="remove-img-icon" onClick={() => handleRemoveImageClick(image)} />
                     </span>
                   ))}

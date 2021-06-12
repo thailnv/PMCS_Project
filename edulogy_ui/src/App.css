@@ -814,6 +814,50 @@ button.dropdown-item {
           border-bottom: 1px solid #ccc;
           margin-left: -22px;
           margin-right: -18px; }
+        .all-discussions .section-wrapper .all-discussions-area .all-discussions-wrapper .pagination {
+          display: flex;
+          list-style: none;
+          justify-content: center;
+          margin-top: 20px;
+          margin-bottom: 32px; }
+          .all-discussions .section-wrapper .all-discussions-area .all-discussions-wrapper .pagination a,
+          .all-discussions .section-wrapper .all-discussions-area .all-discussions-wrapper .pagination a:visited,
+          .all-discussions .section-wrapper .all-discussions-area .all-discussions-wrapper .pagination a:active {
+            color: #6c6c6d;
+            outline: none; }
+          .all-discussions .section-wrapper .all-discussions-area .all-discussions-wrapper .pagination .paginated-btn a,
+          .all-discussions .section-wrapper .all-discussions-area .all-discussions-wrapper .pagination .prev-btn a,
+          .all-discussions .section-wrapper .all-discussions-area .all-discussions-wrapper .pagination .next-btn a {
+            cursor: pointer;
+            border: 1px solid #d1d5da;
+            font-size: 16px;
+            min-width: 36px;
+            text-align: center;
+            display: block; }
+          .all-discussions .section-wrapper .all-discussions-area .all-discussions-wrapper .pagination .paginated-btn:not(.disabled-btn) a:hover,
+          .all-discussions .section-wrapper .all-discussions-area .all-discussions-wrapper .pagination .prev-btn:not(.disabled-btn) a:hover,
+          .all-discussions .section-wrapper .all-discussions-area .all-discussions-wrapper .pagination .next-btn:not(.disabled-btn) a:hover {
+            background: #09a5d4;
+            color: #fff; }
+          .all-discussions .section-wrapper .all-discussions-area .all-discussions-wrapper .pagination .paginated-btn a {
+            padding: 5px 9px; }
+          .all-discussions .section-wrapper .all-discussions-area .all-discussions-wrapper .pagination .prev-btn a,
+          .all-discussions .section-wrapper .all-discussions-area .all-discussions-wrapper .pagination .next-btn a {
+            padding: 5px 10px; }
+          .all-discussions .section-wrapper .all-discussions-area .all-discussions-wrapper .pagination .prev-btn a {
+            min-width: 56px;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px; }
+          .all-discussions .section-wrapper .all-discussions-area .all-discussions-wrapper .pagination .next-btn a {
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px; }
+          .all-discussions .section-wrapper .all-discussions-area .all-discussions-wrapper .pagination .disabled-btn a {
+            cursor: default;
+            opacity: 1;
+            color: #c8ccd0; }
+          .all-discussions .section-wrapper .all-discussions-area .all-discussions-wrapper .pagination .active-btn a {
+            background: #09a5d4;
+            color: #fff; }
 
 @keyframes fadeIn {
   from {
@@ -847,8 +891,95 @@ button.dropdown-item {
           font-size: 26px;
           font-weight: 500;
           margin-top: 12px;
-          border-bottom: 1px solid #eee;
+          border-bottom: 1px solid #e2e2e2;
           padding-bottom: 10px; }
+        .discussion .section-wrapper .discussions-area .discussions-wrapper .reply-card {
+          position: relative;
+          display: none;
+          margin: 36px 84px 0 50px; }
+          .discussion .section-wrapper .discussions-area .discussions-wrapper .reply-card.active {
+            display: block; }
+          .discussion .section-wrapper .discussions-area .discussions-wrapper .reply-card [contentEditable="true"]:empty:before {
+            content: attr(data-placeholder);
+            color: #b3b3b3;
+            cursor: text; }
+          .discussion .section-wrapper .discussions-area .discussions-wrapper .reply-card .reply-typing {
+            border-bottom: 1px solid #b3b3b3;
+            min-height: 24px;
+            width: 100%;
+            line-height: 20px;
+            padding-left: 30px; }
+          .discussion .section-wrapper .discussions-area .discussions-wrapper .reply-card .under-reply {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 8px;
+            font-size: 12px;
+            position: relative; }
+            .discussion .section-wrapper .discussions-area .discussions-wrapper .reply-card .under-reply .uploaded-images {
+              display: flex;
+              flex-wrap: wrap;
+              flex-grow: 1;
+              margin-left: -2px;
+              margin-right: 20px; }
+              .discussion .section-wrapper .discussions-area .discussions-wrapper .reply-card .under-reply .uploaded-images .uploaded-img {
+                background-color: #dbdbdb;
+                margin: 0px 2px 9px 2px;
+                border-radius: 10px;
+                padding: 2px 0 2px 8px;
+                font-size: 12px;
+                display: flex;
+                align-items: center; }
+                .discussion .section-wrapper .discussions-area .discussions-wrapper .reply-card .under-reply .uploaded-images .uploaded-img .img-name {
+                  line-height: 13px;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  max-width: 176px;
+                  white-space: nowrap; }
+                .discussion .section-wrapper .discussions-area .discussions-wrapper .reply-card .under-reply .uploaded-images .uploaded-img .remove-img-icon {
+                  cursor: pointer;
+                  width: 16px;
+                  height: 16px;
+                  margin: 0 3px 0 1px; }
+            .discussion .section-wrapper .discussions-area .discussions-wrapper .reply-card .under-reply .btn-group {
+              display: flex;
+              text-transform: uppercase; }
+              .discussion .section-wrapper .discussions-area .discussions-wrapper .reply-card .under-reply .btn-group .cancel-btn,
+              .discussion .section-wrapper .discussions-area .discussions-wrapper .reply-card .under-reply .btn-group .submit-btn {
+                cursor: pointer;
+                min-width: 60px;
+                text-align: center;
+                border-radius: 2px;
+                height: 28px;
+                line-height: 28px;
+                padding: 0 10px;
+                white-space: nowrap; }
+              .discussion .section-wrapper .discussions-area .discussions-wrapper .reply-card .under-reply .btn-group .cancel-btn {
+                color: #949494;
+                border: 1px solid #b3b3b3; }
+                .discussion .section-wrapper .discussions-area .discussions-wrapper .reply-card .under-reply .btn-group .cancel-btn:hover {
+                  background-color: #e6e4e4; }
+              .discussion .section-wrapper .discussions-area .discussions-wrapper .reply-card .under-reply .btn-group .submit-btn {
+                color: #fff;
+                background: #b3b3b3;
+                border: 1px solid #b3b3b3;
+                margin-left: 6px; }
+                .discussion .section-wrapper .discussions-area .discussions-wrapper .reply-card .under-reply .btn-group .submit-btn:hover {
+                  background-color: #908f8f; }
+          .discussion .section-wrapper .discussions-area .discussions-wrapper .reply-card input[type="file"] {
+            display: none; }
+          .discussion .section-wrapper .discussions-area .discussions-wrapper .reply-card .image-upload {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 0;
+            height: 20px;
+            cursor: pointer; }
+            .discussion .section-wrapper .discussions-area .discussions-wrapper .reply-card .image-upload .image-upload-icon {
+              width: 20px;
+              height: 20px;
+              color: #545454; }
+            .discussion .section-wrapper .discussions-area .discussions-wrapper .reply-card .image-upload:hover .image-upload-icon {
+              opacity: 0.7; }
         .discussion .section-wrapper .discussions-area .discussions-wrapper .replies-quantity {
           margin-top: 20px;
           margin-left: 4px;
@@ -876,13 +1007,19 @@ button.dropdown-item {
     flex-direction: column;
     align-items: center;
     margin-left: -10px;
-    margin-top: -12px; }
+    margin-top: -16px; }
     .discussion-detail-card .voting-area .up-vote,
     .discussion-detail-card .voting-area .down-vote {
       width: 50px;
       height: 50px;
       cursor: pointer;
       color: #c4c4c4; }
+      .discussion-detail-card .voting-area .up-vote.pressed,
+      .discussion-detail-card .voting-area .down-vote.pressed {
+        color: #7cbbd8e0; }
+      .discussion-detail-card .voting-area .up-vote.disabled,
+      .discussion-detail-card .voting-area .down-vote.disabled {
+        cursor: default; }
     .discussion-detail-card .voting-area .up-vote {
       margin-bottom: -10px; }
     .discussion-detail-card .voting-area .down-vote {
@@ -890,7 +1027,22 @@ button.dropdown-item {
   .discussion-detail-card .comment-content {
     margin-left: 10px;
     text-align: justify;
-    flex-grow: 1; }
+    flex-grow: 1;
+    white-space: pre-line; }
+    .discussion-detail-card .comment-content .images-content {
+      margin-left: -10px;
+      margin-right: -10px; }
+    .discussion-detail-card .comment-content .reply {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 15px; }
+      .discussion-detail-card .comment-content .reply .reply-btn {
+        width: 25px;
+        height: 25px;
+        color: #c4c4c4;
+        cursor: pointer; }
+        .discussion-detail-card .comment-content .reply .reply-btn:hover {
+          color: #9e9e9e; }
   .discussion-detail-card .author {
     text-align: center;
     margin-left: 30px;
@@ -918,7 +1070,8 @@ button.dropdown-item {
     margin: 16px 14px;
     padding: 16px;
     border-radius: 4px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; }
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background: #fff; }
     .discussion-posting-area .discussion-posting-wrapper label,
     .discussion-posting-area .discussion-posting-wrapper input,
     .discussion-posting-area .discussion-posting-wrapper textarea {
@@ -963,27 +1116,27 @@ button.dropdown-item {
       border-style: solid;
       border-color: transparent transparent #f1eeee transparent;
       animation: fadeIn 1.5s forwards; }
-    .discussion-posting-area .discussion-posting-wrapper .form-control {
+    .discussion-posting-area .discussion-posting-wrapper .input-control {
       position: relative;
       margin-bottom: 10px;
       width: 100%; }
-      .discussion-posting-area .discussion-posting-wrapper .form-control .image-upload {
+      .discussion-posting-area .discussion-posting-wrapper .input-control .image-upload {
         position: absolute;
         top: 2px;
         right: -1px;
         margin: 0;
         height: 20px;
         cursor: pointer; }
-        .discussion-posting-area .discussion-posting-wrapper .form-control .image-upload:hover .image-upload-icon {
+        .discussion-posting-area .discussion-posting-wrapper .input-control .image-upload:hover .image-upload-icon {
           opacity: 0.7; }
-      .discussion-posting-area .discussion-posting-wrapper .form-control .image-upload-icon {
+      .discussion-posting-area .discussion-posting-wrapper .input-control .image-upload-icon {
         width: 20px;
         height: 20px;
         color: #545454; }
-      .discussion-posting-area .discussion-posting-wrapper .form-control .uploaded-images-area {
+      .discussion-posting-area .discussion-posting-wrapper .input-control .uploaded-images-area {
         display: flex;
         flex-wrap: wrap; }
-        .discussion-posting-area .discussion-posting-wrapper .form-control .uploaded-images-area .uploaded-img {
+        .discussion-posting-area .discussion-posting-wrapper .input-control .uploaded-images-area .uploaded-img {
           background-color: #dbdbdb;
           margin: 2px;
           border-radius: 10px;
@@ -991,9 +1144,13 @@ button.dropdown-item {
           font-size: 12px;
           display: flex;
           align-items: center; }
-          .discussion-posting-area .discussion-posting-wrapper .form-control .uploaded-images-area .uploaded-img span {
-            line-height: 13px; }
-          .discussion-posting-area .discussion-posting-wrapper .form-control .uploaded-images-area .uploaded-img .remove-img-icon {
+          .discussion-posting-area .discussion-posting-wrapper .input-control .uploaded-images-area .uploaded-img .img-name {
+            line-height: 13px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 271px;
+            white-space: nowrap; }
+          .discussion-posting-area .discussion-posting-wrapper .input-control .uploaded-images-area .uploaded-img .remove-img-icon {
             cursor: pointer;
             width: 16px;
             height: 16px;
@@ -1038,7 +1195,13 @@ button.dropdown-item {
     .discussion-card .content-detail .discussion-title {
       font-size: 20px;
       font-weight: 600;
-      cursor: pointer; }
+      cursor: pointer;
+      line-height: 28px;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+      text-overflow: ellipsis; }
       .discussion-card .content-detail .discussion-title, .discussion-card .content-detail .discussion-title:visited, .discussion-card .content-detail .discussion-title:active {
         color: #0987ad; }
       .discussion-card .content-detail .discussion-title:hover {

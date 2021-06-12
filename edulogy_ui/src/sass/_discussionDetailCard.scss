@@ -9,7 +9,7 @@
     flex-direction: column;
     align-items: center;
     margin-left: -10px;
-    margin-top: -12px;
+    margin-top: -16px;
 
     .up-vote,
     .down-vote {
@@ -17,6 +17,14 @@
       height: 50px;
       cursor: pointer;
       color: #c4c4c4;
+
+      &.pressed {
+        color: #7cbbd8e0;
+      }
+
+      &.disabled {
+        cursor: default;
+      }
     }
 
     .up-vote {
@@ -35,6 +43,29 @@
     margin-left: 10px;
     text-align: justify;
     flex-grow: 1;
+    white-space: pre-line;
+
+    .images-content {
+      margin-left: -10px;
+      margin-right: -10px;
+    }
+
+    .reply {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 15px;
+
+      .reply-btn {
+        width: 25px;
+        height: 25px;
+        color: #c4c4c4;
+        cursor: pointer;
+
+        &:hover {
+          color: rgb(158, 158, 158);
+        }
+      }
+    }
   }
 
   .author {
