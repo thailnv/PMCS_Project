@@ -803,6 +803,15 @@ button.dropdown-item {
         width: 6em;
         height: 2.75em;
         border: #d6d6d6 solid 1px; }
+    .test-page .main-view .explanation-display {
+      width: 100%;
+      margin-top: 1em;
+      margin-bottom: 1em;
+      font-size: 15px;
+      padding: 0.5em;
+      border: 1px #c5c5c5 solid; }
+      .test-page .main-view .explanation-display div {
+        line-height: 1.5em; }
   .test-page .sub-view {
     width: 35%;
     padding: 1em; }
@@ -853,7 +862,8 @@ button.dropdown-item {
   width: 20%;
   padding-left: 0.5em;
   padding-right: 0.5em;
-  margin-bottom: 1em; }
+  margin-bottom: 1em;
+  position: relative; }
   .test_card .card_container {
     box-shadow: 0 0 4px 0 #333;
     padding-bottom: 1em; }
@@ -873,7 +883,18 @@ button.dropdown-item {
       -webkit-box-orient: vertical;
       overflow: hidden;
       text-overflow: ellipsis; }
-    .test_card .card_container .level,
+    .test_card .card_container .level {
+      font-size: 14px;
+      position: absolute;
+      top: 0;
+      right: 0.5em;
+      padding: 0.25em;
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+      color: white;
+      background: #00949e;
+      border-radius: 0.25em;
+      border-top-right-radius: 0; }
     .test_card .card_container .time {
       margin-top: 0.25em;
       margin-left: 0.5em;
@@ -1176,7 +1197,7 @@ button.dropdown-item {
     .toeic-info .info-container .toeic-procedures-process {
       background: white;
       width: 100%; }
-    .toeic-info .info-container b {
+    .toeic-info .info-container .toeic-location b {
       display: block;
       margin-top: 1em; }
     .toeic-info .info-container h2 {

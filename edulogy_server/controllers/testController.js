@@ -59,6 +59,7 @@ exports.addOne = async (req, res, next) => {
     name: req.body.name,
     time: req.body.time,
     type: req.body.type,
+    img: req.body.img,
     questions: [],
   };
   try {

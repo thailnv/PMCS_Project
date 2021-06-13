@@ -126,6 +126,17 @@
         border: $border;
       }
     }
+    .explanation-display {
+      width: 100%;
+      margin-top: 1em;
+      margin-bottom: 1em;
+      font-size: 15px;
+      padding: 0.5em;
+      border: 1px rgb(197, 197, 197) solid;
+      div {
+        line-height: 1.5em;
+      }
+    }
   }
   .sub-view {
     width: 35%;
@@ -191,6 +202,7 @@
   padding-left: 0.5em;
   padding-right: 0.5em;
   margin-bottom: 1em;
+  position: relative;
   .card_container {
     box-shadow: 0 0 4px 0 #333;
     padding-bottom: 1em;
@@ -212,7 +224,19 @@
       overflow: hidden;
       text-overflow: ellipsis;
     }
-    .level,
+    .level {
+      font-size: 14px;
+      position: absolute;
+      top: 0;
+      right: 0.5em;
+      padding: 0.25em;
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+      color: white;
+      background: $test-page-main-color;
+      border-radius: 0.25em;
+      border-top-right-radius: 0;
+    }
     .time {
       margin-top: 0.25em;
       margin-left: 0.5em;

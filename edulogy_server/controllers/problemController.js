@@ -66,11 +66,51 @@ exports.likeOne = async (req, res, next) => {
   }
 };
 
+exports.dislikeOne = async (req, res, next) => {
+  try {
+    let problem = await Problem.findById(req.params.id);
+    if (!problem) {
+      res.status(404).json({
+        status: "fail",
+        message: "No problem found with that id",
+      });
+      return;
+    }
+    if (problem.dislike.indexOf(req.user._id) !== -1) {
+      res.status(405).json({
+        status: "fail",
+        message: "This user already disliked this!",
+      });
+      return;
+    }
+    problem.dislike.push(req.user._id);
+    await problem.save();
+    res.status(200).json({
+      status: "success",
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({
+      message: "Something went wrong please try again latter!",
+    });
+  }
+};
+
 exports.getAll = async (req, res, next) => {
   try {
-    let { page, pagesize } = req.query;
+    let { page, pageSize } = req.query;
+    page = parseInt(page);
+    pageSize = parseInt(pageSize);
+    let totalProblem = await Problem.find({}).lean();
+    totalProblem = totalProblem.length;
+    let totalPage = Math.ceil(totalProblem / pageSize);
     let problem = await Problem.find({})
-      .select("-comments -imgs")
+      .sort({
+        _id: -1,
+      })
+      .limit(pageSize)
+      .skip((page - 1) * pageSize)
+      .select("-imgs")
       .populate({
         path: "comments",
         select: "-subComments",
@@ -81,16 +121,11 @@ exports.getAll = async (req, res, next) => {
       })
       .populate("user", "name")
       .lean();
-    if (!problem.length) {
-      res.status(404).json({
-        status: "fail",
-        message: "No document found with that id !",
-      });
-      return;
-    }
     res.status(200).json({
       status: "success",
       doc: problem,
+      totalPage,
+      totalProblem,
     });
   } catch (err) {
     console.log(err);

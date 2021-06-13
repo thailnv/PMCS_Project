@@ -38,7 +38,7 @@ export default function MainView(props) {
         }
       </div>
       <div className="part-direction">{partDirection[currentPart]}</div>
-      {
+      { //display content if part is 5 or user already submit
         (test.questions[currentQuestion].content && test.questions[currentQuestion].part > 4)
           || (mode === c.SUBMITED_MODE)
           ?
@@ -67,6 +67,14 @@ export default function MainView(props) {
             })
           }
         </div>
+        {currentPart === 5 && mode === c.SUBMITED_MODE &&
+          <div className="explanation-display">
+            <span>Giải thích:</span>
+            {
+              test.questions[currentQuestion].explanation.split("\\n").map((v, i) => <div key={i}>{v}</div>)
+            }
+          </div>
+        }
       </div>
       <div className="action">
         <button onClick={() => handleChangeQuestion(currentQuestion - 1)} id="prevBtn"><i className="fas fa-angle-double-left"></i></button>

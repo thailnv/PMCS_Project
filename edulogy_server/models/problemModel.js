@@ -7,15 +7,17 @@ const problemSchema = mongoose.Schema({
   imgs: [String],
   comments: [{ type: mongoose.Types.ObjectId, ref: "comment" }],
   like: [{ type: mongoose.Types.ObjectId, ref: "user" }],
+  dislike: [{ type: mongoose.Types.ObjectId, ref: "user" }],
 });
 
 const validate = (problem) => {
   const schema = joi.object({
     title: joi.string().required(),
     content: joi.string().required(),
-    user: joi.string().required(),
+    user: joi.string(),
     comments: joi.array(),
     like: joi.array(),
+    dislike: joi.array(),
     imgs: joi.array().items(joi.string()),
   });
 
