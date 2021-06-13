@@ -30,7 +30,7 @@ function AllDiscussions() {
           {isError && <div style={{ lineHeight: '50vh', textAlign: 'center' }}>Something went wrong</div>}
           {data && <div className="all-discussions-wrapper">
             <h2 className="title">Tất cả chủ đề</h2>
-            <div className="discussions-quantity">{data.doc.length} chủ đề</div>
+            <div className="discussions-quantity">{data.totalProblem} chủ đề</div>
 
             <div className="divider"></div>
 

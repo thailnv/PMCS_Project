@@ -34,6 +34,13 @@ function DiscussionDetailCard({ discussion, type, refetch, handleReplyClick }) {
         Authorization: JSON.parse(localStorage.getItem('token'))
       }
     }
+
+    axios.get(`https://fathomless-castle-76283.herokuapp.com/api/${type}/dislike/${discussion._id}`, config)
+      .then(response => {
+        console.log('da dislike', response.data);
+        refetch();
+      })
+      .catch(error => console.log(error))
   }
 
   const disableVote = () => {
@@ -43,21 +50,24 @@ function DiscussionDetailCard({ discussion, type, refetch, handleReplyClick }) {
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('user'));
-    if (user) {
+    if (user && discussion.user._id !== user._id) {
       if (discussion.like.includes(user._id)) {
         setUpVoteClassName(prevName => prevName + ' pressed');
+        disableVote();
+      } else if (discussion.dislike.includes(user._id)) {
+        setDownVoteClassName(prevName => prevName + ' pressed');
         disableVote();
       }
     } else {
       disableVote();
     }
-  }, [discussion.like]);
+  }, [discussion.like, discussion.dislike]);
 
   return (
     <div className="discussion-detail-card">
       <div className="voting-area">
         <RiArrowUpSFill className={upVoteClassName} onClick={handleUpVote} />
-        <div className="vote-counter">{discussion.like.length}</div>
+        <div className="vote-counter">{discussion.like.length - discussion.dislike.length}</div>
         <RiArrowDownSFill className={downVoteClassName} onClick={handleDownVote} />
       </div>
 

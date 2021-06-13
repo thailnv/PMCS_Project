@@ -854,7 +854,8 @@ button.dropdown-item {
           .all-discussions .section-wrapper .all-discussions-area .all-discussions-wrapper .pagination .disabled-btn a {
             cursor: default;
             opacity: 1;
-            color: #c8ccd0; }
+            color: #c8ccd0;
+            background: #fff; }
           .all-discussions .section-wrapper .all-discussions-area .all-discussions-wrapper .pagination .active-btn a {
             background: #09a5d4;
             color: #fff; }
@@ -1225,7 +1226,8 @@ button.dropdown-item {
       display: -webkit-box;
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 1;
-      text-overflow: ellipsis; }
+      text-overflow: ellipsis;
+      text-decoration: none; }
       .discussion-card .content-detail .discussion-title, .discussion-card .content-detail .discussion-title:visited, .discussion-card .content-detail .discussion-title:active {
         color: #0987ad; }
       .discussion-card .content-detail .discussion-title:hover {
