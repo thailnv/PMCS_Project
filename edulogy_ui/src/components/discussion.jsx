@@ -47,7 +47,7 @@ function Discussion() {
   const handleOnReply = async () => {
     const content = replyTypingRef.current.innerText.trim();
 
-    if(!content) return;
+    if (!content) return;
 
     const images = await getImagesUrl();
 
@@ -64,15 +64,18 @@ function Discussion() {
 
     console.log(data);
 
-    // axios.post('https://fathomless-castle-76283.herokuapp.com/api/problems', data, config)
-    //   .then(response => {
-    //     console.log(response.data);
-    //     setSelectedImages([]);
-    //     refetch();
-    //   })
-    //   .catch(error => {
-    //     console.log(error);
-    //   })
+    setSelectedImages([]);
+    replyTypingRef.current.innerText = '';
+    replyCardRef.current.classList.remove('active');
+
+    axios.post(`https://fathomless-castle-76283.herokuapp.com/api/problems/reply/${id}`, data, config)
+      .then(response => {
+        console.log(response.data);
+        refetch();
+      })
+      .catch(error => {
+        console.log(error);
+      })
   }
 
   const handleCancelClick = () => {

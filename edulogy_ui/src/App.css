@@ -1071,7 +1071,8 @@ button.dropdown-item {
     padding: 16px;
     border-radius: 4px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    background: #fff; }
+    background: #fff;
+    position: relative; }
     .discussion-posting-area .discussion-posting-wrapper label,
     .discussion-posting-area .discussion-posting-wrapper input,
     .discussion-posting-area .discussion-posting-wrapper textarea {
@@ -1100,13 +1101,14 @@ button.dropdown-item {
       text-align: center;
       top: calc(100% + 3px);
       width: 70px;
-      background: #f1eeee;
+      background: #fff;
       padding: 3px 0;
       font-size: 12px;
       font-weight: 300;
       transform: translateX(-40%);
       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-      animation: fadeIn 2s forwards; }
+      animation: fadeIn 2s forwards;
+      border-radius: 3px; }
     .discussion-posting-area .discussion-posting-wrapper label[for="image"]:hover:not(:focus)::after {
       content: "";
       position: absolute;
@@ -1166,6 +1168,28 @@ button.dropdown-item {
         font-size: 15px; }
         .discussion-posting-area .discussion-posting-wrapper .btn-group button:hover {
           background-color: #8fabab; }
+    .discussion-posting-area .discussion-posting-wrapper .loading-overlay {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 4px;
+      background: rgba(0, 0, 0, 0.2); }
+    .discussion-posting-area .discussion-posting-wrapper .error-overlay {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 4px;
+      background: rgba(0, 0, 0, 0.17);
+      text-align: center; }
+      .discussion-posting-area .discussion-posting-wrapper .error-overlay::before {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle; }
 
 .discussion-card {
   display: flex;

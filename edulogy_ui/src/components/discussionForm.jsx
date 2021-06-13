@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import TextError from './textError';
 import { IoIosClose } from "react-icons/io";
 import { MdCameraAlt } from "react-icons/md";
 import axios from 'axios';
+import { useMutation } from 'react-query';
+import { RotateCircleLoading } from 'react-loadingg';
 
 const initialValues = {
   title: '',
@@ -18,6 +20,29 @@ const validationSchema = Yup.object({
 
 function DiscussionForm({ refetch }) {
   const [selectedImages, setSelectedImages] = useState([]);
+
+  const mutation = useMutation(async ({ formValues, resetForm }) => {
+    const images = await getImagesUrl();
+
+    const config = {
+      headers: {
+        Authorization: JSON.parse(localStorage.getItem('token'))
+      }
+    }
+
+    const data = {
+      title: formValues.title,
+      content: formValues.content,
+      imgs: images
+    }
+
+    await axios.post('https://fathomless-castle-76283.herokuapp.com/api/problems', data, config);
+
+    console.log('Thanh cong');
+    setSelectedImages([]);
+    resetForm();
+    refetch();
+  });
 
   const getImagesUrl = async () => {
     let imagesUrl = [];
@@ -34,32 +59,8 @@ function DiscussionForm({ refetch }) {
     return imagesUrl;
   }
 
-  const onSubmit = async (values, { resetForm }) => {
-    // console.log(values);
-    const images = await getImagesUrl();
-
-    const config = {
-      headers: {
-        Authorization: JSON.parse(localStorage.getItem('token'))
-      }
-    }
-
-    const data = {
-      title: values.title,
-      content: values.content,
-      imgs: images
-    }
-
-    axios.post('https://fathomless-castle-76283.herokuapp.com/api/problems', data, config)
-      .then(response => {
-        console.log(response.data);
-        resetForm();
-        setSelectedImages([]);
-        refetch();
-      })
-      .catch(error => {
-        console.log(error);
-      })
+  const onSubmit = (values, { resetForm }) => {
+    mutation.mutate({ formValues: values, resetForm });
   }
 
   const handleImagesChoose = (e) => {
@@ -119,6 +120,12 @@ function DiscussionForm({ refetch }) {
                 <button type="button" className="clear-btn" onClick={() => handleCancelClick(formik.resetForm)}>Hủy</button>
                 <button type="submit" className="submit-btn">Gửi</button>
               </div>
+
+              {mutation.isLoading && <div className="loading-overlay">
+                <RotateCircleLoading color='#00949e' />
+              </div>}
+
+              {mutation.isError && <div className="error-overlay">Đã xảy ra lỗi!</div>}
             </Form>
           )
         }}
