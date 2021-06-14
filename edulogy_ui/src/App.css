@@ -788,7 +788,7 @@ button.dropdown-item {
     opacity: 1; } }
 
 .all-discussions {
-  margin-top: 2em; }
+  padding-top: 2em; }
   .all-discussions .section-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -872,8 +872,19 @@ button.dropdown-item {
   to {
     opacity: 0; } }
 
+@media (max-width: 768px) {
+  .all-discussions {
+    padding-top: 1em;
+    min-height: 100vh; }
+    .all-discussions #loading-effect {
+      margin-top: 80vh; }
+    .all-discussions .section-wrapper .all-discussions-area {
+      flex: 0 0 100%;
+      max-width: 100%;
+      border-left: none; } }
+
 .discussion {
-  margin-top: 2em; }
+  padding-top: 2em; }
   .discussion .section-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -998,6 +1009,20 @@ button.dropdown-item {
     opacity: 1; }
   to {
     opacity: 0; } }
+
+@media (max-width: 768px) {
+  .discussion {
+    padding-top: 1em;
+    min-height: 100vh; }
+    .discussion #loading-effect {
+      margin-top: 80vh; }
+    .discussion .section-wrapper .discussions-area {
+      flex: 0 0 100%;
+      max-width: 100%;
+      border-left: none; }
+      .discussion .section-wrapper .discussions-area .discussion-detail-card .author {
+        margin-left: 20px;
+        margin-right: 0; } }
 
 .discussion-detail-card {
   display: flex;
@@ -1192,6 +1217,33 @@ button.dropdown-item {
         height: 100%;
         vertical-align: middle; }
 
+@media (max-width: 768px) {
+  .discussion-posting-area {
+    all: revert;
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    transition: 5s; }
+    .discussion-posting-area.active {
+      display: block; }
+    .discussion-posting-area .discussion-posting-wrapper {
+      position: fixed;
+      width: calc(100% - 32px);
+      top: 50%;
+      transform: translateY(-50%); }
+      .discussion-posting-area .discussion-posting-wrapper .clear-btn {
+        display: none; }
+      .discussion-posting-area .discussion-posting-wrapper .submit-btn {
+        width: 100% !important;
+        height: 42px !important; }
+      .discussion-posting-area .discussion-posting-wrapper textarea {
+        height: 50vw; } }
+
 .discussion-card {
   display: flex;
   border-bottom: 1px solid #e2e2e2;
@@ -1240,6 +1292,32 @@ button.dropdown-item {
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 2;
       text-overflow: ellipsis; }
+
+.floating-button {
+  display: none;
+  cursor: pointer;
+  width: 56px;
+  height: 56px;
+  line-height: 56px;
+  font-size: 26px;
+  border-radius: 50%;
+  background: #09a5d4;
+  color: #fff;
+  text-align: center;
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 2;
+  transition: 0.2s;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px; }
+  .floating-button:hover {
+    background: #0991ba; }
+  .floating-button.active {
+    transform: rotate(45deg); }
+
+@media (max-width: 768px) {
+  .floating-button {
+    display: block; } }
 
 .test-page {
   width: 90%;

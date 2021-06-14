@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import TextError from './textError';
@@ -18,7 +18,7 @@ const validationSchema = Yup.object({
   content: Yup.string().required('Không được bỏ trống nội dung')
 });
 
-function DiscussionForm({ refetch }) {
+const DiscussionForm = React.forwardRef(({ refetch }, ref) => {
   const [selectedImages, setSelectedImages] = useState([]);
 
   const mutation = useMutation(async ({ formValues, resetForm }) => {
@@ -82,7 +82,7 @@ function DiscussionForm({ refetch }) {
   }
 
   return (
-    <div className="discussion-posting-area">
+    <div className="discussion-posting-area" ref={ref}>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -117,7 +117,7 @@ function DiscussionForm({ refetch }) {
               </div>
 
               <div className="btn-group">
-                <button type="button" className="clear-btn" onClick={() => handleCancelClick(formik.resetForm)}>Hủy</button>
+                <button type="button" className="clear-btn" id="clear-btn" onClick={() => handleCancelClick(formik.resetForm)}>Hủy</button>
                 <button type="submit" className="submit-btn">Gửi</button>
               </div>
 
@@ -132,6 +132,6 @@ function DiscussionForm({ refetch }) {
       </Formik>
     </div>
   );
-}
+});
 
 export default DiscussionForm;

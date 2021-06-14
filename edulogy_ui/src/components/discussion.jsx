@@ -1,7 +1,8 @@
 import React, { useRef, useState } from 'react';
 import DiscussionDetailCard from './discussionDetailCard';
 import DiscussionForm from './discussionForm';
-import { useHistory, useParams, useLocation } from 'react-router-dom';
+import FloatingButton from './floatingButton';
+import { useParams } from 'react-router-dom';
 import { useQuery } from 'react-query';
 import axios from 'axios';
 import { BoxLoading } from 'react-loadingg';
@@ -13,6 +14,9 @@ function Discussion() {
 
   const replyTypingRef = useRef(null);
   const replyCardRef = useRef(null);
+
+  const discussionFormRef = useRef(null);
+  const floatingButtonRef = useRef(null);
 
   const [selectedImages, setSelectedImages] = useState([]);
 
@@ -78,6 +82,16 @@ function Discussion() {
       })
   }
 
+  const handleFloatingButtonClick = () => {
+    if (discussionFormRef.current.classList.contains('active')) {
+      floatingButtonRef.current.classList.remove('active');
+      discussionFormRef.current.classList.remove('active');
+    } else {
+      floatingButtonRef.current.classList.add('active');
+      discussionFormRef.current.classList.add('active');
+    }
+  }
+
   const handleCancelClick = () => {
     replyTypingRef.current.innerText = '';
     replyCardRef.current.classList.remove('active');
@@ -105,10 +119,12 @@ function Discussion() {
   return (
     <div className="discussion">
       <div className="section-wrapper">
-        <DiscussionForm refetch={refetch} />
+        <DiscussionForm refetch={refetch} ref={discussionFormRef} />
 
         <div className="discussions-area">
-          {isLoading && <BoxLoading color='#00949e' />}
+          {isLoading && <div id="loading-effect">
+            <BoxLoading color='#00949e' />
+          </div>}
           {isError && <div style={{ lineHeight: '50vh', textAlign: 'center' }}>Something went wrong</div>}
           {problem && <div className="discussions-wrapper">
             <h3 className="title">{problem.doc.title}</h3>
@@ -153,11 +169,13 @@ function Discussion() {
             <div className="replies-quantity">{problem.doc.comments.length} câu trả lời</div>
 
             {problem.doc.comments.map(comment => (
-              <DiscussionDetailCard discussion={comment} type='comments' refetch={refetch} />
+              <DiscussionDetailCard key={comment._id} discussion={comment} type='comments' refetch={refetch} />
             ))}
           </div>}
         </div>
       </div>
+
+      <FloatingButton onClick={handleFloatingButtonClick} ref={floatingButtonRef} />
     </div>
   );
 }

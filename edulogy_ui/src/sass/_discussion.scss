@@ -1,5 +1,5 @@
 .discussion {
-  margin-top: 2em;
+  padding-top: 2em;
 
   .section-wrapper {
     display: flex;
@@ -176,6 +176,30 @@
     }
     to {
       opacity: 0;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .discussion {
+    padding-top: 1em;
+    min-height: 100vh;
+
+    #loading-effect {
+      margin-top: 80vh;
+    }
+
+    .section-wrapper {
+      .discussions-area {
+        flex: 0 0 100%;
+        max-width: 100%;
+        border-left: none;
+
+        .discussion-detail-card .author {
+          margin-left: 20px;
+          margin-right: 0;
+        }
+      }
     }
   }
 }

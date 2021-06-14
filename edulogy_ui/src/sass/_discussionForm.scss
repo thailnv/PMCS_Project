@@ -180,3 +180,42 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .discussion-posting-area {
+    all: revert;
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    transition: 5s;
+
+    &.active {
+      display: block;
+    }
+
+    .discussion-posting-wrapper {
+      position: fixed;
+      width: calc(100% - 32px);
+      top: 50%;
+      transform: translateY(-50%);
+
+      .clear-btn {
+        display: none;
+      }
+
+      .submit-btn {
+        width: 100% !important;
+        height: 42px !important;
+      }
+
+      textarea {
+        height: 50vw;
+      }
+    }
+  }
+}

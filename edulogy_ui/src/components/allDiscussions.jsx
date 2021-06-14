@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import DiscussionCard from './discussionCard';
 import DiscussionForm from './discussionForm';
+import FloatingButton from './floatingButton';
 import { useQuery } from 'react-query';
 import axios from 'axios';
 import { BoxLoading } from 'react-loadingg';
@@ -10,8 +11,11 @@ function AllDiscussions() {
   const [page, setPage] = useState(0);
   const [totalPages, setTotalPages] = useState(1);
 
+  const discussionFormRef = useRef(null);
+  const floatingButtonRef = useRef(null);
+
   const { data, isLoading, isError, refetch } = useQuery(['discussions', page], async () => {
-    const response = await axios.get(`https://fathomless-castle-76283.herokuapp.com/api/problems?page=${page + 1}&pageSize=3`);
+    const response = await axios.get(`https://fathomless-castle-76283.herokuapp.com/api/problems?page=${page + 1}&pageSize=5`);
     setTotalPages(response.data.totalPage);
     return response.data;
   });
@@ -20,14 +24,26 @@ function AllDiscussions() {
     setPage(selected);
   }
 
+  const handleFloatingButtonClick = () => {
+    if (discussionFormRef.current.classList.contains('active')) {
+      floatingButtonRef.current.classList.remove('active');
+      discussionFormRef.current.classList.remove('active');
+    } else {
+      floatingButtonRef.current.classList.add('active');
+      discussionFormRef.current.classList.add('active');
+    }
+  }
+
   return (
     <div className="all-discussions">
       <div className="section-wrapper">
-        <DiscussionForm refetch={refetch} />
+        <DiscussionForm refetch={refetch} ref={discussionFormRef} />
 
         <div className="all-discussions-area">
-          {isLoading && <BoxLoading color='#00949e' />}
-          {isError && <div style={{ lineHeight: '50vh', textAlign: 'center' }}>Something went wrong</div>}
+          {isLoading && <div id="loading-effect">
+            <BoxLoading color='#00949e' />
+          </div>}
+          {isError && <div style={{ lineHeight: '80vh', textAlign: 'center' }}>Something went wrong</div>}
           {data && <div className="all-discussions-wrapper">
             <h2 className="title">Tất cả chủ đề</h2>
             <div className="discussions-quantity">{data.totalProblem} chủ đề</div>
@@ -35,7 +51,7 @@ function AllDiscussions() {
             <div className="divider"></div>
 
             {data.doc.map(discussion => (
-              <DiscussionCard discussion={discussion} />
+              <DiscussionCard key={discussion._id} discussion={discussion} />
             ))}
 
             <ReactPaginate
@@ -55,6 +71,8 @@ function AllDiscussions() {
           </div>}
         </div>
       </div>
+
+      <FloatingButton onClick={handleFloatingButtonClick} ref={floatingButtonRef} />
     </div>
   )
 }
