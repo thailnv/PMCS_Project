@@ -8,9 +8,12 @@ import axios from 'axios';
 import { BoxLoading } from 'react-loadingg';
 import { IoIosClose } from "react-icons/io";
 import { MdCameraAlt } from "react-icons/md";
+import { useSelector } from 'react-redux';
 
 function Discussion() {
   const { id } = useParams();
+
+  const user = useSelector(store => store.authentication.user);
 
   const replyTypingRef = useRef(null);
   const replyCardRef = useRef(null);
@@ -135,7 +138,7 @@ function Discussion() {
               handleReplyClick={handleReplyClick}
             />
 
-            <div className="reply-card" ref={replyCardRef}>
+            {user && <div className="reply-card" ref={replyCardRef}>
               <div
                 className="reply-typing"
                 contentEditable="true"
@@ -147,7 +150,7 @@ function Discussion() {
               <div className="under-reply">
                 <div className="uploaded-images">
                   {selectedImages.map((image) => (
-                    <span className="uploaded-img">
+                    <span key={image.name} className="uploaded-img">
                       <span className="img-name">{image.name}</span>
                       <IoIosClose className="remove-img-icon" onClick={() => handleRemoveImageClick(image)} />
                     </span>
@@ -164,7 +167,7 @@ function Discussion() {
               <label htmlFor="reply-image" className="image-upload">
                 <MdCameraAlt className="image-upload-icon" />
               </label>
-            </div>
+            </div>}
 
             <div className="replies-quantity">{problem.doc.comments.length} câu trả lời</div>
 

@@ -3,8 +3,11 @@ import { RiArrowUpSFill, RiArrowDownSFill } from "react-icons/ri";
 import axios from 'axios';
 import { ImReply } from "react-icons/im";
 import FbImageLibrary from 'react-fb-image-grid';
+import { useSelector } from 'react-redux';
 
 function DiscussionDetailCard({ discussion, type, refetch, handleReplyClick }) {
+  const user = useSelector(store => store.authentication.user);
+
   const [upVoteClassName, setUpVoteClassName] = useState('up-vote');
   const [downVoteClassName, setDownVoteClassName] = useState('down-vote');
 
@@ -44,13 +47,15 @@ function DiscussionDetailCard({ discussion, type, refetch, handleReplyClick }) {
   }
 
   const disableVote = () => {
-    setUpVoteClassName(prevName => prevName + ' disabled');
-    setDownVoteClassName(prevName => prevName + ' disabled');
+    if (!upVoteClassName.includes('disabled')) setUpVoteClassName(prevName => prevName + ' disabled');
+    if (!downVoteClassName.includes('disabled')) setDownVoteClassName(prevName => prevName + ' disabled');
   }
 
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem('user'));
-    if (user && discussion.user._id !== user._id) {
+    if (user && user._id !== discussion.user._id) {
+      setUpVoteClassName('up-vote');
+      setDownVoteClassName('down-vote');
+
       if (discussion.like.includes(user._id)) {
         setUpVoteClassName(prevName => prevName + ' pressed');
         disableVote();
@@ -61,7 +66,7 @@ function DiscussionDetailCard({ discussion, type, refetch, handleReplyClick }) {
     } else {
       disableVote();
     }
-  }, [discussion.like, discussion.dislike]);
+  }, [discussion.like, discussion.dislike, user]);
 
   return (
     <div className="discussion-detail-card">
@@ -82,7 +87,7 @@ function DiscussionDetailCard({ discussion, type, refetch, handleReplyClick }) {
           />
         </div>
 
-        {type === 'problems' && <div className="reply">
+        {user && type === 'problems' && <div className="reply">
           <ImReply className="reply-btn" onClick={handleReplyClick} />
         </div>}
       </div>

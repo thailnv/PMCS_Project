@@ -7,11 +7,7 @@ import { MdCameraAlt } from "react-icons/md";
 import axios from 'axios';
 import { useMutation } from 'react-query';
 import { RotateCircleLoading } from 'react-loadingg';
-
-const initialValues = {
-  title: '',
-  content: ''
-};
+import { useSelector } from 'react-redux';
 
 const validationSchema = Yup.object({
   title: Yup.string().required('Không được bỏ trống tiêu đề'),
@@ -20,6 +16,13 @@ const validationSchema = Yup.object({
 
 const DiscussionForm = React.forwardRef(({ refetch }, ref) => {
   const [selectedImages, setSelectedImages] = useState([]);
+
+  const user = useSelector(store => store.authentication.user);
+
+  const initialValues = {
+    title: '',
+    content: ''
+  };
 
   const mutation = useMutation(async ({ formValues, resetForm }) => {
     const images = await getImagesUrl();
@@ -59,8 +62,12 @@ const DiscussionForm = React.forwardRef(({ refetch }, ref) => {
     return imagesUrl;
   }
 
-  const onSubmit = (values, { resetForm }) => {
-    mutation.mutate({ formValues: values, resetForm });
+  const onSubmit = (values, { resetForm, setFieldError }) => {
+    if (!user) {
+      setFieldError('content', 'Vui lòng đăng nhập để sử dụng tính năng này');
+    } else {
+      mutation.mutate({ formValues: values, resetForm });
+    }
   }
 
   const handleImagesChoose = (e) => {
@@ -108,7 +115,7 @@ const DiscussionForm = React.forwardRef(({ refetch }, ref) => {
                 </label>
                 <div className="uploaded-images-area">
                   {selectedImages.map((image) => (
-                    <span className="uploaded-img">
+                    <span key={image.name} className="uploaded-img">
                       <span className="img-name">{image.name}</span>
                       <IoIosClose className="remove-img-icon" onClick={() => handleRemoveImageClick(image)} />
                     </span>
