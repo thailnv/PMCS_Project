@@ -53,6 +53,8 @@ exports.likeOne = async (req, res, next) => {
       });
       return;
     }
+    let indexInDislike = problem.dislike.indexOf(req.user._id);
+    if (indexInDislike !== -1) problem.dislike.splice(indexInDislike, 1);
     problem.like.push(req.user._id);
     await problem.save();
     res.status(200).json({
@@ -83,6 +85,8 @@ exports.dislikeOne = async (req, res, next) => {
       });
       return;
     }
+    let indexInLike = problem.like.indexOf(req.user._id);
+    if (indexInLike !== -1) problem.like.splice(indexInLike, 1);
     problem.dislike.push(req.user._id);
     await problem.save();
     res.status(200).json({

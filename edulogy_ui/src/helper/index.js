@@ -3,6 +3,29 @@ function showScore(s) {
   document.getElementById("scorePopup").classList.add("show_flex");
   document.getElementById("scoreDisplay").innerHTML = s;
 }
+function showStatus(status, message) {
+  let modal = document.getElementById("modal");
+  let msgDisplay = document.getElementById("statusMsg");
+  let statusPopup = document.getElementById("statusPopup");
+  modal.classList.add("show_flex");
+  statusPopup.classList.add("show_flex");
+  msgDisplay.innerHTML = message;
+  if (status === "loading") {
+    msgDisplay.innerHTML =
+      '<img src="https://i.ibb.co/Z64YB8h/ajax-loader.gif" alt="">';
+    return;
+  }
+  if (status === "success") {
+    document.getElementById("closeStatusBtn").onclick = () => {
+      document.location.reload();
+    };
+    return;
+  }
+  document.getElementById("closeStatusBtn").onclick = () => {
+    statusPopup.classList.remove("show");
+    modal.classList.remove("show_flex");
+  };
+}
 function showSidebar() {
   document.getElementById("modal").classList.add("show");
   document.getElementById("menuSidebar").style.width = "300px";
@@ -29,4 +52,4 @@ function toggleSubitem() {
   else subitem.style.height = "0";
 }
 
-export { showScore, showSidebar, closeSidebar, toggleSubitem };
+export { showScore, showSidebar, closeSidebar, toggleSubitem, showStatus };

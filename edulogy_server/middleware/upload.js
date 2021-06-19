@@ -59,6 +59,9 @@ const extractQuestion = async (req, res, next) => {
       case "Part":
         partHandle(line);
         break;
+      case "Type":
+        req.type = line.split(" ")[1];
+        break;
       case "IMG":
       case "SCRIPT":
         addMedia(line);
@@ -71,12 +74,6 @@ const extractQuestion = async (req, res, next) => {
         break;
     }
   }
-
-  //console.log(questions.length);
-  // for (let i = 0; i < questions.length; i++) {
-  //   let doc = new Question(questions[i]);
-  //   await doc.save();
-  // }
 
   req.questions = questions;
 

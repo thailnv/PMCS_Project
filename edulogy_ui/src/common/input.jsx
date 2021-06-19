@@ -1,26 +1,30 @@
 import React from 'react'
 
-function Input (props) {
+function Input(props) {
   let {
-    value, 
-    type, 
-    name, 
-    error, 
-    placeholder, 
-    handleChange
+    id,
+    value,
+    type,
+    name,
+    error,
+    placeholder,
+    handleChange,
+    autoComplete
   } = props;
 
   let className = error ? 'input-error' : '';
   placeholder = error ? error : placeholder;
-  return (  
-  <input 
-    className = {className}
-    type={type} 
-    name={name} 
-    value= {value}
-    placeholder={placeholder} 
-    onChange ={handleChange}
-  />)        
+  return (
+    <input
+      id={id}
+      className={className}
+      type={type}
+      name={name}
+      value={value}
+      placeholder={placeholder}
+      onChange={handleChange}
+      autoComplete={autoComplete}
+    />)
 }
 
 export default Input

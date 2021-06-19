@@ -53,12 +53,10 @@ exports.getAll = async (req, res, next) => {
   }
 };
 exports.addOne = async (req, res, next) => {
-  console.log(req.questions.length);
-
   let test = {
     name: req.body.name,
     time: req.body.time,
-    type: req.body.type,
+    type: req.type,
     img: req.body.img,
     questions: [],
   };
@@ -98,15 +96,17 @@ exports.addOne = async (req, res, next) => {
         doc,
       });
     } else {
+      let message = errorList.reduce((rs, v) => rs + v + "<br/>", "");
       res.status(400).json({
-        status: "Sorry some questions have error!",
-        error: errorList,
+        status: "fail",
+        message,
       });
     }
   } catch (error) {
     console.log(error);
     res.status(500).json({
-      status: "Something went wrong please try again latter !",
+      status: "fail",
+      message: "Something went wrong please try again latter !",
     });
     return;
   }

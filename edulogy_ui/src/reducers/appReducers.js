@@ -27,9 +27,16 @@ export function application(state = initialState, action) {
         homeInfo: action.info,
       };
     case constants.GET_HOME_FAILURE:
+    case constants.GET_ADMIN_FAILURE:
       return {
         ...state,
         status: constants.FAILURE,
+      };
+    case constants.GET_ADMIN_SUCCESS:
+      return {
+        ...state,
+        status: constants.SUCCESS,
+        adminInfo: action.info,
       };
     default:
       return state;

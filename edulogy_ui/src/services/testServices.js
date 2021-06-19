@@ -28,7 +28,57 @@ function getTest(query) {
     });
 }
 
+function addTest(test) {
+  let requestOption = {
+    method: "POST",
+    body: test,
+  };
+  return fetch(`${c.apiUrl}/tests`, requestOption)
+    .then((res) => res.json())
+    .then((json) => {
+      console.log(json);
+      return json;
+    });
+}
+
+function deleteTest(id) {
+  let requestOption = {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: JSON.parse(localStorage.getItem("token")),
+    },
+  };
+  return fetch(`${c.apiUrl}/tests/${id}`, requestOption)
+    .then((res) => res.json())
+    .then((json) => {
+      console.log(json);
+      return json;
+    });
+}
+
+function updateTest(id, test) {
+  let requestOption = {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: JSON.parse(localStorage.getItem("token")),
+    },
+    body: JSON.stringify(test),
+  };
+  console.log(test);
+  return fetch(`${c.apiUrl}/tests/${id}`, requestOption)
+    .then((res) => res.json())
+    .then((json) => {
+      console.log(json);
+      return json;
+    });
+}
+
 export const testService = {
   getTestById,
   getTest,
+  addTest,
+  deleteTest,
+  updateTest,
 };

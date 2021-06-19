@@ -1,4 +1,6 @@
 const { Test } = require("../models/testModel");
+const { Question } = require("../models/questionModel");
+const { User } = require("../models/userModel");
 
 exports.homePage = async (req, res, next) => {
   try {
@@ -13,6 +15,7 @@ exports.homePage = async (req, res, next) => {
       .limit(5);
 
     res.status(200).json({
+      status: "success",
       level1,
       level2,
       level3,
@@ -22,6 +25,29 @@ exports.homePage = async (req, res, next) => {
     res.status(500).json({
       status: "fail",
       message: "Something went wrong please try again latter",
+    });
+  }
+};
+
+exports.adminPage = async (req, res, next) => {
+  try {
+    const tests = await Test.find({}).select("-type").lean();
+    const questions = await Question.find({}).lean();
+    const users = await User.find({}).lean();
+    tests.forEach((test) => {
+      test.questions = test.questions.length;
+    });
+    res.status(200).json({
+      status: "success",
+      tests,
+      questions: questions.length,
+      users: users.length,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({
+      status: "fail",
+      message: "Something went wrong please try again latter!",
     });
   }
 };

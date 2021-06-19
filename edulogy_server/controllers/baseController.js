@@ -3,13 +3,15 @@ exports.deleteOne = (Model) => async (req, res, next) => {
     const doc = await Model.findByIdAndDelete(req.params.id);
 
     if (!doc) {
-      res.status(404).send("No document found with that id");
+      res.status(404).json({
+        status: "fail",
+        message: "No document found with that id",
+      });
       return;
     }
-
-    res.status(204).json({
+    res.status(200).json({
       status: "success",
-      data: null,
+      message: "OK",
     });
   } catch (error) {
     res.status(500).json({
@@ -38,6 +40,7 @@ exports.addOne = (Model) => async (req, res, next) => {
 
 exports.updateOne = (Model) => async (req, res, next) => {
   try {
+    console.log(req.params.id, req.body);
     const doc = await Model.findByIdAndUpdate(req.params.id, req.body);
 
     if (!doc) {
@@ -47,7 +50,6 @@ exports.updateOne = (Model) => async (req, res, next) => {
 
     res.status(200).json({
       status: "success",
-      doc,
     });
   } catch (error) {
     res.status(500).json({

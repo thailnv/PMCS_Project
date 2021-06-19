@@ -421,10 +421,24 @@ button.dropdown-item {
   border-radius: 2em;
   height: 3em;
   width: 10em;
+  line-height: 2.75em;
+  text-align: center;
   margin-right: 2em;
-  color: whitesmoke;
+  color: #333;
   font-weight: 600;
   font-size: 14px; }
+
+.account-dropdown {
+  cursor: pointer; }
+  .account-dropdown .dropdown-list {
+    min-width: 10em;
+    right: 0; }
+    .account-dropdown .dropdown-list a.dropdown-item {
+      min-width: 10em; }
+    .account-dropdown .dropdown-list div.dropdown-item:first-of-type {
+      padding-top: 0em; }
+    .account-dropdown .dropdown-list .dropdown-item {
+      cursor: pointer; }
 
 @media only screen and (max-width: 600px) {
   .nav {
@@ -460,7 +474,7 @@ button.dropdown-item {
     margin-left: 1em; }
   #account-btn {
     margin-right: 0em;
-    width: 8em; } }
+    width: 10em; } }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -471,7 +485,7 @@ button.dropdown-item {
     margin-left: 2em; }
   #account-btn {
     margin-right: 0em;
-    width: 8em; } }
+    width: 10em; } }
 
 .banner {
   width: 100%;
@@ -1004,6 +1018,105 @@ button.dropdown-item {
   justify-content: center;
   align-items: center;
   display: none; }
+  .modal .info-popup {
+    background-color: white; }
+    .modal .info-popup form {
+      width: 350px !important;
+      display: block !important;
+      box-shadow: 0 0 2px 0 #757575;
+      min-height: 420px;
+      padding: 1em; }
+      .modal .info-popup form button {
+        width: 5em;
+        height: 2.25em;
+        font-size: 1em;
+        margin: auto;
+        margin-top: 1em;
+        display: block;
+        color: white;
+        background: #0080bb; }
+      .modal .info-popup form button.cancel-btn {
+        background-color: #b94848; }
+      .modal .info-popup form h3 {
+        text-align: center; }
+      .modal .info-popup form input {
+        display: block;
+        height: 2.5em;
+        line-height: 2.5em;
+        width: 100%;
+        padding-left: 0.5em; }
+      .modal .info-popup form input[type="checkbox"] {
+        height: 1.25em;
+        line-height: 1.25em;
+        width: 1.25em;
+        display: block;
+        margin-right: 1em;
+        margin-left: 1.5em; }
+      .modal .info-popup form input[type="file"] {
+        width: 15em;
+        height: auto;
+        line-height: normal; }
+      .modal .info-popup form input[type="text"],
+      .modal .info-popup form input[type="number"] {
+        border: 1px solid #333; }
+      .modal .info-popup form label {
+        display: block; }
+      .modal .info-popup form > label {
+        height: 2.25em;
+        line-height: 2.25em; }
+      .modal .info-popup form .row {
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-top: 0.25em; }
+      .modal .info-popup form > .row {
+        margin-top: 0.5em; }
+  .modal .confirm-popup {
+    padding: 1em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    background: white;
+    border-radius: 0.25em;
+    max-width: 100vw;
+    min-width: 300px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.5em;
+    text-align: center; }
+    .modal .confirm-popup .confirm-btn,
+    .modal .confirm-popup .cancel-btn {
+      width: 5em;
+      height: 2.5em;
+      color: white;
+      margin-top: 1em; }
+    .modal .confirm-popup .confirm-btn {
+      background-color: #00949e; }
+    .modal .confirm-popup .cancel-btn {
+      background-color: #b94848;
+      margin-left: 0.5em; }
+  .modal .status-popup {
+    padding: 1em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    background: white;
+    border-radius: 0.25em;
+    max-width: 100vw;
+    min-width: 300px;
+    min-height: 200px;
+    line-height: 1.5em;
+    text-align: center;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    .modal .status-popup button {
+      width: 5em;
+      height: 2.5em;
+      background: #00949e;
+      color: white;
+      margin-top: 1em;
+      display: block; }
   .modal .score-popup {
     display: none;
     max-width: 100%;
@@ -1321,6 +1434,223 @@ button.dropdown-item {
       .toeic-info .info-container .toeic-procedures-process {
         background: white;
         width: 100%; } }
+
+.admin-page {
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  overflow: hidden; }
+  .admin-page .admin-section {
+    width: 95%;
+    height: calc(100% - 6em);
+    margin: auto;
+    display: flex;
+    justify-content: space-between; }
+    .admin-page .admin-section form {
+      width: 350px;
+      box-shadow: 0 0 2px 0 #757575;
+      min-height: 420px;
+      padding: 1em; }
+      .admin-page .admin-section form button {
+        width: 5em;
+        height: 2.25em;
+        font-size: 1em;
+        margin: auto;
+        margin-top: 1em;
+        display: block;
+        color: white;
+        background: #0080bb; }
+      .admin-page .admin-section form button.cancel-btn {
+        background-color: #b94848; }
+      .admin-page .admin-section form h3 {
+        text-align: center; }
+      .admin-page .admin-section form input {
+        display: block;
+        height: 2.5em;
+        line-height: 2.5em;
+        width: 100%;
+        padding-left: 0.5em; }
+      .admin-page .admin-section form input[type="checkbox"] {
+        height: 1.25em;
+        line-height: 1.25em;
+        width: 1.25em;
+        display: block;
+        margin-right: 1em;
+        margin-left: 1.5em; }
+      .admin-page .admin-section form input[type="file"] {
+        width: 15em;
+        height: auto;
+        line-height: normal; }
+      .admin-page .admin-section form input[type="text"],
+      .admin-page .admin-section form input[type="number"] {
+        border: 1px solid #333; }
+      .admin-page .admin-section form label {
+        display: block; }
+      .admin-page .admin-section form > label {
+        height: 2.25em;
+        line-height: 2.25em; }
+      .admin-page .admin-section form .row {
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-top: 0.25em; }
+      .admin-page .admin-section form > .row {
+        margin-top: 0.5em; }
+    .admin-page .admin-section .table-view {
+      width: calc(100% - 350px - 1em);
+      box-shadow: 0 0 2px 0 #757575;
+      height: 420px;
+      padding: 1em; }
+      .admin-page .admin-section .table-view .header {
+        margin-top: 0.25em;
+        display: flex;
+        width: 100%;
+        font-weight: 600;
+        height: 2.25em;
+        align-items: center;
+        border-bottom: 1px solid #757575; }
+      .admin-page .admin-section .table-view .data-row-container {
+        height: calc(100% - 4.5em);
+        overflow-y: scroll; }
+      .admin-page .admin-section .table-view .data-row-container::-webkit-scrollbar {
+        display: none; }
+      .admin-page .admin-section .table-view .data-row {
+        display: flex;
+        height: 2.5em;
+        align-items: center;
+        border-bottom: 1px solid #757575; }
+      .admin-page .admin-section .table-view .name {
+        width: 30%;
+        padding-right: 0.5em;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
+      .admin-page .admin-section .table-view .level {
+        width: 20%; }
+      .admin-page .admin-section .table-view .number-questions {
+        width: 15%; }
+      .admin-page .admin-section .table-view .time {
+        width: 20%; }
+      .admin-page .admin-section .table-view .action {
+        width: 15%;
+        display: flex; }
+        .admin-page .admin-section .table-view .action button {
+          width: 3.5em;
+          height: 1.75em;
+          color: white; }
+        .admin-page .admin-section .table-view .action .delete-btn {
+          color: #df5d3d;
+          border: 2px solid #afafaf; }
+        .admin-page .admin-section .table-view .action .edit-btn {
+          border: 2px solid #afafaf;
+          color: #21b17a;
+          margin-left: 0.5em; }
+  .admin-page .report-view {
+    width: 95%;
+    margin: auto;
+    height: 8em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .admin-page .report-view .info {
+      width: 20%;
+      min-width: 160px;
+      height: 5em;
+      padding: 0.5em;
+      box-shadow: 0 0 2px 0 #888888;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-end;
+      position: relative; }
+      .admin-page .report-view .info i {
+        font-size: 2em;
+        color: #bebebe; }
+      .admin-page .report-view .info .update-time {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        border-top: 1px #bbbbbb solid;
+        font-size: 12px;
+        font-weight: bold;
+        color: #727272;
+        padding-top: 0.5em; }
+        .admin-page .report-view .info .update-time i {
+          font-size: 12px;
+          margin-right: 0.5em; }
+      .admin-page .report-view .info .icon {
+        position: absolute;
+        width: 3em;
+        height: 3em;
+        line-height: 3em;
+        left: 0.75em;
+        top: -1em;
+        text-align: center;
+        background: #dae262;
+        box-shadow: 0 0 2px 0 #888888; }
+        .admin-page .report-view .info .icon i {
+          font-size: 1em;
+          color: white; }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .admin-page .admin-section {
+    width: 100%;
+    height: calc(100% - 225px); }
+    .admin-page .admin-section form {
+      display: none; }
+    .admin-page .admin-section .table-view {
+      width: 100%;
+      height: calc(100% - 1em);
+      margin-top: 1em;
+      padding-right: 0.5em;
+      padding-left: 0.5em; }
+      .admin-page .admin-section .table-view .number-questions {
+        display: none; }
+      .admin-page .admin-section .table-view .name {
+        width: 45%; }
+      .admin-page .admin-section .table-view .time {
+        display: none; }
+      .admin-page .admin-section .table-view .action {
+        width: 30%; }
+      .admin-page .admin-section .table-view .level {
+        width: 25%; }
+  .admin-page .report-view {
+    width: 100%;
+    flex-wrap: wrap;
+    height: 225px; }
+    .admin-page .report-view .info {
+      width: 48%;
+      margin-top: 2em; } }
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .admin-page .admin-section {
+    width: 100%; }
+    .admin-page .admin-section form {
+      display: none; }
+    .admin-page .admin-section .table-view {
+      width: 100%; }
+  .admin-page .report-view {
+    width: 100%; } }
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .admin-page .admin-section {
+    width: 100%; }
+    .admin-page .admin-section form {
+      width: 300px; }
+    .admin-page .admin-section .table-view {
+      width: calc(100% - 300px - 1em); }
+      .admin-page .admin-section .table-view .number-questions {
+        display: none; }
+      .admin-page .admin-section .table-view .name {
+        width: 35%; }
+      .admin-page .admin-section .table-view .time {
+        width: 25%; }
+      .admin-page .admin-section .table-view .action {
+        width: 20%; }
+  .admin-page .report-view {
+    width: 100%; } }
 
 .App {
   width: 100vw;

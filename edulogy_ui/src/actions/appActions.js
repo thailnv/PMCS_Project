@@ -4,7 +4,7 @@ import { constants as c } from "../constants";
 function getHomeInfo() {
   return (dispatch) => {
     appServices.getHomeInfo().then((res) => {
-      if (res.level1) dispatch(success(res));
+      if (res.status === "success") dispatch(success(res));
       else dispatch(failure(res.message));
     });
   };
@@ -14,6 +14,22 @@ function getHomeInfo() {
   }
   function failure(message) {
     return { type: c.GET_HOME_FAILURE, message };
+  }
+}
+
+function getAdminInfo() {
+  return (dispatch) => {
+    appServices.getAdminInfo().then((res) => {
+      if (res.status === "success") dispatch(success(res));
+      else dispatch(failure(res.message));
+    });
+  };
+
+  function success(info) {
+    return { type: c.GET_ADMIN_SUCCESS, info };
+  }
+  function failure(message) {
+    return { type: c.GET_ADMIN_FAILURE, message };
   }
 }
 
@@ -29,4 +45,5 @@ export const appActions = {
   changePopup,
   hidePopup,
   getHomeInfo,
+  getAdminInfo,
 };

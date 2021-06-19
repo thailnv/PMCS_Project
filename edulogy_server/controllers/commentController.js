@@ -20,7 +20,43 @@ exports.likeOne = async (req, res, next) => {
       });
       return;
     }
+    let indexInDislike = comment.dislike.indexOf(req.user._id);
+    if (indexInDislike !== -1) comment.dislike.splice(indexInDislike, 1);
     comment.like.push(req.user._id);
+    await comment.save();
+    res.status(200).json({
+      status: "success",
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({
+      status: "fail",
+      message: "Something went wrong please try again latter!",
+    });
+  }
+};
+
+exports.dislikeOne = async (req, res, next) => {
+  try {
+    let comment = await Comment.findById(req.params.id);
+    if (!comment) {
+      res.status(404).json({
+        status: "fail",
+        message: "No comment found with that id",
+      });
+      return;
+    }
+
+    if (comment.dislike.indexOf(req.user._id) !== -1) {
+      res.status(405).json({
+        status: "fail",
+        message: "This user already disliked this!",
+      });
+      return;
+    }
+    let indexInLike = comment.like.indexOf(req.user._id);
+    if (indexInLike !== -1) comment.like.splice(indexInLike, 1);
+    comment.dislike.push(req.user._id);
     await comment.save();
     res.status(200).json({
       status: "success",

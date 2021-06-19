@@ -19,8 +19,6 @@ function Nav(props) {
     dispatch(userActions.logout());
   }
 
-  const buttonTitle = user ? 'Đăng xuất' : 'Đăng nhập';
-
   function handleShowSidebar() {
     showSidebar();
   }
@@ -67,12 +65,26 @@ function Nav(props) {
             </button>
           </div>
           <div className="dropdown">
-            <button
-              id="account-btn"
-              className={navStyle.btnColor}
-              onClick={user ? handleLogoutClick : handleLoginClick}>
-              {buttonTitle}
-            </button>
+            {
+              !user
+                ? <button
+                  id="account-btn"
+                  onClick={handleLoginClick}>
+                  Login
+                </button>
+                :
+                <div className="account-dropdown">
+                  <div id="account-btn" className="dropdown-btn account-btn">Thông tin tài khoản</div>
+                  <div className="dropdown-list">
+                    <a href="/thay-doi-thong-tin" className="dropdown-item">Thay đổi thông tin</a>
+                    <a href="/thong-bao" className="dropdown-item">Thông báo</a>
+                    {
+                      user.role === "admin" && <a href="/quan-ly" className="dropdown-item">Quản lý</a>
+                    }
+                    <div onClick={handleLogoutClick} className="dropdown-item">Đăng xuất</div>
+                  </div>
+                </div>
+            }
           </div>
         </div>
       </div>

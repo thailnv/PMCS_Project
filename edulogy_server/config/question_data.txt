@@ -1,3 +1,4 @@
+Type part5
 Part 5
 Question 21:
 CONTENT While the director of communications is away, all e-mails and calls will be forwarded to -------assistant.
@@ -5,58 +6,4 @@ she
 TRUE her
 hers
 herself
-Question 22:
-CONTENT Mr. Srour’s flight arrived ------- late for him to attend the reception.
-so
-TRUE too
-ever
-already
-Question 23:
-CONTENT Mr. Wagner will arrange the schedule of events for the------ of the flagship store.
-TRUE opening
-openess
-openly
-opens
-Question 24:
-CONTENT -------the final award had been presented, Ms. Ryu acknowledged the support of the event's sponsors.
-During
-Then
-TRUE After 
-Next
-Question 25:
-CONTENT Chunto Consultancy Service recommended a ------ way of balancing the annual budget.
-successed
-success
-TRUE successful
-successfully
-Question 26:
-CONTENT Press lightly-------the pedal with your left foot to release the vehicle’s parking brake
-to 
-TRUE on 
-of
-in
-Question 27:
-CONTENT Hikers are invited------ the information center for trail maps of Far Valley Park.
-visiting
-TRUE to visit
-visits
-have visited
-Question 28:
-CONTENT Danton Estate Brokerage offers an online educational program to help------ home buyers choose a property.
-unmistakable
-incomplete
-unused
-TRUE inexperienced
-Question 29:
-CONTENT Lolana Dance Troupe stands out because the group knows-------to integrate a variety of dance styles.
-TRUE how
-that 
-since
-about
-Question 30:
-CONTENT The Lafayette Hill Public Library requires that the -------of mobile phones be restricted to the conversation rooms.
-TRUE use
-model
-time 
-call
 Part 6

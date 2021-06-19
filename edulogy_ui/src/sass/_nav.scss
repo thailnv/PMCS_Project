@@ -160,12 +160,29 @@ button.dropdown-item {
   border-radius: 2em;
   height: 3em;
   width: 10em;
+  line-height: 2.75em;
+  text-align: center;
   margin-right: 2em;
-  color: whitesmoke;
+  color: #333;
   font-weight: 600;
   font-size: 14px;
 }
-
+.account-dropdown {
+  cursor: pointer;
+  .dropdown-list {
+    min-width: 10em;
+    right: 0;
+    a.dropdown-item {
+      min-width: 10em;
+    }
+    div.dropdown-item:first-of-type {
+      padding-top: 0em;
+    }
+    .dropdown-item {
+      cursor: pointer;
+    }
+  }
+}
 @media only screen and (max-width: 600px) {
   .nav {
     position: relative;
@@ -212,7 +229,7 @@ button.dropdown-item {
   }
   #account-btn {
     margin-right: 0em;
-    width: 8em;
+    width: 10em;
   }
 }
 
@@ -227,6 +244,6 @@ button.dropdown-item {
   }
   #account-btn {
     margin-right: 0em;
-    width: 8em;
+    width: 10em;
   }
 }

@@ -1,0 +1,45 @@
+export default function UpdateForm(props) {
+  return (
+    <div className="info-popup">
+      <form id="updateForm" encType="multipart/form-data">
+        <h3>Thông tin test</h3>
+        <label htmlFor="new-name">Tên test:</label>
+        <input autoComplete="off" type="text" name="name" onChange={props.handleInputUpdateChange}
+          id="new-name" value={props.updateInfo.name} />
+        <label htmlFor="new-img">Ảnh minh họa:</label>
+        <input autoComplete="off" type="text" name="img" onChange={props.handleInputUpdateChange}
+          id="new-img" defaultValue={props.updateInfo.img} />
+        <div className="row">
+          <label>Level</label>
+          <div>
+            <div className="row">
+              <input type="checkbox" checked={props.updateInfo.level === "250-500"}
+                onChange={() => props.handleUpdateLevel("250-500")} name="level" id="new-250-500" value="250-500" />
+              <label htmlFor="new-250-500">250 - 500</label>
+            </div >
+            <div className="row">
+              <input type="checkbox" checked={props.updateInfo.level === "500-750"}
+                onChange={() => props.handleUpdateLevel("500-750")} name="level" id="new-500-750" value="500-750" />
+              <label htmlFor="new-500-750">500 - 750</label>
+            </div>
+            <div className="row">
+              <input type="checkbox" checked={props.updateInfo.level === "750-990"}
+                onChange={() => props.handleUpdateLevel("750-990")} name="level" id="new-750-990" value="750-990" />
+              <label htmlFor="new-750-990">750 - 990</label>
+            </div>
+          </div>
+        </div>
+        <label htmlFor="questions">Số lượng câu hỏi: </label>
+        <input type="number" name="questions" id="questions" readOnly="readonly"
+          defaultValue={props.updateInfo.questions} />
+        <label htmlFor="new-time">Thời gian làm bài: </label>
+        <input type="number" name="time" onChange={props.handleInputUpdateChange}
+          id="new-time" defaultValue={props.updateInfo.time} />
+        <div style={{ display: "flex" }}>
+          <button onClick={props.handleUpdate} id="btnSubmit">Lưu</button>
+          <button onClick={props.handleCloseEdit} className="cancel-btn">Đóng</button>
+        </div>
+      </form>
+    </div>
+  )
+}

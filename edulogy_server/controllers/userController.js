@@ -95,7 +95,6 @@ exports.login = async (req, res, next) => {
 
       //3 all correct send jwt to the client
       const token = createToken(_.pick(user, ["_id", "role"]));
-      user.role = undefined;
 
       res.status(200).json({
         status: "success",
