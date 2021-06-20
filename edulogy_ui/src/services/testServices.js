@@ -24,6 +24,7 @@ function getTest(query) {
   return fetch(`${c.apiUrl}/tests${queryString}`)
     .then((res) => res.json())
     .then((json) => {
+      console.log(json);
       return json;
     });
 }

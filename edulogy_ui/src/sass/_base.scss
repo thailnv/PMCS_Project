@@ -131,6 +131,30 @@ ol {
 .hide {
   display: none !important;
 }
+
+.paginate {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1em;
+  .page-index {
+    cursor: pointer;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    text-align: center;
+    box-shadow: 0 0 2px 0 rgb(122, 122, 122);
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+  }
+  .page-index:hover {
+    color: white;
+    background-color: $test-page-main-color;
+  }
+  .index-active {
+    color: white;
+    background-color: $test-page-main-color;
+  }
+}
 @media only screen and (max-width: 600px) {
   .mobile-display {
     display: block !important;

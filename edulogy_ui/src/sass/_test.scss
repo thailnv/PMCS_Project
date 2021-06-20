@@ -254,6 +254,9 @@
   padding-top: 0;
   padding-bottom: 0;
   background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   .row {
     min-height: 3em;
     border-bottom: rgb(117, 117, 117) solid 1px;

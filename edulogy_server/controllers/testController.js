@@ -1,6 +1,7 @@
 const base = require("./baseController");
 const { Test } = require("../models/testModel");
 const { Question, validate } = require("../models/questionModel");
+const _ = require("lodash");
 
 exports.getOne = async (req, res, next) => {
   try {
@@ -25,19 +26,25 @@ exports.getOne = async (req, res, next) => {
 exports.getAll = async (req, res, next) => {
   console.log(req.query);
   try {
-    let { type, page, pagesize } = req.query;
+    let { type, page, pagesize, level } = req.query;
 
     page = parseInt(page);
     pagesize = parseInt(pagesize);
     type = type ? { type } : {};
+    type = level ? { ...type, level: level } : type;
+
+    let totalTest = await Test.find(type).lean();
+    let totalPage = Math.ceil(totalTest.length / parseInt(pagesize));
 
     let doc = await Test.find(type)
       .select("level img time name type")
       .limit(pagesize)
-      .skip((page - 1) * pagesize);
+      .skip((page - 1) * pagesize)
+      .lean();
     if (doc) {
       res.status(200).json({
         doc,
+        totalPage,
       });
     } else {
       res.status(400).json({

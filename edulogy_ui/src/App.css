@@ -116,6 +116,26 @@ ol {
 .hide {
   display: none !important; }
 
+.paginate {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1em; }
+  .paginate .page-index {
+    cursor: pointer;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    text-align: center;
+    box-shadow: 0 0 2px 0 #7a7a7a;
+    margin-left: 0.25em;
+    margin-right: 0.25em; }
+  .paginate .page-index:hover {
+    color: white;
+    background-color: #00949e; }
+  .paginate .index-active {
+    color: white;
+    background-color: #00949e; }
+
 @media only screen and (max-width: 600px) {
   .mobile-display {
     display: block !important;
@@ -922,7 +942,10 @@ button.dropdown-item {
   padding: 1em;
   padding-top: 0;
   padding-bottom: 0;
-  background: white; }
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
   .list-test-page .row {
     min-height: 3em;
     border-bottom: #757575 solid 1px;

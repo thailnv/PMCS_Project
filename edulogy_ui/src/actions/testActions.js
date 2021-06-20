@@ -20,12 +20,12 @@ function getTestById(id) {
 function getTest(query) {
   return (dispatch) => {
     testService.getTest(query).then((res) => {
-      if (res.doc) dispatch(success(res.doc));
+      if (res.doc) dispatch(success(res.doc, res.totalPage));
       else dispatch(failure(res.message));
     });
   };
-  function success(tests) {
-    return { type: c.GET_TESTS_SUCCESS, tests };
+  function success(tests, totalPage) {
+    return { type: c.GET_TESTS_SUCCESS, tests, totalPage };
   }
   function failure(message) {
     return { type: c.GET_TESTS_FAILURE, message };
