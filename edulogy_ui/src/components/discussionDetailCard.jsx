@@ -1,8 +1,7 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { RiArrowUpSFill, RiArrowDownSFill } from "react-icons/ri";
 import axios from 'axios';
 import { ImReply } from "react-icons/im";
-import FbImageLibrary from 'react-fb-image-grid';
 import { useSelector } from 'react-redux';
 
 function DiscussionDetailCard({ discussion, type, refetch, handleReplyClick }) {
@@ -80,11 +79,6 @@ function DiscussionDetailCard({ discussion, type, refetch, handleReplyClick }) {
         {discussion.content}
 
         <div className="images-content">
-          {/* <FbImageLibrary
-            images={discussion.imgs}
-            hideOverlay
-            countFrom={2}
-          /> */}
           {discussion.imgs.map(img => (
             <img src={img} alt="" />
           ))}
