@@ -885,7 +885,8 @@ button.dropdown-item {
       border-left: none; } }
 
 .discussion {
-  padding-top: 2em; }
+  padding-top: 2em;
+  background: #fff; }
   .discussion .section-wrapper {
     display: flex;
     flex-wrap: wrap;
