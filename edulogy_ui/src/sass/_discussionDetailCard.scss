@@ -1,6 +1,5 @@
 .discussion-detail-card {
   display: flex;
-  // align-items: center;
   border-bottom: 1px solid #e2e2e2;
   padding: 12px 0;
 
@@ -48,6 +47,11 @@
     .images-content {
       margin-left: -10px;
       margin-right: -10px;
+
+      img {
+        margin: 12px 0;
+        max-width: 100%;
+      }
     }
 
     .reply {

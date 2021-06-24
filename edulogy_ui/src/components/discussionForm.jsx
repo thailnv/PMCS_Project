@@ -99,6 +99,7 @@ const DiscussionForm = React.forwardRef(({ refetch }, ref) => {
         {formik => {
           return (
             <Form className="discussion-posting-wrapper">
+              <h3>Đặt câu hỏi</h3>
               <div className="input-control">
                 <label htmlFor="title">Tiêu đề</label>
                 <Field type="text" id="title" name="title" />

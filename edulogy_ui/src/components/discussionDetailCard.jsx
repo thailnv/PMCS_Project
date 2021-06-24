@@ -80,11 +80,14 @@ function DiscussionDetailCard({ discussion, type, refetch, handleReplyClick }) {
         {discussion.content}
 
         <div className="images-content">
-          <FbImageLibrary
+          {/* <FbImageLibrary
             images={discussion.imgs}
             hideOverlay
             countFrom={2}
-          />
+          /> */}
+          {discussion.imgs.map(img => (
+            <img src={img} alt="" />
+          ))}
         </div>
 
         {user && type === 'problems' && <div className="reply">

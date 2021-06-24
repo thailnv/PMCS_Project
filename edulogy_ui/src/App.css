@@ -788,7 +788,8 @@ button.dropdown-item {
     opacity: 1; } }
 
 .all-discussions {
-  padding-top: 2em; }
+  padding-top: 2em;
+  background: #fff; }
   .all-discussions .section-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -1058,6 +1059,9 @@ button.dropdown-item {
     .discussion-detail-card .comment-content .images-content {
       margin-left: -10px;
       margin-right: -10px; }
+      .discussion-detail-card .comment-content .images-content img {
+        margin: 12px 0;
+        max-width: 100%; }
     .discussion-detail-card .comment-content .reply {
       display: flex;
       justify-content: flex-end;
@@ -1099,6 +1103,12 @@ button.dropdown-item {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     background: #fff;
     position: relative; }
+    .discussion-posting-area .discussion-posting-wrapper h3 {
+      text-align: center;
+      font-size: 20px;
+      font-weight: 600;
+      margin-top: 0;
+      margin-bottom: 10px; }
     .discussion-posting-area .discussion-posting-wrapper label,
     .discussion-posting-area .discussion-posting-wrapper input,
     .discussion-posting-area .discussion-posting-wrapper textarea {
