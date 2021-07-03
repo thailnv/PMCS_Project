@@ -1,5 +1,6 @@
 @import "./variable";
 @import "./base";
+@import "./textError";
 @import "./login";
 @import "./nav";
 @import "./banner";
@@ -9,6 +10,12 @@
 @import "./popup";
 @import "./home";
 @import "./info";
+@import "./discussionsSection";
+@import "./discussion";
+@import "./discussionDetailCard";
+@import "./discussionForm";
+@import "./discussionCard";
+@import "./floatingButton";
 @import "./admin";
 .App {
   width: 100vw;
