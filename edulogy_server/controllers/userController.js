@@ -29,7 +29,7 @@ exports.signup = async (req, res, next) => {
         googleID: req.body.googleID,
         role: req.body.role,
       });
-      const token = createToken(user._id);
+      const token = createToken(_.pick(user, ["_id", "role"]));
 
       //remove password before send response to client
       user.password = undefined;

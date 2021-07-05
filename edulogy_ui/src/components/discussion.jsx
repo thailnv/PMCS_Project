@@ -24,7 +24,7 @@ function Discussion() {
   const [selectedImages, setSelectedImages] = useState([]);
 
   const { data: problem, isLoading, isError, refetch } = useQuery(['discussion', id], async () => {
-    const response = await axios.get(`https://fathomless-castle-76283.herokuapp.com/api/problems/${id}`);
+    const response = await axios.get(`http://localhost:3000/api/problems/${id}`);
     // console.log(response.data)
     return response.data;
   });
@@ -45,7 +45,7 @@ function Discussion() {
   }
 
   const handleEnterPress = (e) => {
-    if (e.keyCode == 13 && !e.shiftKey) {
+    if (e.keyCode === 13 && !e.shiftKey) {
       e.preventDefault();
       handleOnReply();
     }
@@ -75,7 +75,7 @@ function Discussion() {
     replyTypingRef.current.innerText = '';
     replyCardRef.current.classList.remove('active');
 
-    axios.post(`https://fathomless-castle-76283.herokuapp.com/api/problems/reply/${id}`, data, config)
+    axios.post(`http://localhost:3000/api/problems/reply/${id}`, data, config)
       .then(response => {
         console.log(response.data);
         refetch();
@@ -125,9 +125,11 @@ function Discussion() {
         <DiscussionForm refetch={refetch} ref={discussionFormRef} />
 
         <div className="discussions-area">
-          {isLoading && <div id="loading-effect">
-            <BoxLoading color='#00949e' />
-          </div>}
+          {isLoading &&
+            <div id="loading-effect">
+              <BoxLoading color='#00949e' />
+            </div>
+          }
           {isError && <div style={{ lineHeight: '50vh', textAlign: 'center' }}>Something went wrong</div>}
           {problem && <div className="discussions-wrapper">
             <h3 className="title">{problem.doc.title}</h3>

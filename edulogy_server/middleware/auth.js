@@ -15,6 +15,7 @@ exports.restrictTo = (...roles) => {
 };
 
 exports.protect = async (req, res, next) => {
+  console.log("protect");
   try {
     // 1) check if the token is there
     let token;
@@ -35,6 +36,7 @@ exports.protect = async (req, res, next) => {
     // 2) Verify token
     const decode = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
     req.user = decode.user;
+    console.log(req.user);
 
     next();
   } catch (err) {
