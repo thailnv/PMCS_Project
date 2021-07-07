@@ -31,12 +31,12 @@ exports.homePage = async (req, res, next) => {
 
 exports.adminPage = async (req, res, next) => {
   try {
-    const tests = await Test.find({}).select("-type").lean();
+    const tests = await Test.find({})
+      .select("-type")
+      .populate("questions")
+      .lean();
     const questions = await Question.find({}).lean();
     const users = await User.find({}).lean();
-    tests.forEach((test) => {
-      test.questions = test.questions.length;
-    });
     res.status(200).json({
       status: "success",
       tests,

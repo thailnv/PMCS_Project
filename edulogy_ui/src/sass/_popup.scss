@@ -13,7 +13,8 @@
   .info-popup {
     background-color: white;
     form {
-      min-width: 350px !important;
+      width: auto !important;
+      max-width: 100vw;
       display: block !important;
       box-shadow: 0 0 2px 0 rgb(117, 117, 117);
       min-height: 420px;
@@ -64,7 +65,7 @@
       .col {
         padding-left: 0.5em;
         padding-right: 0.5em;
-        min-width: 300px;
+        width: 300px;
       }
       > div > div > label {
         height: 2.25em;
@@ -195,5 +196,12 @@
   }
   div {
     text-align: center;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .info-popup {
+    height: auto;
+    max-height: 100vh;
   }
 }

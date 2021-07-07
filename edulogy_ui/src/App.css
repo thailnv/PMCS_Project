@@ -1056,7 +1056,8 @@ button.dropdown-item {
   .modal .info-popup {
     background-color: white; }
     .modal .info-popup form {
-      min-width: 350px !important;
+      width: auto !important;
+      max-width: 100vw;
       display: block !important;
       box-shadow: 0 0 2px 0 #757575;
       min-height: 420px;
@@ -1099,7 +1100,7 @@ button.dropdown-item {
       .modal .info-popup form .col {
         padding-left: 0.5em;
         padding-right: 0.5em;
-        min-width: 300px; }
+        width: 300px; }
       .modal .info-popup form > div > div > label {
         height: 2.25em;
         line-height: 2.25em; }
@@ -1212,6 +1213,11 @@ button.dropdown-item {
     margin: auto; }
   .loading_page div {
     text-align: center; }
+
+@media only screen and (max-width: 600px) {
+  .info-popup {
+    height: auto;
+    max-height: 100vh; } }
 
 .home_section {
   width: 100%;
@@ -2129,15 +2135,37 @@ button.dropdown-item {
           border: 2px solid #afafaf;
           color: #21b17a;
           margin-left: 0.5em; }
-    .admin-page .admin-section .list-questions-view .index {
-      width: 20%; }
-    .admin-page .admin-section .list-questions-view .part {
-      width: 20%; }
-    .admin-page .admin-section .list-questions-view .content {
-      width: 60%; }
-    .admin-page .admin-section .list-questions-view .header {
-      display: flex;
-      font-weight: 600; }
+    .admin-page .admin-section .main-info-view {
+      display: flex; }
+    .admin-page .admin-section .list-questions-view {
+      width: 600px;
+      max-width: 100vw; }
+      .admin-page .admin-section .list-questions-view .index {
+        width: 10%; }
+      .admin-page .admin-section .list-questions-view .part {
+        width: 10%; }
+      .admin-page .admin-section .list-questions-view .content {
+        width: 75%;
+        height: 2.5em;
+        overflow: hidden; }
+      .admin-page .admin-section .list-questions-view .header {
+        display: flex;
+        font-weight: 600;
+        line-height: 1.5em; }
+      .admin-page .admin-section .list-questions-view .question-info textarea {
+        width: 100%;
+        font-size: 1em; }
+      .admin-page .admin-section .list-questions-view .question-info label {
+        width: 8em; }
+      .admin-page .admin-section .list-questions-view .data-row-container::-webkit-scrollbar {
+        display: none; }
+      .admin-page .admin-section .list-questions-view .data-row-container {
+        height: 7.5em;
+        overflow-y: scroll; }
+        .admin-page .admin-section .list-questions-view .data-row-container .data-row {
+          display: flex;
+          line-height: 2.5em;
+          border-bottom: 1px solid #757575; }
   .admin-page .report-view {
     width: 95%;
     margin: auto;
@@ -2192,6 +2220,20 @@ button.dropdown-item {
     height: calc(100% - 225px); }
     .admin-page .admin-section form {
       display: none; }
+    .admin-page .admin-section .main-info-view {
+      display: flex;
+      flex-direction: column; }
+      .admin-page .admin-section .main-info-view .col {
+        width: 100%; }
+    .admin-page .admin-section .list-questions-view {
+      width: 600px;
+      max-width: 100vw; }
+      .admin-page .admin-section .list-questions-view .index {
+        width: 15%; }
+      .admin-page .admin-section .list-questions-view .part {
+        width: 15%; }
+      .admin-page .admin-section .list-questions-view .content {
+        width: 60%; }
     .admin-page .admin-section .table-view {
       width: 100%;
       height: calc(100% - 1em);

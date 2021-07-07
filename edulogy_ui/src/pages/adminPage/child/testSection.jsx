@@ -13,7 +13,7 @@ export default function TestSection(props) {
   const [currentLevel, setCurrentLevel] = useState("");
   const [customClass, setCustomClass] = useState({ confirm: "modal", info: "modal" });
   const [selectedTest, setSelectedTest] = useState({});
-  const [updateInfo, setUpdateInfo] = useState({ name: "" });
+  const [updateInfo, setUpdateInfo] = useState({ name: "", nQuestions: 0, questions: [] });
 
   function handleChangeLevel(e) {
     setCurrentLevel(e.target.value);
@@ -37,7 +37,7 @@ export default function TestSection(props) {
 
   function handleShowEdit(test) {
     setSelectedTest(test);
-    setUpdateInfo(test);
+    setUpdateInfo({ ...test, nQuestions: test.questions.length });
     setCustomClass({ ...customClass, info: "modal show_flex" });
   }
 
@@ -112,7 +112,7 @@ export default function TestSection(props) {
                     {v.level}
                   </div>
                   <div className="number-questions">
-                    {v.questions}
+                    {v.questions.length}
                   </div>
                   <div className="time">
                     {v.time}

@@ -21,6 +21,8 @@ function AdminPage() {
   useEffect(() => {
     if (status === c.LOADING) {
       dispatch(appActions.getAdminInfo());
+    } else {
+      console.log(info);
     }
   }, [status, dispatch])
   return (
