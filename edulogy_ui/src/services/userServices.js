@@ -51,8 +51,25 @@ function logout() {
   localStorage.removeItem("token");
 }
 
+function update(name, email, id){
+  let requestOption = {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" ,
+    authorization: JSON.parse(localStorage.getItem("token")),
+  },
+    body: JSON.stringify({ name, email }),
+  };
+  return fetch(`${constants.apiUrl}/users/${id}`, requestOption)
+    .then((res) => res.json())
+    .then((json) => {
+      console.log(json);
+        return json;
+      })
+}
+
 export const userService = {
   login,
   logout,
   register,
+  update
 };

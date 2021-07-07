@@ -14,7 +14,7 @@ router.get("/:id", userController.getOne);
 
 router.use(auth.protect);
 
-router.post("/:id", validator(validate), userController.update);
+router.put("/:id", userController.update);
 
 router.use(auth.restrictTo("admin"));
 

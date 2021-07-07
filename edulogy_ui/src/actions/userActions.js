@@ -39,8 +39,20 @@ function logout() {
   };
 }
 
+function update(name, email ,id){
+  return (dispatch) => {
+    userService.update( name, email, id).then((res) => {
+      console.log(res.doc);
+      if (res.doc) dispatch(success(res.doc));
+    });}
+     function success(user) {
+    return { type: constants.UPDATE_SUCCESS, user };
+  }
+}
+
 export const userActions = {
   login,
   logout,
   register,
+  update
 };

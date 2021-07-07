@@ -7,7 +7,13 @@ let initialState = user ? { loggedIn: true, user } : {};
 export function authentication(state = initialState, action) {
   switch (action.type) {
     case constants.LOGIN_SUCCESS:
+    case constants.UPDATE_SUCCESS:
+      localStorage.setItem("user",JSON.stringify(action.user))
+      return {
+        user: action.user,
+      };
     case constants.REGISTER_SUCCESS:
+      console.log(action.user)
       return {
         loggedIn: true,
         user: action.user,
