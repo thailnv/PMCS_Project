@@ -44,6 +44,13 @@ function questionHandle() {
   };
 }
 const extractQuestion = async (req, res, next) => {
+  if (!req.file) {
+    res.status(400).json({
+      status: "fail",
+      message: "Vui lòng upload file test.",
+    });
+    return;
+  }
   var bufferStream = new stream.PassThrough();
   bufferStream.end(req.file.buffer);
 
@@ -78,6 +85,12 @@ const extractQuestion = async (req, res, next) => {
   req.questions = questions;
 
   questions = [];
+  if (!req.questions.length || currentPart === 0 || !req.type) {
+    res.status(400).json({
+      status: "fail",
+      message: "File upload không hợp lệ vui lòng kiểm tra lại",
+    });
+  }
   next();
 };
 

@@ -142,6 +142,9 @@
     width: 35%;
     padding: 1em;
     .timer {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 1em;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -161,6 +164,9 @@
       cursor: pointer;
     }
     .list-question {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 4em;
       padding: 0.5em;
       display: flex;
       flex-wrap: wrap;

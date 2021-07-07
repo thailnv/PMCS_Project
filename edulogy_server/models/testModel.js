@@ -19,11 +19,11 @@ const testSchema = new mongoose.Schema({
 const validate = (test) => {
   const schema = joi.object({
     name: joi.string().min(4).required(),
-    type: joi.string().required(),
-    time: joi.number(),
-    level: joi.string(),
+    type: joi.string(),
+    time: joi.number().min(1).required(),
+    level: joi.string().required(),
     img: joi.string().required(),
-    questions: joi.array().min(1).required(),
+    questions: joi.array(),
   });
   return schema.validate(test);
 };
