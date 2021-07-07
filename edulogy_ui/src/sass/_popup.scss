@@ -13,7 +13,7 @@
   .info-popup {
     background-color: white;
     form {
-      width: 350px !important;
+      min-width: 350px !important;
       display: block !important;
       box-shadow: 0 0 2px 0 rgb(117, 117, 117);
       min-height: 420px;
@@ -61,7 +61,12 @@
       label {
         display: block;
       }
-      > label {
+      .col {
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        min-width: 300px;
+      }
+      > div > div > label {
         height: 2.25em;
         line-height: 2.25em;
       }

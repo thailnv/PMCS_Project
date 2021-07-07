@@ -1056,7 +1056,7 @@ button.dropdown-item {
   .modal .info-popup {
     background-color: white; }
     .modal .info-popup form {
-      width: 350px !important;
+      min-width: 350px !important;
       display: block !important;
       box-shadow: 0 0 2px 0 #757575;
       min-height: 420px;
@@ -1096,7 +1096,11 @@ button.dropdown-item {
         border: 1px solid #333; }
       .modal .info-popup form label {
         display: block; }
-      .modal .info-popup form > label {
+      .modal .info-popup form .col {
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        min-width: 300px; }
+      .modal .info-popup form > div > div > label {
         height: 2.25em;
         line-height: 2.25em; }
       .modal .info-popup form .row {
@@ -2028,7 +2032,7 @@ button.dropdown-item {
     display: flex;
     justify-content: space-between; }
     .admin-page .admin-section form {
-      width: 350px;
+      min-width: 350px;
       box-shadow: 0 0 2px 0 #757575;
       min-height: 420px;
       padding: 1em; }
@@ -2125,6 +2129,15 @@ button.dropdown-item {
           border: 2px solid #afafaf;
           color: #21b17a;
           margin-left: 0.5em; }
+    .admin-page .admin-section .list-questions-view .index {
+      width: 20%; }
+    .admin-page .admin-section .list-questions-view .part {
+      width: 20%; }
+    .admin-page .admin-section .list-questions-view .content {
+      width: 60%; }
+    .admin-page .admin-section .list-questions-view .header {
+      display: flex;
+      font-weight: 600; }
   .admin-page .report-view {
     width: 95%;
     margin: auto;

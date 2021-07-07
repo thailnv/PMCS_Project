@@ -50,6 +50,7 @@ exports.updateOne = (Model) => async (req, res, next) => {
 
     res.status(200).json({
       status: "success",
+      doc,
     });
   } catch (error) {
     res.status(500).json({
