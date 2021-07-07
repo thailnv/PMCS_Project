@@ -41,7 +41,9 @@ exports.addOne = (Model) => async (req, res, next) => {
 exports.updateOne = (Model) => async (req, res, next) => {
   try {
     console.log(req.params.id, req.body);
-    const doc = await Model.findByIdAndUpdate(req.params.id, req.body);
+    const doc = await Model.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
 
     if (!doc) {
       res.status(404).send("No document found with that id");
