@@ -15,7 +15,7 @@ function AllDiscussions() {
   const floatingButtonRef = useRef(null);
 
   const { data, isLoading, isError, refetch } = useQuery(['discussions', page], async () => {
-    const response = await axios.get(`https://fathomless-castle-76283.herokuapp.com/api/problems?page=${page + 1}&pageSize=5`);
+    const response = await axios.get(`http://localhost:3000/api/problems?page=${page + 1}&pageSize=5`);
     setTotalPages(response.data.totalPage);
     return response.data;
   });

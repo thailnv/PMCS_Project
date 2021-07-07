@@ -19,7 +19,7 @@ function DiscussionDetailCard({ discussion, type, refetch, handleReplyClick }) {
       }
     }
 
-    axios.get(`https://fathomless-castle-76283.herokuapp.com/api/${type}/like/${discussion._id}`, config)
+    axios.get(`http://localhost:3000/api/${type}/like/${discussion._id}`, config)
       .then(response => {
         console.log('da like', response.data);
         refetch();
@@ -37,7 +37,7 @@ function DiscussionDetailCard({ discussion, type, refetch, handleReplyClick }) {
       }
     }
 
-    axios.get(`https://fathomless-castle-76283.herokuapp.com/api/${type}/dislike/${discussion._id}`, config)
+    axios.get(`http://localhost:3000/api/${type}/dislike/${discussion._id}`, config)
       .then(response => {
         console.log('da dislike', response.data);
         refetch();
@@ -90,7 +90,7 @@ function DiscussionDetailCard({ discussion, type, refetch, handleReplyClick }) {
       </div>
 
       <div className="author">
-        <div className="author-avatar">{discussion.user.name.split(" ").pop().charAt(0)}</div>
+        <div className="author-avatar">{discussion.user.name.split(" ").pop().charAt(0).toUpperCase()}</div>
         <div className="author-name">{discussion.user.name.split(" ").pop()}</div>
       </div>
     </div>

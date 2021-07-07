@@ -39,7 +39,7 @@ const DiscussionForm = React.forwardRef(({ refetch }, ref) => {
       imgs: images
     }
 
-    await axios.post('https://fathomless-castle-76283.herokuapp.com/api/problems', data, config);
+    await axios.post('http://localhost:3000/api/problems', data, config);
 
     console.log('Thanh cong');
     setSelectedImages([]);
