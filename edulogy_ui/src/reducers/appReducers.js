@@ -9,6 +9,11 @@ export function application(state = initialState, action) {
         ...state,
         popupType: "profile"
       }
+    case constants.POPUP_FORGOTPASS:
+      return {
+        ...state,
+        popupType: "forgotpass",
+      };
     case constants.POPUP_LOGIN:
       return {
         ...state,

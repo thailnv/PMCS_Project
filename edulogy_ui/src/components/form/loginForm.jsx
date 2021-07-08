@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-
+import { appActions } from '../../actions/appActions';
+import { constants } from '../../constants';
 import { userActions } from '../../actions/userActions'
 import Input from '../../common/input';
 
@@ -43,6 +44,10 @@ function LoginForm(props) {
     );
   }
 
+  function forgotPass() {
+    dispatch(appActions.changePopup(constants.POPUP_FORGOTPASS));
+  }
+
   return (
     <form className="form center " onSubmit={handleSubmit}>
       <div className="center-text">
@@ -74,6 +79,7 @@ function LoginForm(props) {
         </button>
         {message && <div className="center-text text-error">{message}</div>}
         <div>Chưa có tài khoản? <button onClick={props.onToggle}>Đăng ký ngay</button> </div>
+        <div> <button onClick={forgotPass} style={{ color: "#006eff", }}>Forgot password?</button> </div>
       </div>
     </form>
   )

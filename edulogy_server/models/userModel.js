@@ -25,6 +25,10 @@ const userSchema = new mongoose.Schema(
       type: String,
       default: "",
     },
+    resetPass: {
+      type: String,
+      default: "",
+    },
   },
   {
     versionKey: false,
