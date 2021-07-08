@@ -51,25 +51,48 @@ function logout() {
   localStorage.removeItem("token");
 }
 
-function update(name, email, id){
+function update(name, email, id) {
   let requestOption = {
     method: "PUT",
-    headers: { "Content-Type": "application/json" ,
-    authorization: JSON.parse(localStorage.getItem("token")),
-  },
+    headers: {
+      "Content-Type": "application/json",
+      authorization: JSON.parse(localStorage.getItem("token")),
+    },
     body: JSON.stringify({ name, email }),
   };
   return fetch(`${constants.apiUrl}/users/${id}`, requestOption)
     .then((res) => res.json())
     .then((json) => {
       console.log(json);
-        return json;
-      })
+      return json;
+    });
+}
+
+function addOne(user) {
+  let requestOption = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: JSON.parse(localStorage.getItem("token")),
+    },
+    body: JSON.stringify(user),
+  };
+  return fetch(`${constants.apiUrl}/users`, requestOption)
+    .then((res) => res.json())
+    .then((json) => {
+      console.log(json);
+      return json;
+    })
+    .catch((err) => {
+      console.log(err);
+      return;
+    });
 }
 
 export const userService = {
   login,
   logout,
   register,
-  update
+  update,
+  addOne,
 };

@@ -1,6 +1,7 @@
 const { Test } = require("../models/testModel");
 const { Question } = require("../models/questionModel");
 const { User } = require("../models/userModel");
+const { Comment } = require("../models/commentModel");
 
 exports.homePage = async (req, res, next) => {
   try {
@@ -36,12 +37,19 @@ exports.adminPage = async (req, res, next) => {
       .populate("questions")
       .lean();
     const questions = await Question.find({}).lean();
-    const users = await User.find({}).lean();
+    const users = await User.find({}).sort("role").lean();
+    for (let i = 0; i < users.length; i++) {
+      let score = 0;
+      let comments = await Comment.find({ user: users[i]._id }).lean();
+      for (let j = 0; j < comments.length; j++)
+        score = score + comments[j].like.length - comments[j].dislike.length;
+      users[i].score = score;
+    }
     res.status(200).json({
       status: "success",
       tests,
       questions: questions.length,
-      users: users.length,
+      users,
     });
   } catch (err) {
     console.log(err);

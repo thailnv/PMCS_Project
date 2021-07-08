@@ -1,4 +1,4 @@
-export default function AddForm(props) {
+export default function AddTestForm(props) {
   return (
     <form onSubmit={props.handleSubmit} id="form">
       <h3>Tạo test mới</h3>

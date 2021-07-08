@@ -2038,6 +2038,7 @@ button.dropdown-item {
     display: flex;
     justify-content: space-between; }
     .admin-page .admin-section form {
+      background-color: white;
       min-width: 350px;
       box-shadow: 0 0 2px 0 #757575;
       min-height: 420px;
@@ -2076,7 +2077,8 @@ button.dropdown-item {
       .admin-page .admin-section form input[type="number"] {
         border: 1px solid #333; }
       .admin-page .admin-section form label {
-        display: block; }
+        display: block;
+        min-width: 5em; }
       .admin-page .admin-section form > label {
         height: 2.25em;
         line-height: 2.25em; }
@@ -2135,6 +2137,26 @@ button.dropdown-item {
           border: 2px solid #afafaf;
           color: #21b17a;
           margin-left: 0.5em; }
+      .admin-page .admin-section .table-view .email {
+        width: 30%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
+      .admin-page .admin-section .table-view .user-name {
+        width: 20%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
+      .admin-page .admin-section .table-view .type {
+        width: 10%; }
+      .admin-page .admin-section .table-view .score {
+        text-align: center;
+        width: 20%; }
+      .admin-page .admin-section .table-view .badge {
+        width: 15%; }
+      .admin-page .admin-section .table-view .badge-d {
+        width: 15%;
+        text-transform: capitalize; }
     .admin-page .admin-section .main-info-view {
       display: flex; }
     .admin-page .admin-section .list-questions-view {
@@ -2212,6 +2234,38 @@ button.dropdown-item {
         .admin-page .report-view .info .icon i {
           font-size: 1em;
           color: white; }
+  .admin-page .setting-btn {
+    position: absolute;
+    right: 0.5em;
+    bottom: 1em;
+    height: 2.5em;
+    width: 2.5em;
+    border-radius: 4em;
+    background-color: #333;
+    color: white;
+    opacity: 0.8;
+    font-size: 1.25em; }
+  .admin-page .setting-tab-container {
+    position: absolute;
+    right: 1em;
+    bottom: 4.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    transition: 0.3s;
+    overflow: hidden; }
+    .admin-page .setting-tab-container .setting-tab {
+      cursor: pointer;
+      border-radius: 0.25em;
+      padding: 0.25em;
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+      width: fit-content;
+      background-color: #333;
+      color: white;
+      opacity: 0.8;
+      font-size: 14px;
+      margin-bottom: 0.5em; }
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
@@ -2245,6 +2299,15 @@ button.dropdown-item {
       .admin-page .admin-section .table-view .name {
         width: 45%; }
       .admin-page .admin-section .table-view .time {
+        display: none; }
+      .admin-page .admin-section .table-view .score,
+      .admin-page .admin-section .table-view .badge {
+        display: none; }
+      .admin-page .admin-section .table-view .user-name {
+        width: 55%; }
+      .admin-page .admin-section .table-view .type {
+        width: 30%; }
+      .admin-page .admin-section .table-view .email {
         display: none; }
       .admin-page .admin-section .table-view .action {
         width: 30%; }

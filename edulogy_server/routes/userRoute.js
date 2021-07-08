@@ -22,6 +22,8 @@ router.put("/:id", userController.update);
 
 router.use(auth.restrictTo("admin"));
 
+router.post("/", validator(validate), userController.signup);
+
 router.get("/", userController.getAll);
 
 router.delete("/:id", userController.delete);
