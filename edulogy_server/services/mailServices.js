@@ -11,7 +11,7 @@ const createTransporter = async () => {
   );
 
   oauth2Client.setCredentials({
-    MAILSERVICE_REFRESH_TOKEN: process.env.MAILSERVICE_REFRESH_TOKEN,
+    refresh_token: process.env.MAILSERVICE_REFRESH_TOKEN,
   });
 
   const accessToken = await new Promise((resolve, reject) => {
@@ -27,7 +27,7 @@ const createTransporter = async () => {
     service: "gmail",
     auth: {
       type: "OAuth2",
-      user: process.env.IDENT_EMAIL,
+      user: process.env.EDULOGY_EMAIL,
       accessToken,
       clientId: process.env.MAILSERVICE_CLIENT_ID,
       clientSecret: process.env.MAILSERVICE_CLIENT_SECRET,
