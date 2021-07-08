@@ -25,6 +25,10 @@ const userSchema = new mongoose.Schema(
       type: String,
       default: "",
     },
+    resetPass: {
+      type: String,
+      default: "",
+    },
     badge: {
       type: String,
       default: "pawn"
@@ -66,6 +70,7 @@ const validate = (user) => {
     name: joi.string().min(2).max(50).required(),
     email: joi.string().email().min(8).max(255).required(),
     password: joi.string().min(4).required(),
+    role: joi.string(),
   });
   return schema.validate(user);
 };

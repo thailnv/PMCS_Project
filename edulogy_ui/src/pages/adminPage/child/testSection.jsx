@@ -3,8 +3,8 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 
 import { showStatus } from "../../../helper";
-import UpdateForm from "./updateForm";
-import AddForm from "./addForm";
+import UpdateTestForm from "./updateTestForm";
+import AddTestForm from "./addTestForm";
 
 export default function TestSection(props) {
 
@@ -75,7 +75,7 @@ export default function TestSection(props) {
   return (
     <div className="admin-section">
       <div className="form-view">
-        <AddForm
+        <AddTestForm
           handleSubmit={handleSubmit}
           currentLevel={currentLevel}
           handleChangeLevel={handleChangeLevel}
@@ -133,7 +133,7 @@ export default function TestSection(props) {
         </div>
       </div>
       <div className={customClass.info}>
-        <UpdateForm
+        <UpdateTestForm
           updateInfo={updateInfo}
           handleInputUpdateChange={handleInputUpdateChange}
           handleUpdateLevel={handleUpdateLevel}

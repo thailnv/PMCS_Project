@@ -1,9 +1,6 @@
 import React from "react"
-export default function UpdateForm(props) {
+export default function UpdateTestForm(props) {
   console.log(props.updateInfo);
-  function handleChange(e) {
-    console.log(e.target.value);
-  }
   return (
     <div className="info-popup">
       <form id="updateForm" encType="multipart/form-data">
@@ -40,7 +37,7 @@ export default function UpdateForm(props) {
           <div className="col">
             <label htmlFor="questions">Số lượng câu hỏi: </label>
             <input type="text" name="questions" id="questions" readOnly="readonly"
-              value={props.updateInfo.questions.length} />
+              value={props.updateInfo.questions ? props.updateInfo.questions.length : 0} />
             <label htmlFor="new-time">Thời gian làm bài: </label>
             <input type="number" name="time" onChange={props.handleInputUpdateChange}
               id="new-time" defaultValue={props.updateInfo.time} />
@@ -61,21 +58,19 @@ export default function UpdateForm(props) {
           </div>
           <div className="data-row-container">
             {
-              props.updateInfo.questions.map((v, i) =>
-                <React.Fragment>
-                  <div className="data-row" key={i}>
-                    <div className="index">
-                      {i + 1}
-                    </div>
-                    <div className="part">
-                      {v.part}
-                    </div>
-                    <div className="content">
-                      {v.content ? v.content : "[No content]"}
-                    </div>
+              props.updateInfo.questions ? props.updateInfo.questions.map((v, i) =>
+                <div className="data-row" key={i}>
+                  <div className="index">
+                    {i + 1}
                   </div>
-                </React.Fragment>
-              )
+                  <div className="part">
+                    {v.part}
+                  </div>
+                  <div className="content">
+                    {v.content ? v.content : "[No content]"}
+                  </div>
+                </div>
+              ) : <></>
             }
           </div>
         </div>

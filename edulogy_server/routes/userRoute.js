@@ -12,11 +12,17 @@ router.post("/signup", validator(validate), userController.signup);
 
 router.get("/:id", userController.getOne);
 
+router.put("/forgot-password", userController.forgorPassword);
+
+router.put("/reset-password", userController.resetPassword);
+
 router.use(auth.protect);
 
 router.put("/:id", userController.update);
 
 router.use(auth.restrictTo("admin"));
+
+router.post("/", validator(validate), userController.signup);
 
 router.get("/", userController.getAll);
 

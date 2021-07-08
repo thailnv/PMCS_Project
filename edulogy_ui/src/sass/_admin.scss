@@ -10,6 +10,7 @@
     display: flex;
     justify-content: space-between;
     form {
+      background-color: white;
       min-width: 350px;
       box-shadow: 0 0 2px 0 rgb(117, 117, 117);
       min-height: 420px;
@@ -56,6 +57,7 @@
       }
       label {
         display: block;
+        min-width: 5em;
       }
       > label {
         height: 2.25em;
@@ -130,6 +132,32 @@
           color: rgb(33, 177, 122);
           margin-left: 0.5em;
         }
+      }
+      .email {
+        width: 30%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      .user-name {
+        width: 20%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      .type {
+        width: 10%;
+      }
+      .score {
+        text-align: center;
+        width: 20%;
+      }
+      .badge {
+        width: 15%;
+      }
+      .badge-d {
+        width: 15%;
+        text-transform: capitalize;
       }
     }
     .main-info-view {
@@ -230,6 +258,41 @@
       }
     }
   }
+  .setting-btn {
+    position: absolute;
+    right: 0.5em;
+    bottom: 1em;
+    height: 2.5em;
+    width: 2.5em;
+    border-radius: 4em;
+    background-color: #333;
+    color: white;
+    opacity: 0.8;
+    font-size: 1.25em;
+  }
+  .setting-tab-container {
+    position: absolute;
+    right: 1em;
+    bottom: 4.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    transition: 0.3s;
+    overflow: hidden;
+    .setting-tab {
+      cursor: pointer;
+      border-radius: 0.25em;
+      padding: 0.25em;
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+      width: fit-content;
+      background-color: #333;
+      color: white;
+      opacity: 0.8;
+      font-size: 14px;
+      margin-bottom: 0.5em;
+    }
+  }
 }
 
 /* Extra small devices (phones, 600px and down) */
@@ -274,6 +337,19 @@
           width: 45%;
         }
         .time {
+          display: none;
+        }
+        .score,
+        .badge {
+          display: none;
+        }
+        .user-name {
+          width: 55%;
+        }
+        .type {
+          width: 30%;
+        }
+        .email {
           display: none;
         }
         .action {

@@ -7,6 +7,9 @@ const bcrypt = require("bcryptjs");
 
 const { User } = require("../models/userModel");
 const base = require("./baseController");
+const c = require("../constants");
+
+const { sendEmail } = require("../services/mailServices");
 
 const createToken = (user) => {
   return jwt.sign({ user }, process.env.JWT_SECRET, { expiresIn: "7d" });
@@ -105,6 +108,71 @@ exports.login = async (req, res, next) => {
       console.log("error when login");
       next(err);
     }
+  }
+};
+
+exports.forgorPassword = async (req, res) => {
+  console.log("Reset pass request data: ", req.body);
+  const user = await User.findOne({ email: req.body.email });
+  if (!user) {
+    return res.status(400).json({
+      status: "fail",
+      message: "User with this email does not exist",
+    });
+  } else {
+    console.log(user);
+
+    let code = await bcrypt.genSalt(10);
+    const data = {
+      subject: "Edulogy - reset password.",
+      to: user.email,
+      from: `Edulogy<${process.env.EDULOGY_EMAIL}>`,
+      html: `<h2 style="color:#777;font-size:20px;font-weight:300">Use this verify code to reset your password</h2>
+                <p>Verify code: ${code}</p>`,
+    };
+    user.updateOne({ resetPass: code }, (err, success) => {
+      if (err) {
+        return res.status(400).json({ error: "reset link error" });
+      } else {
+        sendEmail(data);
+        return res
+          .status(201)
+          .json({ success: "Verify code was sent to your email" ,mail:`${process.env.IDENT_EMAIL}`});
+      }
+    });
+  }
+};
+
+exports.resetPassword = async (req, res) => {
+  const { resetPass, newPass } = req.body;
+  if (resetPass) {
+    let user = await User.findOne({ resetPass: resetPass });
+    if (!user) {
+      res.status(400).json({
+        status: c.STATUS_FAILURE,
+        message: "Verify code invalid",
+      });
+    } else {
+      user.password = newPass;
+      try {
+        await user.save();
+        res.status(200).json({
+          status: c.STATUS_SUCCESS,
+          message: "Password reset successfully",
+        });
+      } catch (err) {
+        console.log(err);
+        res.status(500).json({
+          status: c.STATUS_FAILURE,
+          message: c.UNKNOWN_ERROR_MSG,
+        });
+      }
+    }
+  } else {
+    res.status(400).json({
+      status: c.STATUS_FAILURE,
+      message: "Verify code invalid",
+    });
   }
 };
 

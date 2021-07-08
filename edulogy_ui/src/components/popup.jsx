@@ -3,13 +3,15 @@ import { useSelector } from 'react-redux'
 import React from 'react';
 import Login from './login';
 import ProfilePopup from './profilePopup';
+import ForgotPass from './forgetpassword';
 function Popup() {
 
   const popupType = useSelector(state => state.application.popupType);
 
   let currentPopup = {
     login: <Login />,
-    profile:<ProfilePopup/>
+    profile:<ProfilePopup/>,
+    forgotpass:<ForgotPass/>
   }
 
   let className = 'popup';
