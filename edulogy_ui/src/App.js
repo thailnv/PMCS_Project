@@ -8,7 +8,6 @@ import { ToeicInfoPage } from "./pages/toeicInfo";
 import { ListTestPage } from "./pages/listtestPage";
 import { DiscussionsPage } from "./pages/discussionsPage";
 import { DiscussionDetailPage } from "./pages/discussionDetailPage";
-import { ProfilePage } from "./pages/profilePage"
 import "./App.css";
 
 const queryClient = new QueryClient();
@@ -24,7 +23,6 @@ function App() {
           <Route path="/thong-tin" component={ToeicInfoPage} />
           <Route path="/thao-luan" component={DiscussionsPage} />
           <Route path="/chi-tiet-thao-luan/:id" component={DiscussionDetailPage} />
-          <Route path="/thay-doi-thong-tin" component={ProfilePage} />
           <Route path="/quan-ly" component={AdminPage} />
         </Switch>
       </QueryClientProvider>

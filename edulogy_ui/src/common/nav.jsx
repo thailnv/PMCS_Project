@@ -15,6 +15,10 @@ function Nav(props) {
     dispatch(appActions.changePopup(constants.POPUP_LOGIN));
   }
 
+  function handleProfileClick(){
+    dispatch(appActions.changePopup(constants.POPUP_PROFILE));
+  }
+
   function handleLogoutClick() {
     dispatch(userActions.logout());
   }
@@ -76,7 +80,7 @@ function Nav(props) {
                 <div className="account-dropdown">
                   <div id="account-btn" className="dropdown-btn account-btn">Thông tin tài khoản</div>
                   <div className="dropdown-list">
-                    <a href="/thay-doi-thong-tin" className="dropdown-item">Thay đổi thông tin</a>
+                    <a href="#" onClick={handleProfileClick} className="dropdown-item">Thay đổi thông tin</a>
                     <a href="/thong-bao" className="dropdown-item">Thông báo</a>
                     {
                       user.role === "admin" && <a href="/quan-ly" className="dropdown-item">Quản lý</a>

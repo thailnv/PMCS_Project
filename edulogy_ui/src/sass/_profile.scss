@@ -1,7 +1,8 @@
 .profile_container{
     position: relative;
-    width: 100vw;
-    height: 100vh;
+    width: 70vw;
+    height: 80vh;
+    top: 100px;
     margin: auto;
     text-align: center;
     display: flex;
@@ -65,9 +66,24 @@
     background-color: rgb(32, 139, 139);
 }
 #close_updateprofile{
-  position: fixed;
+  position: absolute;
   top: 20px;
   right: 20px;
   font-size: 30px;
+  color: rgb(41, 160, 160);
   z-index: 3;
+}
+#close_updateprofile:hover{
+  color: rgb(34, 133, 133);
+}
+@media only screen and (max-width: 600px) {
+    .profile_container {
+        width: 90vw;
+        .input_container input{
+            width: 300px;
+        }
+        .updateinfo_btn{
+            width: 30vw;
+        }
+    }
 }

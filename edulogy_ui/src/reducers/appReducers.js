@@ -4,6 +4,11 @@ const initialState = { popupType: "", status: constants.LOADING };
 
 export function application(state = initialState, action) {
   switch (action.type) {
+    case constants.POPUP_PROFILE:
+      return{
+        ...state,
+        popupType: "profile"
+      }
     case constants.POPUP_LOGIN:
       return {
         ...state,
