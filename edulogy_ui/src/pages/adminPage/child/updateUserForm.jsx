@@ -22,7 +22,7 @@ export default function UpdateUserForm(props) {
         </div>
       </div>
       <label htmlFor="img">Năng động:</label>
-      <input autoComplete="off" type="number" readOnly="readOnly" name="score" id="score" />
+      <input autoComplete="off" type="number" readOnly="readOnly" defaultValue={props.updateInfo.score} name="score" id="score" />
       <div className="row">
         <label>Huy hiệu: </label>
         <div>

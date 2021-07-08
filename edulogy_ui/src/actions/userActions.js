@@ -61,7 +61,7 @@ function addOne(user) {
   };
 
   function success(user) {
-    showStatus("success", "Thêm test thành công !");
+    showStatus("success", "Thêm người dùng thành công !");
     return { type: constants.CREATE_USER_SUCCESS, user };
   }
   function failure(message) {
