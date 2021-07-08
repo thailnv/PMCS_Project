@@ -25,6 +25,10 @@ const userSchema = new mongoose.Schema(
       type: String,
       default: "",
     },
+    badge: {
+      type: String,
+      default: "pawn"
+    }
   },
   {
     versionKey: false,

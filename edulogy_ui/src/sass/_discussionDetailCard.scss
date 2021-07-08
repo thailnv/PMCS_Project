@@ -79,18 +79,38 @@
     margin-right: 20px;
 
     .author-avatar {
+      position: relative;
       width: 32px;
       height: 32px;
-      background-color: #c6bbbb;
       margin: 0 auto;
       line-height: 32px;
-      border-radius: 4px;
+      border-radius: 50%;
+
+      &.pawn {
+        background-color: #d3f6fc;
+      }
+
+      &.knight {
+        background-color: #f3dff6;
+      }
+
+      &.bishop {
+        background-color: #fcedd3;
+      }
+
+      .author-badge-frame {
+        position: absolute;
+        top: -6px;
+        left: -6px;
+        width: 44px;
+        height: 44px;
+      }
     }
 
     .author-name {
       margin-top: 6px;
       font-size: 14px;
-      color: #09a5d4;
+      color: #09afd4;
     }
   }
 }

@@ -10,10 +10,10 @@ exports.getOne = async (req, res, next) => {
         select: "-subComments",
         populate: {
           path: "user",
-          select: "name",
+          select: "name badge",
         },
       })
-      .populate("user", "name")
+      .populate("user", "name badge")
       .lean();
     if (!problem) {
       res.status(404).json({
@@ -120,10 +120,10 @@ exports.getAll = async (req, res, next) => {
         select: "-subComments",
         populate: {
           path: "user",
-          select: "name",
+          select: "name badge",
         },
       })
-      .populate("user", "name")
+      .populate("user", "name badge")
       .lean();
     res.status(200).json({
       status: "success",
