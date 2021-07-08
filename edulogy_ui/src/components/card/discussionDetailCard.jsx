@@ -4,8 +4,15 @@ import axios from 'axios';
 import { ImReply } from "react-icons/im";
 import { useSelector } from 'react-redux';
 
+const badgeFrame = {
+  pawn: '/img/badge-2.png',
+  knight: '/img/badge-3.png',
+  bishop: '/img/badge-1.png'
+}
+
 function DiscussionDetailCard({ discussion, type, refetch, handleReplyClick }) {
   const user = useSelector(store => store.authentication.user);
+  console.log(discussion)
 
   const [upVoteClassName, setUpVoteClassName] = useState('up-vote');
   const [downVoteClassName, setDownVoteClassName] = useState('down-vote');
@@ -90,7 +97,10 @@ function DiscussionDetailCard({ discussion, type, refetch, handleReplyClick }) {
       </div>
 
       <div className="author">
-        <div className="author-avatar">{discussion.user.name.split(" ").pop().charAt(0).toUpperCase()}</div>
+        <div className={'author-avatar ' + discussion?.user?.badge}>
+          {discussion.user.name.split(" ").pop().charAt(0).toUpperCase()}
+          {discussion?.user?.badge && <img src={badgeFrame[discussion.user?.badge]} alt="" className="author-badge-frame" />}
+        </div>
         <div className="author-name">{discussion.user.name.split(" ").pop()}</div>
       </div>
     </div>

@@ -1756,7 +1756,8 @@ button.dropdown-item {
       margin-left: -10px;
       margin-right: -10px; }
       .discussion-detail-card .comment-content .images-content img {
-        margin: 12px 0;
+        display: block;
+        margin: 12px auto;
         max-width: 100%;
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; }
     .discussion-detail-card .comment-content .reply {
@@ -1775,16 +1776,28 @@ button.dropdown-item {
     margin-left: 30px;
     margin-right: 20px; }
     .discussion-detail-card .author .author-avatar {
+      position: relative;
       width: 32px;
       height: 32px;
-      background-color: #c6bbbb;
       margin: 0 auto;
       line-height: 32px;
-      border-radius: 4px; }
+      border-radius: 50%; }
+      .discussion-detail-card .author .author-avatar.pawn {
+        background-color: #d3f6fc; }
+      .discussion-detail-card .author .author-avatar.knight {
+        background-color: #f3dff6; }
+      .discussion-detail-card .author .author-avatar.bishop {
+        background-color: #fcedd3; }
+      .discussion-detail-card .author .author-avatar .author-badge-frame {
+        position: absolute;
+        top: -6px;
+        left: -6px;
+        width: 44px;
+        height: 44px; }
     .discussion-detail-card .author .author-name {
       margin-top: 6px;
       font-size: 14px;
-      color: #09a5d4; }
+      color: #09afd4; }
 
 .discussion-posting-area {
   padding-left: 4px;
@@ -1824,7 +1837,7 @@ button.dropdown-item {
     .discussion-posting-area .discussion-posting-wrapper input {
       height: 40px; }
     .discussion-posting-area .discussion-posting-wrapper textarea {
-      height: 15vw; }
+      height: 50vh; }
     .discussion-posting-area .discussion-posting-wrapper #image[type="file"] {
       display: none; }
     .discussion-posting-area .discussion-posting-wrapper label[for="image"]:hover:not(:focus)::before {
@@ -1958,12 +1971,25 @@ button.dropdown-item {
   .discussion-card .author-and-replies {
     text-align: center; }
     .discussion-card .author-and-replies .author-avatar {
+      position: relative;
       width: 36px;
       height: 36px;
       background-color: #c6bbbb;
       margin: 0 auto;
       line-height: 36px;
-      border-radius: 4px; }
+      border-radius: 50%; }
+      .discussion-card .author-and-replies .author-avatar.pawn {
+        background-color: #d3f6fc; }
+      .discussion-card .author-and-replies .author-avatar.knight {
+        background-color: #f3dff6; }
+      .discussion-card .author-and-replies .author-avatar.bishop {
+        background-color: #fcedd3; }
+      .discussion-card .author-and-replies .author-avatar .author-badge-frame {
+        position: absolute;
+        top: -7px;
+        left: -6.4px;
+        width: 48px;
+        height: 48px; }
     .discussion-card .author-and-replies .author-name {
       margin-top: 6px;
       font-size: 14px;

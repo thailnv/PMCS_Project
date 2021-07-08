@@ -17,6 +17,7 @@ function AllDiscussions() {
   const { data, isLoading, isError, refetch } = useQuery(['discussions', page], async () => {
     const response = await axios.get(`http://localhost:3000/api/problems?page=${page + 1}&pageSize=5`);
     setTotalPages(response.data.totalPage);
+    console.log(response.data);
     return response.data;
   });
 
