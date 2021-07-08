@@ -1756,7 +1756,8 @@ button.dropdown-item {
       margin-left: -10px;
       margin-right: -10px; }
       .discussion-detail-card .comment-content .images-content img {
-        margin: 12px 0;
+        display: block;
+        margin: 12px auto;
         max-width: 100%;
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; }
     .discussion-detail-card .comment-content .reply {
@@ -1836,7 +1837,7 @@ button.dropdown-item {
     .discussion-posting-area .discussion-posting-wrapper input {
       height: 40px; }
     .discussion-posting-area .discussion-posting-wrapper textarea {
-      height: 15vw; }
+      height: 50vh; }
     .discussion-posting-area .discussion-posting-wrapper #image[type="file"] {
       display: none; }
     .discussion-posting-area .discussion-posting-wrapper label[for="image"]:hover:not(:focus)::before {
